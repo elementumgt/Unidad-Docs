@@ -8,7 +8,7 @@ export const privacyDocument = Object.freeze({
     "Esta política explica qué información procesa Unidad, para qué se utiliza y cómo puedes ejercer control sobre ella.",
     "This policy explains what information Unidad processes, why it is used, and how you can exercise control over it.",
   ),
-  updated: bilingual("29 de agosto de 2026", "August 29, 2026"),
+  updated: bilingual("8 de septiembre de 2026", "September 8, 2026"),
   sections: [
     {
       id: "alcance",
@@ -37,8 +37,14 @@ export const privacyDocument = Object.freeze({
         subtitle(
           "Configuración y actividad comunitaria",
           "Configuration and community activity",
-          "Preferencias del servidor, comandos personalizados, palabras moderadas, asignaciones de roles, XP, niveles, economía, inventario, eventos, tickets, coaching, perfiles de juego y metadatos de canales de voz temporales.",
-          "Server preferences, custom commands, moderated words, role assignments, XP, levels, economy, inventory, events, tickets, coaching, game profiles, and temporary voice-channel metadata.",
+          "Preferencias del servidor, comandos personalizados, palabras moderadas, asignaciones de roles, XP, mensajes, niveles, economía, inventario, eventos, tickets, coaching, perfiles de juego, metadatos de canales de voz temporales, contadores y configuración de logs.",
+          "Server preferences, custom commands, moderated words, role assignments, XP, messages, levels, economy, inventory, events, tickets, coaching, game profiles, temporary voice-channel metadata, counters, and log configuration.",
+        ),
+        subtitle(
+          "Funciones sociales y contenido aportado",
+          "Social features and submitted content",
+          "Estados AFK y motivos, cumpleaños, relaciones familiares, perfiles sociales y favoritos, agradecimientos, atribución y recompensas de invitaciones, sorteos y participantes, sugerencias, reseñas, mensajes fijados dinámicamente, recordatorios, notas personales y contenido necesario para reportes o transcripciones de tickets.",
+          "AFK status and reasons, birthdays, family relationships, social profiles and favorites, acknowledgements, invitation attribution and rewards, giveaways and participants, suggestions, reviews, sticky messages, reminders, personal notes, and content needed for reports or ticket transcripts.",
         ),
         subtitle(
           "Música",
@@ -49,8 +55,8 @@ export const privacyDocument = Object.freeze({
         subtitle(
           "Integraciones y operación",
           "Integrations and operations",
-          "Nombres o identificadores de Twitch configurados por administradores y registros técnicos limitados, como errores, tiempos y los identificadores necesarios para diagnosticar el servicio.",
-          "Twitch names or identifiers configured by administrators and limited technical logs such as errors, timing, and identifiers needed to diagnose the service.",
+          "Nombres o identificadores de Twitch configurados por administradores; consultas enviadas voluntariamente a búsqueda, traducción, juegos, GIF o chatbot; y registros técnicos limitados, como cambios de canales, roles, emojis, stickers, eventos y servidor, errores, tiempos e identificadores necesarios para operar o diagnosticar el servicio.",
+          "Twitch names or identifiers configured by administrators; queries voluntarily sent to search, translation, games, GIF, or chatbot features; and limited technical logs such as channel, role, emoji, sticker, event, and server changes, errors, timing, and identifiers needed to operate or diagnose the service.",
         ),
       ],
     },
@@ -83,14 +89,18 @@ export const privacyDocument = Object.freeze({
             "Prestar las funciones solicitadas y mantener configuraciones por servidor.",
             "Aplicar permisos, prevenir abuso, moderar contenido y limitar solicitudes excesivas.",
             "Mantener sistemas de XP, economía, roles, tickets, coaching, eventos y voz.",
+            "Gestionar perfiles sociales, cumpleaños, invitaciones, sorteos, sugerencias, recordatorios, starboard y juegos comunitarios.",
             "Buscar, reproducir y restaurar música, así como mostrar un historial solicitado por la comunidad.",
+            "Enviar al proveedor configurado el contenido escrito en el canal de chatbot para generar una respuesta.",
             "Investigar errores, proteger la infraestructura y mejorar estabilidad y rendimiento.",
           ],
           [
             "Provide requested features and retain per-server settings.",
             "Enforce permissions, prevent abuse, moderate content, and rate-limit excessive requests.",
             "Operate XP, economy, roles, tickets, coaching, events, and voice systems.",
+            "Manage social profiles, birthdays, invitations, giveaways, suggestions, reminders, starboard, and community games.",
             "Search, play, and restore music, and display community-requested history.",
+            "Send content written in the configured chatbot channel to the configured provider to generate a response.",
             "Investigate errors, protect infrastructure, and improve stability and performance.",
           ],
         ),
@@ -113,6 +123,8 @@ export const privacyDocument = Object.freeze({
             "Discord, para recibir eventos, mostrar respuestas y administrar recursos autorizados.",
             "Proveedores musicales como YouTube, Spotify, SoundCloud y Apple Music, y el servicio Lavalink, para resolver búsquedas y reproducir contenido.",
             "Twitch, cuando un servidor configura avisos de creadores.",
+            "El proveedor de chatbot configurado por el operador, de forma predeterminada un endpoint compatible con OpenAI, cuando un administrador habilita el canal y existe una clave de API.",
+            "Proveedores de consultas solicitadas: GIPHY, Open Trivia DB, servicios de dilemas, discord.js, GitHub, npm, Apple iTunes, CoinGecko, disease.sh, MyMemory, Open-Meteo, Anagramica e is.gd, según el comando utilizado.",
             "Infraestructura administrada por el operador para PostgreSQL, Redis, registros y copias de seguridad.",
             "GitHub Pages, para publicar este centro legal; sus registros de acceso se rigen por la política de GitHub.",
           ],
@@ -120,6 +132,8 @@ export const privacyDocument = Object.freeze({
             "Discord, to receive events, display responses, and manage authorized resources.",
             "Music providers such as YouTube, Spotify, SoundCloud, and Apple Music, plus Lavalink, to resolve searches and play content.",
             "Twitch, when a server configures creator notifications.",
+            "The chatbot provider configured by the operator, by default an OpenAI-compatible endpoint, when an administrator enables the channel and an API key is present.",
+            "Providers for requested queries: GIPHY, Open Trivia DB, dilemma services, discord.js, GitHub, npm, Apple iTunes, CoinGecko, disease.sh, MyMemory, Open-Meteo, Anagramica, and is.gd, depending on the command used.",
             "Operator-managed infrastructure for PostgreSQL, Redis, logs, and backups.",
             "GitHub Pages, to publish this legal center; access logs are governed by GitHub’s policy.",
           ],
@@ -135,8 +149,8 @@ export const privacyDocument = Object.freeze({
       title: bilingual("6. Conservación y eliminación", "6. Retention and deletion"),
       blocks: [
         paragraph(
-          "La configuración, progresión, economía, historial musical y demás registros funcionales se conservan mientras sean necesarios para operar la característica correspondiente o hasta que un administrador autorizado o el usuario solicite su eliminación. Los datos temporales de caché expiran automáticamente; las copias de seguridad pueden conservar datos durante su ciclo operativo limitado.",
-          "Configuration, progression, economy, music history, and other functional records are kept while needed to operate the corresponding feature or until an authorized administrator or user requests deletion. Temporary cache data expires automatically; backups may retain data for their limited operational lifecycle.",
+          "La configuración, progresión, economía, historial musical, perfiles, relaciones, invitaciones, sorteos, sugerencias, recordatorios y demás registros funcionales se conservan mientras sean necesarios para operar la característica correspondiente o hasta que un administrador autorizado o el usuario solicite su eliminación. El estado AFK se elimina al volver a escribir; los datos temporales de caché y sesiones interactivas expiran automáticamente. Las copias de seguridad pueden conservar datos durante su ciclo operativo limitado.",
+          "Configuration, progression, economy, music history, profiles, relationships, invitations, giveaways, suggestions, reminders, and other functional records are retained while needed for the corresponding feature or until an authorized administrator or user requests deletion. AFK status is removed when the user writes again; temporary cache and interactive-session data expire automatically. Backups may retain data for their limited operational lifecycle.",
         ),
         paragraph(
           "Retirar el bot de un servidor detiene nuevo tratamiento en ese servidor, pero no garantiza la eliminación inmediata de todos los registros existentes. El propietario del servidor puede solicitar la eliminación completa indicando el identificador del servidor.",

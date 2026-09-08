@@ -1,412 +1,63 @@
+import { commandCatalogSnapshot } from "./commandCatalogSnapshot.js";
+
 const t = (es, en) => ({ es, en });
-const exampleTokens = {
-  "[canal]": "#general",
-  "[cantidad]": "250",
-  "[categoria]": "Soporte",
-  "[categorias]": "color,region",
-  "[clave]": "soporte",
-  "[color]": "#5865F2",
-  "[descripcion]": "Acceso VIP",
-  "[dueno]": "@Bryan",
-  "[emoji]": "🎮",
-  "[estado]": "on",
-  "[etiqueta]": "Miembro",
-  "[game]": "overwatch",
-  "[id]": "1",
-  "[limite]": "10",
-  "[nombre]": "Unidad",
-  "[nota]": "Selecciona una opción",
-  "[orden]": "1",
-  "[posicion]": "tank",
-  "[rank]": "gold",
-  "[requiere_perfil]": "true",
-  "[requires_profile]": "true",
-  "[rol]": "@Miembro",
-  "[rolgate]": "@Verificado",
-  "[role_emoji]": "🏆",
-  "[channel_emoji]": "🎮",
-  "[tier]": "5",
-  "[titulo]": "Elige tus roles",
-  "[url]": "https://example.com/banner.png",
-  "[user_limit]": "5",
-  "[usuario]": "@Bryan",
-  "[valor]": "true",
-};
 
-const requiredExampleTokens = {
-  canal: "#general",
-  cancion: "Never Gonna Give You Up",
-  cantidad: "250",
-  category: "#Competitivo",
-  categoria: "#Soporte",
-  categorias: "color,region",
-  clave: "xp.enabled",
-  color: "#5865F2",
-  descripcion: "Acceso VIP",
-  emoji: "🎮",
-  estado: "on",
-  game: "overwatch",
-  id: "1",
-  label: "Oro",
-  limite: "10",
-  modulo: "music",
-  nivel: "75",
-  nombre: "Unidad",
-  palabra: "spam",
-  posicion: "tank",
-  precio: "500",
-  rank: "gold",
-  respuesta: "Consulta #reglas",
-  rol: "@Miembro",
-  tier: "5",
-  tipo: "general",
-  titulo: "Elige tus roles",
-  trigger: "reglas",
-  usuario: "@Bryan",
-  valor: "true",
-};
-
-function buildExample(syntax) {
-  let example = syntax;
-  for (const [token, value] of Object.entries(exampleTokens)) {
-    example = example.replaceAll(token, value);
-  }
-  return example
-    .split(" ")
-    .map((token, index) => (index < 2 ? token : (requiredExampleTokens[token] ?? token)))
-    .join(" ");
-}
-
-const u = (syntax, es, en, example = buildExample(syntax)) => ({
-  syntax,
-  example,
-  description: t(es, en),
-});
-
-export const commandGroups = [
-  {
-    id: "inicio",
-    title: t("Primeros pasos", "Getting started"),
-    description: t("Comandos básicos y configuración inicial del servidor.", "Basic commands and initial server setup."),
-    commands: [
-      {
-        name: "help",
-        summary: t("Muestra el catálogo de comandos disponible dentro de Discord.", "Shows the command catalog available inside Discord."),
-        access: t("Todos los miembros.", "All members."),
-        usage: [u("/help", "Abre la ayuda privada del bot.", "Opens the bot’s private help response.")],
-      },
-      {
-        name: "ping",
-        summary: t("Comprueba que el bot está conectado y responde.", "Checks that the bot is connected and responsive."),
-        access: t("Todos los miembros.", "All members."),
-        usage: [u("/ping", "Devuelve la latencia y el estado básico.", "Returns latency and basic status.")],
-      },
-      {
-        name: "setup",
-        summary: t("Asistente guiado para preparar Unidad en un servidor nuevo.", "Guided assistant for preparing Unidad in a new server."),
-        access: t("Permiso Administrador de Discord.", "Discord Administrator permission."),
-        usage: [
-          u("/setup wizard", "Inicia la configuración paso a paso.", "Starts step-by-step setup."),
-          u("/setup status", "Resume qué componentes están configurados o pendientes.", "Summarizes configured and pending components."),
-        ],
-        notes: t("Ejecuta status antes y después del wizard para verificar el resultado.", "Run status before and after the wizard to verify the result."),
-      },
-    ],
-  },
-  {
-    id: "perfil-economia",
-    title: t("Perfil y economía", "Profile and economy"),
-    description: t("Progresión, monedas, transferencias y tienda del servidor.", "Progression, currency, transfers, and the server shop."),
-    commands: [
-      {
-        name: "nivel",
-        summary: t("Consulta XP y nivel propio o de otro miembro.", "Shows your XP and level or another member’s."),
-        access: t("Todos los miembros; requiere el módulo XP activo.", "All members; requires the XP module."),
-        usage: [u("/nivel [usuario]", "Sin usuario muestra tu propio perfil.", "Without a user, shows your own profile.")],
-      },
-      {
-        name: "eco",
-        summary: t("Opera la economía comunitaria con saldo, pagos y recompensas.", "Operates the community economy with balances, payments, and rewards."),
-        access: t("Todos los miembros; requiere el módulo economía activo.", "All members; requires the economy module."),
-        usage: [
-          u("/eco balance [usuario]", "Consulta un saldo.", "Checks a balance."),
-          u("/eco pay usuario cantidad", "Transfiere monedas de forma atómica.", "Transfers currency atomically."),
-          u("/eco daily", "Reclama la recompensa diaria cuando termina el cooldown.", "Claims the daily reward after cooldown."),
-          u("/eco work", "Obtiene una recompensa de trabajo sujeta a cooldown.", "Earns a work reward subject to cooldown."),
-        ],
-      },
-      {
-        name: "shop",
-        summary: t("Consulta y compra artículos configurados por el servidor.", "Browses and purchases server-configured items."),
-        access: t("Todos los miembros; requiere economía activa.", "All members; requires economy."),
-        usage: [
-          u("/shop list", "Lista artículos, precios e identificadores.", "Lists items, prices, and identifiers."),
-          u("/shop buy id", "Compra el artículo; saldo e inventario cambian en una transacción.", "Purchases the item; balance and inventory change in one transaction."),
-        ],
-      },
-    ],
-  },
-  {
-    id: "musica",
-    title: t("Música", "Music"),
-    description: t("Reproducción Lavalink, cola persistente e historial durable.", "Lavalink playback, persistent queue, and durable history."),
-    commands: [
-      {
-        name: "play",
-        summary: t("Busca o agrega música a la cola del servidor.", "Searches for or adds music to the server queue."),
-        access: t("Miembro conectado a voz; música activa.", "Member connected to voice; music enabled."),
-        usage: [u("/play cancion", "Acepta texto o URL HTTPS de YouTube, Spotify, SoundCloud o Apple Music.", "Accepts text or an HTTPS URL from YouTube, Spotify, SoundCloud, or Apple Music.")],
-        notes: t("La cola admite hasta 100 pistas. Si había una cola persistida sin reproductor, se restaura antes de añadir la nueva canción.", "The queue supports up to 100 tracks. If a persisted queue exists without a player, it is restored before adding the new track."),
-      },
-      {
-        name: "queue",
-        summary: t("Muestra la pista actual y las próximas canciones.", "Shows the current track and upcoming songs."),
-        access: t("Todos los miembros.", "All members."),
-        usage: [u("/queue", "También muestra una cola guardada cuando el bot está desconectado de voz.", "Also shows a saved queue while the bot is disconnected from voice.")],
-      },
-      {
-        name: "history",
-        summary: t("Consulta pistas reproducidas, saltadas o fallidas.", "Shows played, skipped, or failed tracks."),
-        access: t("Todos los miembros.", "All members."),
-        usage: [u("/history [limite]", "Devuelve entre 1 y 25 registros recientes.", "Returns between 1 and 25 recent entries.")],
-      },
-      {
-        name: "skip",
-        summary: t("Salta la canción que está sonando.", "Skips the currently playing track."),
-        access: t("Mismo canal de voz y rol DJ, Staff o Admin.", "Same voice channel and DJ, Staff, or Admin role."),
-        usage: [u("/skip", "Avanza a la siguiente pista disponible.", "Advances to the next available track.")],
-      },
-      {
-        name: "stop",
-        summary: t("Detiene la reproducción y elimina la cola intencionalmente.", "Stops playback and intentionally clears the queue."),
-        access: t("Mismo canal de voz y rol DJ, Staff o Admin.", "Same voice channel and DJ, Staff, or Admin role."),
-        usage: [u("/stop", "Desconecta el reproductor; esta acción no se restaura.", "Disconnects the player; this action is not restored.")],
-      },
-      {
-        name: "volume",
-        summary: t("Ajusta el volumen del reproductor del servidor.", "Adjusts the server player volume."),
-        access: t("Mismo canal de voz; control protegido por roles musicales.", "Same voice channel; protected by music-control roles."),
-        usage: [u("/volume nivel", "Define un valor entre 1 y 100.", "Sets a value between 1 and 100.")],
-      },
-    ],
-  },
-  {
-    id: "comunidad",
-    title: t("Comunidad", "Community"),
-    description: t("Eventos, creadores, coaching y soporte mediante tickets.", "Events, creators, coaching, and ticket-based support."),
-    commands: [
-      {
-        name: "event",
-        summary: t("Crea, consulta y administra eventos de la comunidad.", "Creates, browses, and manages community events."),
-        access: t("Crear/listar: miembro; cancelar: Staff; canal: Admin.", "Create/list: member; cancel: Staff; channel: Admin."),
-        usage: [
-          u("/event crear", "Abre el formulario interactivo de creación.", "Opens the interactive creation form."),
-          u("/event lista", "Muestra próximos eventos.", "Shows upcoming events."),
-          u("/event cancelar id", "Cancela un evento por identificador.", "Cancels an event by identifier."),
-          u("/event setcanal canal", "Configura el canal de publicaciones.", "Configures the publication channel."),
-        ],
-      },
-      {
-        name: "creator",
-        summary: t("Vincula creadores de Twitch y configura avisos en vivo.", "Links Twitch creators and configures live alerts."),
-        access: t("Lista/quitar: miembro; registrar: Staff; configuración: Admin.", "List/remove: member; register: Staff; configuration: Admin."),
-        usage: [
-          u("/creator registrar usuario [dueno]", "Vincula Twitch y asigna el rol configurado.", "Links Twitch and assigns the configured role."),
-          u("/creator quitar", "Desvincula tu cuenta.", "Unlinks your account."),
-          u("/creator lista", "Lista creadores registrados y estado.", "Lists registered creators and status."),
-          u("/creator canal canal", "Configura el canal de directos.", "Configures the live-alert channel."),
-          u("/creator rolnotif [rol]", "Configura la mención de notificación.", "Configures the notification mention."),
-          u("/creator setrole rol", "Configura el rol de creador.", "Configures the creator role."),
-        ],
-      },
-      {
-        name: "coaching",
-        summary: t("Gestiona solicitudes, mentores, posiciones y sesiones privadas.", "Manages requests, mentors, positions, and private sessions."),
-        access: t("Solicitar/listar: miembro; mentores: Staff; configuración: Admin.", "Request/list: member; mentors: Staff; configuration: Admin."),
-        usage: [
-          u("/coaching solicitar", "Solicita un mentor disponible.", "Requests an available mentor."),
-          u("/coaching disponible estado", "Marca disponibilidad del coach.", "Sets coach availability."),
-          u("/coaching registrar usuario posicion", "Registra un coach por posición.", "Registers a coach by position."),
-          u("/coaching quitar usuario", "Retira un coach.", "Removes a coach."),
-          u("/coaching lista [posicion]", "Lista coaches, opcionalmente filtrados.", "Lists coaches, optionally filtered."),
-          u("/coaching cerrar", "Cierra la sesión activa.", "Closes the active session."),
-          u("/coaching setcanal canal", "Define el canal donde se crean hilos.", "Sets the channel where threads are created."),
-          u("/coaching posicion-add clave nombre [emoji] [rol] [orden]", "Crea o actualiza una posición; clave admite hasta 50 caracteres y nombre hasta 100.", "Creates or updates a position; key supports up to 50 characters and name up to 100.", "/coaching posicion-add tank Tanque 🛡️ @Coach 1"),
-          u("/coaching posicion-delete clave", "Elimina una posición por su clave interna.", "Deletes a position by its internal key.", "/coaching posicion-delete tank"),
-          u("/coaching posicion-list", "Lista todas las posiciones configuradas y su orden.", "Lists all configured positions and their order."),
-        ],
-      },
-      {
-        name: "ticket",
-        summary: t("Configura categorías y publica el panel de tickets.", "Configures categories and publishes the ticket panel."),
-        access: t("Listar: miembro; cambios y panel: Admin.", "List: member; changes and panel: Admin."),
-        usage: [
-          u("/ticket category-add clave nombre [emoji] [descripcion] [orden]", "Crea o actualiza una categoría.", "Creates or updates a category."),
-          u("/ticket category-delete clave", "Elimina una categoría.", "Deletes a category."),
-          u("/ticket category-list", "Lista categorías configuradas.", "Lists configured categories."),
-          u("/ticket panel canal", "Publica el selector para abrir tickets.", "Publishes the ticket-opening selector."),
-        ],
-        notes: t("Solo puede existir un ticket abierto por miembro y servidor.", "Only one open ticket may exist per member and server."),
-      },
-    ],
-  },
-  {
-    id: "personalizacion",
-    title: t("Roles y personalización", "Roles and customization"),
-    description: t("Autoasignación, cascadas y respuestas personalizadas.", "Self-assignment, cascades, and custom responses."),
-    commands: [
-      {
-        name: "selfrole",
-        summary: t("Administra roles autoasignables, secciones y dependencias.", "Manages self-assignable roles, sections, and dependencies."),
-        access: t("Gestionar roles de Discord y acceso Admin del bot.", "Discord Manage Roles and bot Admin access."),
-        usage: [
-          u("/selfrole add rol [etiqueta] [categoria] [orden]", "Añade o actualiza un rol.", "Adds or updates a role."),
-          u("/selfrole delete rol", "Elimina un rol del catálogo autoasignable.", "Deletes a role from the self-assignable catalog."),
-          u("/selfrole list", "Lista los roles autoasignables configurados.", "Lists configured self-assignable roles."),
-          u("/selfrole panel canal", "Publica el panel.", "Publishes the panel."),
-          u("/selfrole section-add titulo categorias [emoji] [orden] [rolgate] [nota]", "Crea o edita una sección.", "Creates or edits a section."),
-          u("/selfrole section-delete titulo", "Elimina una sección usando su título exacto.", "Deletes a section using its exact title."),
-          u("/selfrole section-list", "Lista las secciones y categorías vinculadas.", "Lists sections and their linked categories."),
-          u("/selfrole cascade-add rol categorias [titulo]", "Crea opciones dependientes de un rol.", "Creates options dependent on a role."),
-          u("/selfrole cascade-delete rol", "Elimina la cascada vinculada a un rol.", "Deletes the cascade linked to a role."),
-          u("/selfrole cascade-list", "Lista todas las cascadas configuradas.", "Lists every configured cascade."),
-        ],
-      },
-      {
-        name: "cmd",
-        summary: t("Crea respuestas de texto personalizadas por servidor.", "Creates per-server custom text responses."),
-        access: t("Administrar servidor y rol Staff.", "Manage Server and Staff role."),
-        usage: [
-          u("/cmd add trigger respuesta", "Crea o reemplaza una respuesta.", "Creates or replaces a response."),
-          u("/cmd delete trigger", "Elimina una respuesta.", "Deletes a response."),
-          u("/cmd list", "Lista triggers disponibles.", "Lists available triggers."),
-        ],
-        notes: t("Las respuestas bloquean menciones automáticas peligrosas.", "Responses block dangerous automatic mentions."),
-      },
-      {
-        name: "trigger",
-        summary: t("Ejecuta un comando personalizado registrado con /cmd.", "Runs a custom command registered with /cmd."),
-        access: t("Todos los miembros.", "All members."),
-        usage: [u("/trigger nombre", "El nombre ofrece autocompletado.", "The name supports autocomplete.")],
-      },
-    ],
-  },
-  {
-    id: "moderacion",
-    title: t("Moderación", "Moderation"),
-    description: t("Filtros comunitarios y protección de canales.", "Community filters and channel protection."),
-    commands: [
-      {
-        name: "banword",
-        summary: t("Gestiona la lista de palabras prohibidas del servidor.", "Manages the server’s banned-word list."),
-        access: t("Administrar servidor y rol Staff.", "Manage Server and Staff role."),
-        usage: [
-          u("/banword add palabra", "Añade una palabra normalizada.", "Adds a normalized word."),
-          u("/banword remove palabra", "Retira una palabra.", "Removes a word."),
-          u("/banword list", "Muestra la lista actual.", "Shows the current list."),
-        ],
-      },
-    ],
-  },
-  {
-    id: "administracion",
-    title: t("Administración", "Administration"),
-    description: t("Configuración avanzada, módulos, paneles, canales y roles.", "Advanced configuration, modules, panels, channels, and roles."),
-    commands: [
-      {
-        name: "module",
-        summary: t("Activa o desactiva módulos completos del bot.", "Enables or disables entire bot modules."),
-        access: t("Administrar servidor y acceso Admin.", "Manage Server and Admin access."),
-        usage: [
-          u("/module toggle modulo estado", "Controla tickets, música, economía, XP o moderación.", "Controls tickets, music, economy, XP, or moderation."),
-          u("/module status", "Muestra el estado de todos los módulos.", "Shows every module’s status."),
-        ],
-      },
-      {
-        name: "config",
-        summary: t("Consulta o modifica claves avanzadas de configuración.", "Views or changes advanced configuration keys."),
-        access: t("Administrar servidor y acceso Admin.", "Manage Server and Admin access."),
-        usage: [
-          u("/config show", "Muestra la configuración efectiva.", "Shows the effective configuration."),
-          u("/config set clave valor", "Modifica una clave validada.", "Changes a validated key."),
-        ],
-        notes: t("Prefiere /setup y comandos especializados cuando exista una opción dedicada.", "Prefer /setup and specialized commands when a dedicated option exists."),
-      },
-      {
-        name: "admin",
-        summary: t("Concentra la configuración operativa del servidor.", "Centralizes operational server configuration."),
-        access: t("Administrar servidor y acceso Admin del bot.", "Manage Server and bot Admin access."),
-        usage: [
-          u("/admin setwelcomechannel canal", "Define el canal de texto donde se publican las bienvenidas.", "Sets the text channel where welcome messages are published.", "/admin setwelcomechannel #bienvenidas"),
-          u("/admin setlevelchannel canal", "Define el canal que anuncia las subidas de nivel.", "Sets the channel that announces level-ups.", "/admin setlevelchannel #niveles"),
-          u("/admin setroleschannel canal", "Define el canal del panel de selección de roles.", "Sets the role-selection panel channel.", "/admin setroleschannel #roles"),
-          u("/admin setlobbychannel canal", "Registra el canal de voz que actuará como lobby temporal.", "Registers the voice channel used as a temporary-room lobby.", "/admin setlobbychannel 🔊 Crear sala"),
-          u("/admin setverifychannel canal", "Define el canal donde se publica el panel de verificación.", "Sets the verification-panel channel.", "/admin setverifychannel #verificación"),
-          u("/admin setverifyrole rol", "Configura el rol que recibe un miembro al verificarse.", "Configures the role granted after verification.", "/admin setverifyrole @Verificado"),
-          u("/admin sendverifypanel", "Publica el panel de verificación en el canal configurado.", "Publishes the verification panel in the configured channel."),
-          u("/admin setticketscategory categoria", "Define la categoría de Discord donde se crearán los tickets.", "Sets the Discord category where tickets are created.", "/admin setticketscategory Soporte"),
-          u("/admin setstaffrole rol", "Configura el rol de Staff que puede atender tickets y acciones protegidas.", "Configures the Staff role allowed to handle tickets and protected actions.", "/admin setstaffrole @Staff"),
-          u("/admin sendticketspanel canal", "Publica el panel para abrir tickets en un canal de texto.", "Publishes the ticket-opening panel in a text channel.", "/admin sendticketspanel #soporte"),
-          u("/admin sendembedpanel canal", "Publica el panel interactivo del creador de embeds.", "Publishes the interactive embed-builder panel.", "/admin sendembedpanel #anuncios"),
-          u("/admin eco-config nombre emoji", "Personaliza el nombre y emoji de la moneda del servidor.", "Customizes the server currency name and emoji.", "/admin eco-config créditos 💎"),
-          u("/admin shop-add nombre precio [rol] [descripcion]", "Añade un artículo; puede conceder un rol y tener descripción.", "Adds an item; it may grant a role and include a description.", "/admin shop-add VIP 500 @VIP Acceso premium"),
-          u("/admin eco-give usuario cantidad", "Añade una cantidad positiva al saldo de un miembro.", "Adds a positive amount to a member's balance.", "/admin eco-give @Bryan 250"),
-          u("/admin setlogchannel tipo canal", "Asigna un canal al tipo de log mod, voice, tickets o general.", "Assigns a channel to the mod, voice, tickets, or general log type.", "/admin setlogchannel mod #mod-logs"),
-          u("/admin setwelcomecolor color", "Cambia el color hexadecimal del embed de bienvenida.", "Changes the welcome embed hexadecimal color.", "/admin setwelcomecolor #5865F2"),
-          u("/admin setwelcomeimage [url]", "Define una imagen o GIF HTTPS; sin URL elimina la imagen actual.", "Sets an HTTPS image or GIF; omitting the URL removes the current image.", "/admin setwelcomeimage https://example.com/banner.png"),
-          u("/admin setxpcolor color", "Cambia el color hexadecimal del embed de subida de nivel.", "Changes the level-up embed hexadecimal color.", "/admin setxpcolor #57F287"),
-          u("/admin setdjrole rol", "Configura el rol autorizado para controlar la música.", "Configures the role authorized to control music.", "/admin setdjrole @DJ"),
-          u("/admin seteconomyrole rol", "Configura el rol que puede gestionar saldos y tienda.", "Configures the role allowed to manage balances and the shop.", "/admin seteconomyrole @Economía"),
-          u("/admin setrolespanelgame rol", "Define el rol de juego que habilita el perfil avanzado del panel.", "Sets the game role that enables the panel's advanced profile.", "/admin setrolespanelgame @Overwatch"),
-          u("/admin setcoachingcorerole rol", "Define el rol Coach general que activa el selector de posiciones.", "Sets the general Coach role that activates position selection.", "/admin setcoachingcorerole @Coach"),
-          u("/admin setadminrole rol", "Define el rol con acceso administrativo interno del bot.", "Sets the role with the bot's internal administrative access.", "/admin setadminrole @Administrador"),
-          u("/admin setvcpanelchannel canal", "Define dónde se publican los paneles de control de salas temporales.", "Sets where temporary-room control panels are published.", "/admin setvcpanelchannel #control-de-voz"),
-        ],
-      },
-    ],
-  },
-  {
-    id: "voz-rangos",
-    title: t("Voz y rangos", "Voice and ranks"),
-    description: t("Lobbies, salas temporales y progresión competitiva por juego.", "Lobbies, temporary rooms, and per-game competitive progression."),
-    commands: [
-      {
-        name: "lobby",
-        summary: t("Registra y administra lobbies que crean salas temporales.", "Registers and manages lobbies that create temporary rooms."),
-        access: t("Administrar servidor y acceso Admin.", "Manage Server and Admin access."),
-        usage: [
-          u("/lobby create canal nombre [limite] [rol] [emoji] [requiere_perfil]", "Registra un lobby.", "Registers a lobby."),
-          u("/lobby edit canal [nombre] [limite] [rol] [emoji] [requiere_perfil]", "Modifica sus opciones.", "Changes its options."),
-          u("/lobby delete canal", "Desregistra sin borrar el canal de Discord.", "Unregisters without deleting the Discord channel."),
-          u("/lobby list", "Lista lobbies configurados.", "Lists configured lobbies."),
-        ],
-        notes: t("Las salas vacías se eliminan automáticamente; el propietario controla participantes desde el panel.", "Empty rooms are deleted automatically; the owner controls participants through the panel."),
-      },
-      {
-        name: "rank",
-        summary: t("Gestiona rangos por juego y genera lobbies competitivos.", "Manages per-game ranks and generates competitive lobbies."),
-        access: t("Administrar servidor y acceso Admin.", "Manage Server and Admin access."),
-        usage: [
-          u("/rank add game rank label tier [role_emoji] [channel_emoji]", "Crea o actualiza un rango.", "Creates or updates a rank."),
-          u("/rank remove game rank", "Elimina un rango.", "Deletes a rank."),
-          u("/rank list [game]", "Lista rangos, con filtro opcional.", "Lists ranks with an optional filter."),
-          u("/rank lobbies-setup game category [user_limit] [requires_profile]", "Crea lobbies para los rangos del juego.", "Creates lobbies for the game’s ranks."),
-          u("/rank lobbies-teardown game", "Elimina únicamente los lobbies de ese juego.", "Deletes only that game’s lobbies."),
-        ],
-      },
-    ],
-  },
+const groupDefinitions = [
+  { id: "inicio", title: t("Primeros pasos", "Getting started"), description: t("Ayuda, estado, información del servidor, instalación y notas personales.", "Help, status, server information, installation, and personal notes."), commands: ["help", "ping", "bot", "invite", "guild", "notepad"] },
+  { id: "configuracion", title: t("Configuración", "Configuration"), description: t("Asistentes, módulos y configuración operativa del servidor.", "Setup assistants, modules, and operational server configuration."), commands: ["setup", "autosetup", "admin", "config", "module"] },
+  { id: "moderacion", title: t("Moderación y seguridad", "Moderation and security"), description: t("Sanciones, AutoMod, anuncios y canales de reporte.", "Sanctions, AutoMod, announcements, and report channels."), commands: ["moderation", "automod", "banword", "announcement", "report"] },
+  { id: "comunidad", title: t("Comunidad", "Community"), description: t("Identidad social, eventos, invitaciones, soporte y contenido persistente.", "Social identity, events, invitations, support, and persistent community content."), commands: ["afk", "birthdays", "family", "profile", "thanks", "suggestions", "stickymessages", "giveaway", "invites", "event", "creator", "coaching", "ticket"] },
+  { id: "progresion", title: t("Progresión y economía", "Progression and economy"), description: t("XP, mensajes, recompensas, saldos, tienda y casino transaccional.", "XP, messages, rewards, balances, shop, and transactional casino."), commands: ["nivel", "levels", "messages", "eco", "economy", "shop", "casino"] },
+  { id: "musica", title: t("Música y voz", "Music and voice"), description: t("Lavalink, cola durable, radio, sonidos y actividades de voz.", "Lavalink, durable queue, radio, sounds, and voice activities."), commands: ["play", "music", "queue", "history", "seek", "skip", "stop", "volume", "radio", "soundboard", "activities"] },
+  { id: "contenido", title: t("Juegos, imágenes y herramientas", "Games, images, and tools"), description: t("Minijuegos interactivos, plantillas visuales, búsqueda y utilidades.", "Interactive minigames, visual templates, search, and utilities."), commands: ["fun", "games", "images", "search", "tools"] },
+  { id: "roles-voz", title: t("Roles, salas y contadores", "Roles, rooms, and counters"), description: t("Autoasignación, comandos personalizados, lobbies y estadísticas visibles.", "Self-assignment, custom commands, lobbies, and visible statistics."), commands: ["selfrole", "cmd", "trigger", "lobby", "rank", "voice", "serverstats"] },
 ];
 
-export const commandCount = commandGroups.reduce((total, group) => total + group.commands.length, 0);
+const englishSummaries = {
+  activities: "Starts a Discord embedded activity in your voice channel.", admin: "Configures the server's operational channels, roles, panels, and appearance.", afk: "Manages your away status and notifies people who mention you.", announcement: "Creates and edits announcements posted by Unidad.", automod: "Configures automatic moderation and exempt channels.", autosetup: "Creates recommended channels and presets for a new server.", banword: "Manages the server's prohibited-word list.", birthdays: "Stores and lists server birthdays.", bot: "Shows Unidad information, links, uptime, voting, and support.", casino: "Runs transactional games of chance using the server economy.", cmd: "Manages custom text commands for this server.", coaching: "Manages coaches, positions, requests, and private coaching sessions.", config: "Reads and changes validated advanced configuration values.", creator: "Links Twitch creators and configures live notifications.", eco: "Provides the compact balance, payment, daily, and work interface.", economy: "Provides the complete wallet, bank, rewards, inventory, shop, and administration system.", event: "Creates, lists, cancels, and configures community events.", family: "Manages persistent social family relationships by server.", fun: "Provides lightweight jokes, text transforms, facts, and simulations.", games: "Provides interactive and quick community minigames.", giveaway: "Manages persistent giveaways and participant selection.", guild: "Shows server, channel, role, member, emoji, and invite information.", help: "Builds command help directly from the current command registry.", history: "Shows recent completed, skipped, or failed music tracks.", images: "Generates image templates, avatar effects, and media cards.", invite: "Provides Unidad's installation and support links.", invites: "Tracks invitations, leaderboards, manual adjustments, and role rewards.", levels: "Manages levels, XP, leaderboards, and role rewards.", lobby: "Registers voice lobbies that create temporary member rooms.", messages: "Tracks message progress, leaderboards, and role rewards.", moderation: "Runs protected sanctions, warnings, and channel moderation.", module: "Enables or disables major bot modules.", music: "Provides the complete Lavalink player and persistent queue interface.", nivel: "Shows a member's XP and current level.", notepad: "Stores private notes scoped to a user and server.", ping: "Checks whether Unidad is online and responsive.", play: "Searches for or queues a track from an approved provider.", profile: "Manages a social profile with configurable global or server scope.", queue: "Shows the active or persisted queue and can remove pending tracks.", radio: "Plays and controls the configured live radio stream through Lavalink.", rank: "Manages game ranks and creates rank-specific voice lobbies.", report: "Sends a bug or member report to the configured staff channel.", search: "Provides safe searches and fixed-host external information queries.", seek: "Moves playback to a valid position in the current track.", selfrole: "Manages self-assignable roles, sections, button panels, and cascades.", serverstats: "Creates and maintains voice-channel counters for server statistics.", setup: "Configures each Unidad subsystem through focused setup operations.", shop: "Lists and purchases items from the server shop.", skip: "Skips the current track or advances to a pending queue position.", soundboard: "Queues trusted sound effects through the existing Lavalink session.", stickymessages: "Keeps one configured message at the bottom of a text channel.", stop: "Stops playback, disconnects, and intentionally clears the queue.", suggestions: "Publishes and resolves community suggestions.", thanks: "Stores member acknowledgements with configurable social scope.", ticket: "Manages ticket categories, panels, participants, state, and transcripts.", tools: "Provides calculators, encoding, reminders, QR codes, and other utilities.", trigger: "Runs a custom text response registered for this server.", voice: "Controls the caller's temporary voice room.", volume: "Changes the current Lavalink player volume.",
+};
 
-export function commandNavigationGroups() {
-  return commandGroups.map((group) => ({
-    id: group.id,
-    label: group.title,
-    items: group.commands.map((command) => ({
-      id: `command-${command.name}`,
-      label: { es: `/${command.name}`, en: `/${command.name}` },
-    })),
-  }));
+const access = {
+  admin: t("Administrador interno + Administrar servidor.", "Internal Admin + Manage Server."), autosetup: t("Administrador interno + Administrar servidor.", "Internal Admin + Manage Server."), banword: t("Staff + Administrar servidor.", "Staff + Manage Server."), cmd: t("Staff + Administrar servidor.", "Staff + Manage Server."), config: t("Administrador interno + Administrar servidor.", "Internal Admin + Manage Server."), lobby: t("Administrador interno + Administrar servidor.", "Internal Admin + Manage Server."), module: t("Administrador interno + Administrar servidor.", "Internal Admin + Manage Server."), rank: t("Administrador interno + Administrar servidor.", "Internal Admin + Manage Server."), selfrole: t("Administrador interno + Gestionar roles.", "Internal Admin + Manage Roles."), serverstats: t("Administrador interno + Gestionar canales.", "Internal Admin + Manage Channels."), setup: t("Permiso Administrador de Discord.", "Discord Administrator permission."),
+  moderation: t("Staff y permiso nativo correspondiente; respeta jerarquías.", "Staff and the matching native permission; role hierarchy is enforced."), automod: t("Staff; configurar requiere permisos de moderación.", "Staff; configuration requires moderation permissions."), announcement: t("Staff + Gestionar mensajes.", "Staff + Manage Messages."), giveaway: t("Staff + Gestionar eventos.", "Staff + Manage Events."), stickymessages: t("Staff + Gestionar mensajes.", "Staff + Manage Messages."),
+  activities: t("Miembro en un canal de voz; Unidad necesita Crear invitaciones.", "Member in voice; Unidad needs Create Invite."), play: t("Miembro en voz; módulo musical activo.", "Member in voice; music module enabled."), music: t("Mismo canal de voz + miembro verificado, DJ, Staff o Admin.", "Same voice channel + verified member, DJ, Staff, or Admin."), queue: t("Consulta pública; modificar exige acceso musical y mismo canal.", "Public viewing; changes require music access and the same voice channel."), radio: t("Mismo canal de voz y reglas del reproductor musical.", "Same voice channel and music-player rules."), soundboard: t("Mismo canal de voz y reglas del reproductor musical.", "Same voice channel and music-player rules."), seek: t("Mismo canal de voz + acceso musical.", "Same voice channel + music access."), skip: t("Mismo canal de voz + acceso musical.", "Same voice channel + music access."), stop: t("Mismo canal de voz + acceso musical.", "Same voice channel + music access."), volume: t("Mismo canal de voz + acceso musical.", "Same voice channel + music access."),
+};
+
+const defaultAccess = t("Todos los miembros; las acciones sensibles vuelven a validar permisos y roles.", "All members; sensitive actions revalidate permissions and roles.");
+const operationVerb = { add: "Adds", accept: "Accepts", ban: "Bans", check: "Checks", clear: "Clears", create: "Creates", delete: "Deletes", deny: "Denies", display: "Shows", edit: "Edits", end: "Ends", info: "Shows information for", leaderboard: "Shows the leaderboard for", list: "Lists", lock: "Locks", pause: "Pauses", play: "Plays", remove: "Removes", rename: "Renames", resume: "Resumes", rewards: "Lists rewards for", send: "Sends", set: "Sets", show: "Shows", start: "Starts", status: "Shows status for", stop: "Stops", unpause: "Resumes", unlock: "Unlocks" };
+const typeLabels = { 3: t("Texto", "Text"), 4: t("Entero", "Integer"), 5: t("Sí/No", "Boolean"), 6: t("Usuario", "User"), 7: t("Canal", "Channel"), 8: t("Rol", "Role"), 9: t("Mención", "Mentionable"), 10: t("Número", "Number"), 11: t("Archivo", "Attachment") };
+const exampleValues = { active: "true", amount: "100", bday: "17 de abril", boolean: "true", cancion: "Daft Punk One More Time", cantidad: "10", category: "#soporte", channel: "#general", code: "VW5pZGFk", color: "#5865F2", confirmar: "CONFIRMAR", country: "Guatemala", description: "Descripción de ejemplo", duration: "2h", emoji: "<:unidad:123456789012345678>", feedback: "Excelente experiencia", id: "1", invite: "https://discord.gg/example", ip: "play.example.org", language: "en", limit: "10", message: "Mensaje de ejemplo", minutos: "30", motivo: "Incumplimiento de reglas", name: "Unidad", nivel: "50", nombre: "Unidad", number: "24", pagina: "1", palabra: "spam", posicion: "2", prize: "Membresía", question: "¿Todo saldrá bien?", reason: "Vuelvo pronto", role: "@Miembro", rol: "@Miembro", segundos: "60", setup: "starboard", site: "https://example.org", stars: "5", suggestion: "Agregar una noche de trivia", text: "Hola comunidad", time: "2h", timezone: "America/Guatemala", tipo: "general", type: "bug", user: "@Ana", user1: "@Ana", user2: "@Alex", user3: "@Sam", usuario: "@Ana", value: "global", valor: "true", winners: "1", word: "unidad", "image-url": "https://example.org/image.png" };
+
+function routeFor(command, usage) { return `/${command.name}${usage.path.length ? ` ${usage.path.join(" ")}` : ""}`; }
+function syntaxFor(command, usage) { const parameters = usage.parameters.map(parameter => parameter.required ? `<${parameter.name}>` : `[${parameter.name}]`).join(" "); return `${routeFor(command, usage)}${parameters ? ` ${parameters}` : ""}`; }
+function exampleFor(command, usage) {
+  const required = usage.parameters.filter(parameter => parameter.required);
+  const parameters = (required.length ? required : usage.parameters.slice(0, 1)).map(parameter => {
+    const value = parameter.choices?.[0]?.value ?? exampleValues[parameter.name] ?? (parameter.type === 6 ? "@Ana" : parameter.type === 7 ? "#general" : parameter.type === 8 ? "@Miembro" : parameter.type === 4 || parameter.type === 10 ? String(parameter.minValue ?? 1) : parameter.type === 5 ? "true" : "ejemplo");
+    return `${parameter.name}:${value}`;
+  });
+  return `${routeFor(command, usage)}${parameters.length ? ` ${parameters.join(" ")}` : ""}`;
 }
+function englishOperation(command, usage) { const action = usage.path.at(-1); if (!action) return englishSummaries[command.name]; return `${operationVerb[action] ?? "Runs"} the ${usage.path.join(" ")} operation for /${command.name}.`; }
+function parameterDetails(parameter) {
+  const constraints = [];
+  if (parameter.minValue !== undefined) constraints.push(`min ${parameter.minValue}`);
+  if (parameter.maxValue !== undefined) constraints.push(`max ${parameter.maxValue}`);
+  if (parameter.minLength !== undefined) constraints.push(`minLength ${parameter.minLength}`);
+  if (parameter.maxLength !== undefined) constraints.push(`maxLength ${parameter.maxLength}`);
+  if (parameter.choices?.length) constraints.push(parameter.choices.map(choice => `${choice.name}=${choice.value}`).join(", "));
+  if (parameter.autocomplete) constraints.push("autocomplete");
+  return { name: parameter.name, type: typeLabels[parameter.type] ?? t(`Tipo ${parameter.type}`, `Type ${parameter.type}`), required: parameter.required, description: t(parameter.description, `Value accepted by the ${parameter.name} option.`), constraints: constraints.join(" · ") };
+}
+
+const byName = new Map(commandCatalogSnapshot.commands.map(command => [command.name, command]));
+export const commandGroups = groupDefinitions.map(group => ({ ...group, commands: group.commands.map(name => {
+  const command = byName.get(name); if (!command) throw new Error(`Missing command snapshot: ${name}`); byName.delete(name);
+  return { name, summary: t(command.description, englishSummaries[name] ?? `Documentation for /${name}.`), access: access[name] ?? defaultAccess, defaultMemberPermissions: command.defaultMemberPermissions, dmPermission: command.dmPermission, usage: command.usages.map(usage => ({ syntax: syntaxFor(command, usage), example: exampleFor(command, usage), description: t(usage.description, englishOperation(command, usage)), parameters: usage.parameters.map(parameterDetails) })) };
+}) }));
+if (byName.size) throw new Error(`Unclassified command documentation: ${[...byName.keys()].join(", ")}`);
+
+export const commandCount = commandGroups.reduce((total, group) => total + group.commands.length, 0);
+export const actionCount = commandGroups.flatMap(group => group.commands).reduce((total, command) => total + command.usage.length, 0);
+export const documentedSource = { current: commandCatalogSnapshot.sourceCommit, since: commandCatalogSnapshot.referenceCommit };
+export function commandNavigationGroups() { return commandGroups.map(group => ({ id: group.id, label: group.title, items: group.commands.map(command => ({ id: `command-${command.name}`, label: { es: `/${command.name}`, en: `/${command.name}` } })) })); }
