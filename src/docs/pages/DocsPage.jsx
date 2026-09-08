@@ -15,9 +15,11 @@ import {
 import { useMemo, useState } from "react";
 import SiteLayout from "../../components/SiteLayout.jsx";
 import {
+  actionCount,
   commandCount,
   commandGroups,
   commandNavigationGroups,
+  documentedSource,
 } from "../content/commandDocs.js";
 import { usePreferences } from "../../hooks/usePreferences.js";
 import CommandCard from "../components/CommandCard.jsx";
@@ -28,7 +30,9 @@ const copy = {
   es: {
     eyebrow: "Referencia oficial",
     title: "Documentación de comandos",
-    intro: "Referencia completa de los comandos slash de Unidad, verificada contra el código del bot.",
+    intro: "Referencia completa de los 59 comandos slash y sus 461 operaciones, generada desde las definiciones reales del bot.",
+    source: "Código verificado",
+    since: "cambios documentados desde",
     search: "Buscar comando, acción o función",
     noResults: "No hay comandos que coincidan con la búsqueda.",
     commands: "comandos",
@@ -40,19 +44,25 @@ const copy = {
     permissionTitle: "Permisos y acceso",
     permissionBody: "Discord puede ocultar comandos si no tienes el permiso predeterminado. Algunas acciones también validan roles internos de Admin, Staff, DJ o Economía configurados por el servidor.",
     persistenceTitle: "Persistencia de música",
-    persistenceBody: "La cola se guarda por servidor y se recupera al volver a usar /play. /queue puede consultar la cola guardada sin reproductor. /stop es una limpieza intencional y no se restaura.",
+    persistenceBody: "La cola y el historial se guardan por servidor. Radio y soundboard usan la misma sesión Lavalink; otro canal de voz no puede modificar la cola activa. /stop realiza una limpieza intencional.",
     limitsTitle: "Límites y seguridad",
-    limitsBody: "La cola admite hasta 100 pistas, /history acepta de 1 a 25 registros y /volume de 1 a 100. /play solo acepta búsquedas o URLs HTTPS de proveedores autorizados.",
+    limitsBody: "Los comandos aplican límites globales y por interacción. Música solo acepta proveedores autorizados; descargas de imágenes se restringen al CDN de Discord y las operaciones sensibles validan permisos nuevamente.",
     access: "Acceso",
     syntax: "Sintaxis",
     example: "Ejemplo",
     note: "Importante",
     results: "Resultados",
+    parameters: "Parámetros",
+    required: "Obligatorio",
+    optional: "Opcional",
+    noParameters: "Sin parámetros",
   },
   en: {
     eyebrow: "Official reference",
     title: "Command documentation",
-    intro: "Complete reference for Unidad slash commands, verified against the bot source code.",
+    intro: "Complete reference for all 59 slash commands and 461 operations, generated from the bot's real definitions.",
+    source: "Verified source",
+    since: "changes documented since",
     search: "Search commands, actions, or features",
     noResults: "No commands match your search.",
     commands: "commands",
@@ -64,14 +74,18 @@ const copy = {
     permissionTitle: "Permissions and access",
     permissionBody: "Discord may hide commands when you lack their default permission. Some actions also validate the server's configured Admin, Staff, DJ, or Economy roles.",
     persistenceTitle: "Music persistence",
-    persistenceBody: "The queue is saved per server and restored when /play is used again. /queue can show a saved queue without an active player. /stop intentionally clears it and cannot be restored.",
+    persistenceBody: "Queue and history are stored per server. Radio and soundboard share the Lavalink session; another voice channel cannot change the active queue. /stop intentionally clears it.",
     limitsTitle: "Limits and safety",
-    limitsBody: "The queue supports up to 100 tracks, /history accepts 1 to 25 records, and /volume accepts 1 to 100. /play only accepts searches or HTTPS URLs from approved providers.",
+    limitsBody: "Commands apply global and interaction limits. Music accepts approved providers only; image downloads are restricted to Discord's CDN, and sensitive operations revalidate permissions.",
     access: "Access",
     syntax: "Syntax",
     example: "Example",
     note: "Important",
     results: "Results",
+    parameters: "Parameters",
+    required: "Required",
+    optional: "Optional",
+    noParameters: "No parameters",
   },
 };
 
@@ -91,7 +105,6 @@ export default function DocsPage() {
   const { language } = usePreferences();
   const labels = copy[language];
   const [query, setQuery] = useState("");
-  const actionCount = commandGroups.flatMap((group) => group.commands).reduce((total, command) => total + command.usage.length, 0);
   const navigationGroups = [guideNavigation, ...commandNavigationGroups()];
 
   const filteredGroups = useMemo(() => {
@@ -119,6 +132,7 @@ export default function DocsPage() {
           <Chip color="primary" icon={<MenuBookRounded />} label={labels.eyebrow} variant="outlined" />
           <Typography component="h1" variant="h1" className="!mt-5 !text-3xl !leading-tight sm:!text-4xl xl:!text-5xl">{labels.title}</Typography>
           <Typography color="text.secondary" className="!mt-3 max-w-3xl !text-base !leading-7">{labels.intro}</Typography>
+          <Typography color="text.secondary" className="!mt-2 !font-mono !text-xs">{labels.source}: {documentedSource.current.slice(0, 8)} · {labels.since}: {documentedSource.since.slice(0, 8)}</Typography>
           <div className="mt-6 grid grid-cols-1 items-stretch gap-3 sm:grid-cols-3">
             <StatCard value={commandCount} label={labels.commands} />
             <StatCard value={actionCount} label={labels.actions} />

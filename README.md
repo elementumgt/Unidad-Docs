@@ -18,7 +18,7 @@
 ## Páginas
 
 - `/`: centro legal.
-- `/docs/`: documentación completa de los 25 comandos y sus 95 acciones, con sintaxis, ejemplos, permisos, límites y comportamiento.
+- `/docs/`: documentación completa de los 59 comandos y sus 461 operaciones, generada desde las definiciones slash reales, con parámetros, restricciones, sintaxis, ejemplos, permisos y comportamiento.
 - `/privacidad/`: Política de Privacidad.
 - `/terminos/`: Condiciones del Servicio.
 
@@ -44,7 +44,7 @@ npm run check
 ## Arquitectura
 
 - `src/inicio/`: portada y componentes exclusivos del centro.
-- `src/docs/`: página, componentes, catálogo bilingüe y pruebas de los 25 comandos y 95 acciones.
+- `src/docs/`: página, componentes, instantánea verificable del catálogo bilingüe y pruebas de los 59 comandos y 461 operaciones.
 - `src/privacidad/`: página, componente, contenido y pruebas de la Política de Privacidad.
 - `src/terminos/`: página, componente, contenido y pruebas de las Condiciones del Servicio.
 - `src/shared/legal/`: renderer, estructura y validadores reutilizados exclusivamente por los dos módulos legales.
@@ -54,3 +54,9 @@ npm run check
 - `src/theme-init.js`: resolución temprana del tema para evitar destellos durante la carga.
 
 El contenido de cada idioma se renderiza de forma exclusiva en React; no se mantienen dos copias visibles u ocultas en el DOM.
+
+## Fuente documentada
+
+La referencia visible fue contrastada con `bot-unidad` en el commit actual `20fd09e2b3d969c91cd7a205126c86b22a5e897f`. El commit `125b0311bdd0ba7e95a12804e31f6ba626e6f407` se conserva como punto de partida solicitado para revisar los cambios posteriores.
+
+El catálogo incluido en `src/docs/content/commandCatalogSnapshot.js` conserva cada comando, subcomando, opción, tipo, obligatoriedad, elección y límite declarado por Discord. La documentación interna de arquitectura, persistencia, seguridad, configuración y despliegue permanece en `bot-unidad/docs/` y no se publica en este sitio.

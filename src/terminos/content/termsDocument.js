@@ -8,7 +8,7 @@ export const termsDocument = Object.freeze({
     "Al instalar Unidad o utilizar sus comandos, aceptas estas reglas de uso y las políticas aplicables de Discord.",
     "By installing Unidad or using its commands, you agree to these usage rules and Discord’s applicable policies.",
   ),
-  updated: bilingual("29 de agosto de 2026", "August 29, 2026"),
+  updated: bilingual("8 de septiembre de 2026", "September 8, 2026"),
   sections: [
     {
       id: "aceptacion",
@@ -29,8 +29,8 @@ export const termsDocument = Object.freeze({
       title: bilingual("2. Descripción del servicio", "2. Service description"),
       blocks: [
         paragraph(
-          "Unidad es un bot multipropósito para comunidades de Discord. Sus funciones pueden incluir moderación, roles, verificación, XP, economía, tickets, coaching, eventos, perfiles de juego, canales de voz temporales, avisos de Twitch y reproducción musical.",
-          "Unidad is a multipurpose bot for Discord communities. Its features may include moderation, roles, verification, XP, economy, tickets, coaching, events, game profiles, temporary voice channels, Twitch notifications, and music playback.",
+          "Unidad es un bot multipropósito para comunidades de Discord. Sus funciones incluyen moderación y auditoría, roles y verificación, XP y economía, tickets y coaching, eventos, perfiles sociales y de juego, invitaciones, sorteos, sugerencias, recordatorios, juegos, imágenes, búsquedas, chatbot, canales de voz temporales, contadores, avisos de Twitch y reproducción musical persistente.",
+          "Unidad is a multipurpose bot for Discord communities. Its features include moderation and auditing, roles and verification, XP and economy, tickets and coaching, events, social and game profiles, invitations, giveaways, suggestions, reminders, games, images, search, chatbot, temporary voice channels, counters, Twitch notifications, and persistent music playback.",
         ),
         paragraph(
           "Los módulos disponibles pueden cambiar, estar limitados por permisos o depender de Discord y otros proveedores externos.",
@@ -117,8 +117,8 @@ export const termsDocument = Object.freeze({
       title: bilingual("7. Música y servicios externos", "7. Music and third-party services"),
       blocks: [
         paragraph(
-          "La búsqueda y reproducción dependen de servicios como Discord, YouTube, Spotify, SoundCloud, Apple Music, Twitch y otros proveedores. El uso de esos servicios está sujeto a sus propias condiciones y disponibilidad.",
-          "Search and playback depend on services such as Discord, YouTube, Spotify, SoundCloud, Apple Music, Twitch, and other providers. Use of those services is subject to their own terms and availability.",
+          "La música, búsqueda, traducción, GIF, trivia, dilemas, acortamiento de URL y chatbot dependen de Discord, YouTube, Spotify, SoundCloud, Apple Music, Twitch y otros proveedores indicados en la Política de Privacidad. Su uso está sujeto a sus propias condiciones, límites y disponibilidad.",
+          "Music, search, translation, GIF, trivia, dilemmas, URL shortening, and chatbot features depend on Discord, YouTube, Spotify, SoundCloud, Apple Music, Twitch, and other providers listed in the Privacy Policy. Their use is subject to their own terms, limits, and availability.",
         ),
         paragraph(
           "Unidad no concede licencias sobre música ni contenido de terceros. Los usuarios y administradores son responsables de cumplir la legislación de propiedad intelectual aplicable.",
