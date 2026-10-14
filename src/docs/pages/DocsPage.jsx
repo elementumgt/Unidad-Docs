@@ -1,4 +1,5 @@
 import CheckCircleRounded from "@mui/icons-material/CheckCircleRounded";
+import CallMergeRounded from "@mui/icons-material/CallMergeRounded";
 import LibraryMusicRounded from "@mui/icons-material/LibraryMusicRounded";
 import MenuBookRounded from "@mui/icons-material/MenuBookRounded";
 import SearchRounded from "@mui/icons-material/SearchRounded";
@@ -30,7 +31,7 @@ const copy = {
   es: {
     eyebrow: "Referencia oficial",
     title: "Documentación de comandos",
-    intro: "Referencia completa de los 59 comandos slash y sus 461 operaciones, generada desde las definiciones reales del bot.",
+    intro: "Referencia completa de los 55 comandos slash y sus 443 operaciones, generada desde las definiciones reales del bot.",
     source: "Código verificado",
     since: "cambios documentados desde",
     search: "Buscar comando, acción o función",
@@ -39,6 +40,8 @@ const copy = {
     actions: "acciones documentadas",
     groups: "áreas funcionales",
     guide: "Guía esencial",
+    consolidationTitle: "Comandos unificados",
+    consolidationBody: "/economy reemplaza las interfaces antiguas /eco y /shop; /nivel reúne consulta y administración de XP; las palabras prohibidas se gestionan con /automod blacklist. Los ajustes duplicados de /admin y /config ahora viven en /setup, /module o su comando especializado.",
     quickTitle: "Cómo ejecutar un comando",
     quickBody: "Escribe / en Discord, selecciona Unidad y completa las opciones que Discord marque como obligatorias. Los valores entre corchetes en esta guía son opcionales.",
     permissionTitle: "Permisos y acceso",
@@ -60,7 +63,7 @@ const copy = {
   en: {
     eyebrow: "Official reference",
     title: "Command documentation",
-    intro: "Complete reference for all 59 slash commands and 461 operations, generated from the bot's real definitions.",
+    intro: "Complete reference for all 55 slash commands and 443 operations, generated from the bot's real definitions.",
     source: "Verified source",
     since: "changes documented since",
     search: "Search commands, actions, or features",
@@ -69,6 +72,8 @@ const copy = {
     actions: "documented actions",
     groups: "functional areas",
     guide: "Essential guide",
+    consolidationTitle: "Consolidated commands",
+    consolidationBody: "/economy replaces the former /eco and /shop interfaces; /nivel combines XP viewing and administration; prohibited words are managed with /automod blacklist. Duplicate /admin and /config settings now live in /setup, /module, or their specialized command.",
     quickTitle: "How to run a command",
     quickBody: "Type / in Discord, select Unidad, and complete the options Discord marks as required. Values inside brackets in this guide are optional.",
     permissionTitle: "Permissions and access",
@@ -98,6 +103,7 @@ const guideNavigation = {
     { id: "permissions", label: { es: "Permisos", en: "Permissions" } },
     { id: "music-persistence", label: { es: "Persistencia musical", en: "Music persistence" } },
     { id: "limits", label: { es: "Límites", en: "Limits" } },
+    { id: "command-changes", label: { es: "Comandos unificados", en: "Consolidated commands" } },
   ],
 };
 
@@ -147,6 +153,7 @@ export default function DocsPage() {
             <GuideCard id="permissions" icon={<SecurityRounded />} title={labels.permissionTitle} body={labels.permissionBody} />
             <GuideCard id="music-persistence" icon={<LibraryMusicRounded />} title={labels.persistenceTitle} body={labels.persistenceBody} />
             <GuideCard id="limits" icon={<CheckCircleRounded />} title={labels.limitsTitle} body={labels.limitsBody} />
+            <GuideCard id="command-changes" icon={<CallMergeRounded />} title={labels.consolidationTitle} body={labels.consolidationBody} />
           </div>
         </section>
 
