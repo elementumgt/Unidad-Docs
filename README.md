@@ -65,6 +65,6 @@ El contenido de cada idioma se renderiza de forma exclusiva en React; no se mant
 
 ## Fuente documentada
 
-La referencia visible fue contrastada con `bot-unidad` en el commit actual `301779e409c68fdf15c553dbcf9ae4fab8953cbc`. El commit `125b0311bdd0ba7e95a12804e31f6ba626e6f407` se conserva como punto de partida solicitado para revisar los cambios posteriores.
+La referencia visible fue contrastada con `bot-unidad` en el commit actual `833a4feb62738d4983a388a13aab8675d5246d95`. El commit `125b0311bdd0ba7e95a12804e31f6ba626e6f407` se conserva como punto de partida solicitado para revisar los cambios posteriores.
 
 El catálogo incluido en `src/docs/content/commandCatalogSnapshot.js` conserva cada comando, subcomando, opción, tipo, obligatoriedad, elección y límite declarado por Discord. La documentación interna de arquitectura, persistencia, seguridad, configuración y despliegue permanece en `bot-unidad/docs/` y no se publica en este sitio.
