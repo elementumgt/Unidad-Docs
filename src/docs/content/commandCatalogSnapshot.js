@@ -1,6 +1,6 @@
 // Generated from bot-unidad command builders. Run npm run docs:sync to update.
 export const commandCatalogSnapshot = {
-  "sourceCommit": "301779e409c68fdf15c553dbcf9ae4fab8953cbc",
+  "sourceCommit": "833a4feb62738d4983a388a13aab8675d5246d95",
   "referenceCommit": "125b0311bdd0ba7e95a12804e31f6ba626e6f407",
   "commands": [
     {
@@ -79,7 +79,7 @@ export const commandCatalogSnapshot = {
       "name": "admin",
       "description": "Comandos de administración del servidor",
       "defaultMemberPermissions": "32",
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
           "path": [
@@ -920,7 +920,7 @@ export const commandCatalogSnapshot = {
       "name": "cmd",
       "description": "Gestiona los comandos personalizados de texto",
       "defaultMemberPermissions": "32",
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
           "path": [
@@ -978,7 +978,7 @@ export const commandCatalogSnapshot = {
       "name": "coaching",
       "description": "Sistema de coaching",
       "defaultMemberPermissions": null,
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
           "path": [
@@ -1449,7 +1449,7 @@ export const commandCatalogSnapshot = {
       "name": "creator",
       "description": "Gestión de creadores de contenido",
       "defaultMemberPermissions": null,
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
           "path": [
@@ -1916,7 +1916,7 @@ export const commandCatalogSnapshot = {
       "name": "event",
       "description": "Gestión de eventos del servidor",
       "defaultMemberPermissions": null,
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
           "path": [
@@ -2890,7 +2890,7 @@ export const commandCatalogSnapshot = {
       "name": "help",
       "description": "Consulta los comandos disponibles y sus opciones.",
       "defaultMemberPermissions": null,
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
           "path": [],
@@ -2924,7 +2924,7 @@ export const commandCatalogSnapshot = {
       "name": "history",
       "description": "Muestra el historial reciente de música reproducida.",
       "defaultMemberPermissions": null,
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
           "path": [],
@@ -3676,7 +3676,7 @@ export const commandCatalogSnapshot = {
       "name": "lobby",
       "description": "Gestiona los lobbies de voz temporales del servidor",
       "defaultMemberPermissions": "32",
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
           "path": [
@@ -4448,7 +4448,7 @@ export const commandCatalogSnapshot = {
       "name": "module",
       "description": "Activa o desactiva módulos del bot",
       "defaultMemberPermissions": "32",
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
           "path": [
@@ -4986,7 +4986,7 @@ export const commandCatalogSnapshot = {
       "name": "ping",
       "description": "Comprueba que el bot está activo",
       "defaultMemberPermissions": null,
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
           "path": [],
@@ -4999,7 +4999,7 @@ export const commandCatalogSnapshot = {
       "name": "play",
       "description": "Reproduce una cancion de YouTube, Spotify o SoundCloud.",
       "defaultMemberPermissions": null,
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
           "path": [],
@@ -5453,7 +5453,7 @@ export const commandCatalogSnapshot = {
       "name": "queue",
       "description": "Muestra la cola o elimina una canción pendiente.",
       "defaultMemberPermissions": null,
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
           "path": [],
@@ -5506,7 +5506,7 @@ export const commandCatalogSnapshot = {
       "name": "rank",
       "description": "Gestiona rangos de juego y lobbies de voz por rango",
       "defaultMemberPermissions": "32",
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
           "path": [
@@ -6032,7 +6032,7 @@ export const commandCatalogSnapshot = {
       "name": "selfrole",
       "description": "Gestiona los roles autoasignables del servidor",
       "defaultMemberPermissions": "268435456",
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
           "path": [
@@ -6931,7 +6931,7 @@ export const commandCatalogSnapshot = {
       "name": "skip",
       "description": "Salta la canción actual o avanza a una posición de /queue.",
       "defaultMemberPermissions": null,
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
           "path": [],
@@ -7282,7 +7282,7 @@ export const commandCatalogSnapshot = {
       "name": "stop",
       "description": "Detiene la musica y vacia la cola.",
       "defaultMemberPermissions": null,
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
           "path": [],
@@ -7993,7 +7993,7 @@ export const commandCatalogSnapshot = {
       "name": "trigger",
       "description": "Ejecuta un comando de texto personalizado de este servidor",
       "defaultMemberPermissions": null,
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
           "path": [],
@@ -8076,7 +8076,7 @@ export const commandCatalogSnapshot = {
       "name": "volume",
       "description": "Ajusta el volumen de la musica.",
       "defaultMemberPermissions": null,
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
           "path": [],
