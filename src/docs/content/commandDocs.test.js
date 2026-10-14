@@ -20,7 +20,7 @@ describe("command documentation", () => {
     expect(actionCount).toBe(443);
     expect(Object.fromEntries(commands.map(command => [command.name, command.usage.length]))).toEqual(expectedActions);
     expect(commands.map(command => command.name).sort()).toEqual(commandCatalogSnapshot.commands.map(command => command.name).sort());
-    expect(documentedSource).toEqual({ current: "301779e409c68fdf15c553dbcf9ae4fab8953cbc", since: "125b0311bdd0ba7e95a12804e31f6ba626e6f407" });
+    expect(documentedSource).toEqual({ current: "833a4feb62738d4983a388a13aab8675d5246d95", since: "125b0311bdd0ba7e95a12804e31f6ba626e6f407" });
   });
 
   it("documents every action, option, constraint and executable example", () => {
