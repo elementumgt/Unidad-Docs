@@ -1,6 +1,6 @@
-// Generated from bot-unidad command builders. Update together with the parity tests.
+// Generated from bot-unidad command builders. Run npm run docs:sync to update.
 export const commandCatalogSnapshot = {
-  "sourceCommit": "20fd09e2b3d969c91cd7a205126c86b22a5e897f",
+  "sourceCommit": "301779e409c68fdf15c553dbcf9ae4fab8953cbc",
   "referenceCommit": "125b0311bdd0ba7e95a12804e31f6ba626e6f407",
   "commands": [
     {
@@ -83,44 +83,6 @@ export const commandCatalogSnapshot = {
       "usages": [
         {
           "path": [
-            "setwelcomechannel"
-          ],
-          "description": "Canal donde se publican las bienvenidas",
-          "parameters": [
-            {
-              "name": "canal",
-              "description": "Canal de texto",
-              "type": 7,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
-            }
-          ]
-        },
-        {
-          "path": [
-            "setlevelchannel"
-          ],
-          "description": "Canal donde se anuncian las subidas de nivel",
-          "parameters": [
-            {
-              "name": "canal",
-              "description": "Canal de texto",
-              "type": 7,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
-            }
-          ]
-        },
-        {
-          "path": [
             "setroleschannel"
           ],
           "description": "Canal donde se publica el panel de selección de roles",
@@ -135,61 +97,6 @@ export const commandCatalogSnapshot = {
               "channelTypes": [
                 0
               ]
-            }
-          ]
-        },
-        {
-          "path": [
-            "setlobbychannel"
-          ],
-          "description": "Canal de voz lobby para canales temporales",
-          "parameters": [
-            {
-              "name": "canal",
-              "description": "Canal de voz",
-              "type": 7,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                2
-              ]
-            }
-          ]
-        },
-        {
-          "path": [
-            "setverifychannel"
-          ],
-          "description": "Canal donde se publica el panel de verificación",
-          "parameters": [
-            {
-              "name": "canal",
-              "description": "Canal de texto",
-              "type": 7,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
-            }
-          ]
-        },
-        {
-          "path": [
-            "setverifyrole"
-          ],
-          "description": "Rol que se asigna al verificarse",
-          "parameters": [
-            {
-              "name": "rol",
-              "description": "Rol verificado",
-              "type": 8,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
             }
           ]
         },
@@ -233,25 +140,6 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "channelTypes": []
-            }
-          ]
-        },
-        {
-          "path": [
-            "sendticketspanel"
-          ],
-          "description": "Envía el panel de tickets al canal especificado",
-          "parameters": [
-            {
-              "name": "canal",
-              "description": "Canal de texto",
-              "type": 7,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
             }
           ]
         },
@@ -302,76 +190,6 @@ export const commandCatalogSnapshot = {
         },
         {
           "path": [
-            "shop-add"
-          ],
-          "description": "Agrega un artículo a la tienda.",
-          "parameters": [
-            {
-              "name": "nombre",
-              "description": "Nombre del artículo",
-              "type": 3,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
-            },
-            {
-              "name": "precio",
-              "description": "Precio del artículo",
-              "type": 4,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
-            },
-            {
-              "name": "rol",
-              "description": "Rol que otorgará (opcional)",
-              "type": 8,
-              "required": false,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
-            },
-            {
-              "name": "descripcion",
-              "description": "Descripción del artículo",
-              "type": 3,
-              "required": false,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
-            }
-          ]
-        },
-        {
-          "path": [
-            "eco-give"
-          ],
-          "description": "Otorga dinero a un usuario.",
-          "parameters": [
-            {
-              "name": "usuario",
-              "description": "Usuario",
-              "type": 6,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
-            },
-            {
-              "name": "cantidad",
-              "description": "Cantidad",
-              "type": 4,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
-            }
-          ]
-        },
-        {
-          "path": [
             "setlogchannel"
           ],
           "description": "Configura un canal de logs del bot",
@@ -386,10 +204,6 @@ export const commandCatalogSnapshot = {
                 {
                   "name": "Moderación (palabras, mensajes)",
                   "value": "mod"
-                },
-                {
-                  "name": "Voz (salas temporales)",
-                  "value": "voice"
                 },
                 {
                   "name": "Tickets (abiertos/cerrados)",
@@ -533,25 +347,6 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "channelTypes": []
-            }
-          ]
-        },
-        {
-          "path": [
-            "setvcpanelchannel"
-          ],
-          "description": "Canal de texto donde se publican los paneles de control de canales de voz temporales",
-          "parameters": [
-            {
-              "name": "canal",
-              "description": "Canal de texto",
-              "type": 7,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
             }
           ]
         }
@@ -859,55 +654,6 @@ export const commandCatalogSnapshot = {
             "ticketpanel"
           ],
           "description": "Crea el sistema y panel de tickets.",
-          "parameters": []
-        }
-      ]
-    },
-    {
-      "name": "banword",
-      "description": "Gestiona la lista de palabras prohibidas",
-      "defaultMemberPermissions": "32",
-      "dmPermission": null,
-      "usages": [
-        {
-          "path": [
-            "add"
-          ],
-          "description": "Añade una palabra a la lista de prohibidas",
-          "parameters": [
-            {
-              "name": "palabra",
-              "description": "Palabra a prohibir",
-              "type": 3,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
-            }
-          ]
-        },
-        {
-          "path": [
-            "remove"
-          ],
-          "description": "Elimina una palabra de la lista de prohibidas",
-          "parameters": [
-            {
-              "name": "palabra",
-              "description": "Palabra a eliminar",
-              "type": 3,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
-            }
-          ]
-        },
-        {
-          "path": [
-            "list"
-          ],
-          "description": "Lista todas las palabras prohibidas",
           "parameters": []
         }
       ]
@@ -1269,6 +1015,13 @@ export const commandCatalogSnapshot = {
         },
         {
           "path": [
+            "posiciones"
+          ],
+          "description": "Configura tus especializaciones como coach",
+          "parameters": []
+        },
+        {
+          "path": [
             "registrar"
           ],
           "description": "(Staff) Registra a un usuario como coach",
@@ -1463,10 +1216,6 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [
                 {
-                  "name": "xp.enabled",
-                  "value": "xp.enabled"
-                },
-                {
                   "name": "xp.cooldown",
                   "value": "xp.cooldown"
                 },
@@ -1511,14 +1260,6 @@ export const commandCatalogSnapshot = {
                   "value": "xp.voice_time.interval_minutes"
                 },
                 {
-                  "name": "mod.enabled",
-                  "value": "mod.enabled"
-                },
-                {
-                  "name": "welcome.message",
-                  "value": "welcome.message"
-                },
-                {
                   "name": "social.scope",
                   "value": "social.scope"
                 },
@@ -1533,23 +1274,6 @@ export const commandCatalogSnapshot = {
               "name": "valor",
               "description": "Nuevo valor para la clave",
               "type": 3,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
-            }
-          ]
-        },
-        {
-          "path": [
-            "levels"
-          ],
-          "description": "Activa o desactiva niveles.",
-          "parameters": [
-            {
-              "name": "boolean",
-              "description": "Estado",
-              "type": 5,
               "required": true,
               "autocomplete": false,
               "choices": [],
@@ -1582,18 +1306,18 @@ export const commandCatalogSnapshot = {
           "parameters": [
             {
               "name": "enable",
-              "description": "Estado",
+              "description": "Activar o desactivar la verificación",
               "type": 5,
-              "required": true,
+              "required": false,
               "autocomplete": false,
               "choices": [],
               "channelTypes": []
             },
             {
               "name": "channel",
-              "description": "Canal",
+              "description": "Canal del panel",
               "type": 7,
-              "required": true,
+              "required": false,
               "autocomplete": false,
               "choices": [],
               "channelTypes": [
@@ -1602,9 +1326,9 @@ export const commandCatalogSnapshot = {
             },
             {
               "name": "role",
-              "description": "Rol",
+              "description": "Rol que se asigna al verificarse",
               "type": 8,
-              "required": true,
+              "required": false,
               "autocomplete": false,
               "choices": [],
               "channelTypes": []
@@ -1817,72 +1541,6 @@ export const commandCatalogSnapshot = {
               "channelTypes": []
             }
           ]
-        }
-      ]
-    },
-    {
-      "name": "eco",
-      "description": "Comandos del sistema de economía.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
-      "usages": [
-        {
-          "path": [
-            "balance"
-          ],
-          "description": "Muestra tu saldo o el de otro usuario.",
-          "parameters": [
-            {
-              "name": "usuario",
-              "description": "Usuario a consultar",
-              "type": 6,
-              "required": false,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
-            }
-          ]
-        },
-        {
-          "path": [
-            "pay"
-          ],
-          "description": "Transfiere dinero a otro usuario.",
-          "parameters": [
-            {
-              "name": "usuario",
-              "description": "Usuario a transferir",
-              "type": 6,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
-            },
-            {
-              "name": "cantidad",
-              "description": "Cantidad a enviar",
-              "type": 4,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "minValue": 1,
-              "channelTypes": []
-            }
-          ]
-        },
-        {
-          "path": [
-            "daily"
-          ],
-          "description": "Reclama tu recompensa diaria.",
-          "parameters": []
-        },
-        {
-          "path": [
-            "work"
-          ],
-          "description": "Trabaja para ganar algo de dinero extra.",
-          "parameters": []
         }
       ]
     },
@@ -2121,17 +1779,8 @@ export const commandCatalogSnapshot = {
           "path": [
             "additem"
           ],
-          "description": "Añade un rol a la tienda.",
+          "description": "Añade un artículo a la tienda.",
           "parameters": [
-            {
-              "name": "role",
-              "description": "Rol",
-              "type": 8,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
-            },
             {
               "name": "amount",
               "description": "Precio",
@@ -2140,6 +1789,35 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
+              "channelTypes": []
+            },
+            {
+              "name": "role",
+              "description": "Rol que otorga la compra",
+              "type": 8,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": []
+            },
+            {
+              "name": "nombre",
+              "description": "Nombre visible; por defecto el del rol",
+              "type": 3,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 100,
+              "channelTypes": []
+            },
+            {
+              "name": "descripcion",
+              "description": "Descripción del artículo",
+              "type": 3,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 200,
               "channelTypes": []
             }
           ]
@@ -3995,148 +3673,6 @@ export const commandCatalogSnapshot = {
       ]
     },
     {
-      "name": "levels",
-      "description": "Niveles, XP y recompensas.",
-      "defaultMemberPermissions": null,
-      "dmPermission": false,
-      "usages": [
-        {
-          "path": [
-            "rank"
-          ],
-          "description": "Consulta el progreso de un usuario.",
-          "parameters": [
-            {
-              "name": "usuario",
-              "description": "Usuario; por defecto tú.",
-              "type": 6,
-              "required": false,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
-            }
-          ]
-        },
-        {
-          "path": [
-            "leaderboard"
-          ],
-          "description": "Muestra los diez primeros usuarios.",
-          "parameters": []
-        },
-        {
-          "path": [
-            "rewards"
-          ],
-          "description": "Lista las recompensas configuradas.",
-          "parameters": []
-        },
-        {
-          "path": [
-            "createreward"
-          ],
-          "description": "Crea o reemplaza una recompensa.",
-          "parameters": [
-            {
-              "name": "cantidad",
-              "description": "Nivel requerido",
-              "type": 4,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "minValue": 1,
-              "maxValue": 2000000000,
-              "channelTypes": []
-            },
-            {
-              "name": "rol",
-              "description": "Rol de recompensa",
-              "type": 8,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
-            }
-          ]
-        },
-        {
-          "path": [
-            "deletereward"
-          ],
-          "description": "Elimina una recompensa.",
-          "parameters": [
-            {
-              "name": "cantidad",
-              "description": "Nivel",
-              "type": 4,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "minValue": 1,
-              "maxValue": 2000000000,
-              "channelTypes": []
-            }
-          ]
-        },
-        {
-          "path": [
-            "setlevel"
-          ],
-          "description": "Fija el progreso de un usuario.",
-          "parameters": [
-            {
-              "name": "usuario",
-              "description": "Usuario objetivo",
-              "type": 6,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
-            },
-            {
-              "name": "cantidad",
-              "description": "Nuevo valor",
-              "type": 4,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "minValue": 0,
-              "maxValue": 2000000000,
-              "channelTypes": []
-            }
-          ]
-        },
-        {
-          "path": [
-            "setxp"
-          ],
-          "description": "Fija el progreso de un usuario.",
-          "parameters": [
-            {
-              "name": "usuario",
-              "description": "Usuario objetivo",
-              "type": 6,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
-            },
-            {
-              "name": "cantidad",
-              "description": "Nuevo valor",
-              "type": 4,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
-              "minValue": 0,
-              "maxValue": 2000000000,
-              "channelTypes": []
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "lobby",
       "description": "Gestiona los lobbies de voz temporales del servidor",
       "defaultMemberPermissions": "32",
@@ -5160,7 +4696,7 @@ export const commandCatalogSnapshot = {
           "parameters": [
             {
               "name": "nivel",
-              "description": "Intensidad 0–3 como en la fuente, o extremo",
+              "description": "Intensidad 0–3, o extremo",
               "type": 3,
               "required": true,
               "autocomplete": false,
@@ -5194,21 +4730,140 @@ export const commandCatalogSnapshot = {
     },
     {
       "name": "nivel",
-      "description": "Muestra tu XP y nivel actual en el servidor",
+      "description": "Niveles, XP y recompensas.",
       "defaultMemberPermissions": null,
-      "dmPermission": null,
+      "dmPermission": false,
       "usages": [
         {
-          "path": [],
-          "description": "Muestra tu XP y nivel actual en el servidor",
+          "path": [
+            "rank"
+          ],
+          "description": "Consulta el progreso de un usuario.",
           "parameters": [
             {
               "name": "usuario",
-              "description": "Usuario del que quieres ver el nivel (opcional)",
+              "description": "Usuario; por defecto tú.",
               "type": 6,
               "required": false,
               "autocomplete": false,
               "choices": [],
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "leaderboard"
+          ],
+          "description": "Muestra los diez primeros usuarios.",
+          "parameters": []
+        },
+        {
+          "path": [
+            "rewards"
+          ],
+          "description": "Lista las recompensas configuradas.",
+          "parameters": []
+        },
+        {
+          "path": [
+            "createreward"
+          ],
+          "description": "Crea o reemplaza una recompensa.",
+          "parameters": [
+            {
+              "name": "cantidad",
+              "description": "Nivel requerido",
+              "type": 4,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "minValue": 1,
+              "maxValue": 2000000000,
+              "channelTypes": []
+            },
+            {
+              "name": "rol",
+              "description": "Rol de recompensa",
+              "type": 8,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "deletereward"
+          ],
+          "description": "Elimina una recompensa.",
+          "parameters": [
+            {
+              "name": "cantidad",
+              "description": "Nivel",
+              "type": 4,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "minValue": 1,
+              "maxValue": 2000000000,
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "setlevel"
+          ],
+          "description": "Fija el progreso de un usuario.",
+          "parameters": [
+            {
+              "name": "usuario",
+              "description": "Usuario objetivo",
+              "type": 6,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": []
+            },
+            {
+              "name": "cantidad",
+              "description": "Nuevo valor",
+              "type": 4,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "minValue": 0,
+              "maxValue": 2000000000,
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "setxp"
+          ],
+          "description": "Fija el progreso de un usuario.",
+          "parameters": [
+            {
+              "name": "usuario",
+              "description": "Usuario objetivo",
+              "type": 6,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": []
+            },
+            {
+              "name": "cantidad",
+              "description": "Nuevo valor",
+              "type": 4,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "minValue": 0,
+              "maxValue": 2000000000,
               "channelTypes": []
             }
           ]
@@ -6850,6 +6505,51 @@ export const commandCatalogSnapshot = {
         },
         {
           "path": [
+            "groupsearch"
+          ],
+          "description": "Administra los canales para buscar grupo (LFG).",
+          "parameters": [
+            {
+              "name": "accion",
+              "description": "Cambio que se aplicará",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [
+                {
+                  "name": "Agregar canal",
+                  "value": "add"
+                },
+                {
+                  "name": "Retirar canal",
+                  "value": "remove"
+                },
+                {
+                  "name": "Listar canales",
+                  "value": "list"
+                },
+                {
+                  "name": "Restaurar detección automática",
+                  "value": "clear"
+                }
+              ],
+              "channelTypes": []
+            },
+            {
+              "name": "channel",
+              "description": "Canal que se agregará o retirará",
+              "type": 7,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": [
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "path": [
             "logs"
           ],
           "description": "Configura los canales de logs, niveles o boosts.",
@@ -7189,6 +6889,10 @@ export const commandCatalogSnapshot = {
                   "value": "starboard"
                 },
                 {
+                  "name": "Group search",
+                  "value": "groupsearch"
+                },
+                {
                   "name": "Counting",
                   "value": "counting"
                 },
@@ -7217,38 +6921,6 @@ export const commandCatalogSnapshot = {
                   "value": "welcomerole"
                 }
               ],
-              "channelTypes": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "shop",
-      "description": "Tienda del servidor.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
-      "usages": [
-        {
-          "path": [
-            "list"
-          ],
-          "description": "Muestra los artículos disponibles en la tienda.",
-          "parameters": []
-        },
-        {
-          "path": [
-            "buy"
-          ],
-          "description": "Compra un artículo de la tienda usando su ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "description": "El ID del artículo a comprar",
-              "type": 4,
-              "required": true,
-              "autocomplete": false,
-              "choices": [],
               "channelTypes": []
             }
           ]
@@ -7942,7 +7614,7 @@ export const commandCatalogSnapshot = {
             },
             {
               "name": "formato",
-              "description": "HTML como en la fuente (por defecto) o texto plano.",
+              "description": "HTML (por defecto) o texto plano.",
               "type": 3,
               "required": false,
               "autocomplete": false,

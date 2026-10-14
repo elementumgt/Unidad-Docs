@@ -8,6 +8,7 @@
     "dev": "vite",
     "build": "vite build && node scripts/create-route-entries.js",
     "preview": "vite preview",
+    "docs:sync": "node scripts/sync-command-catalog.js",
     "lint": "eslint .",
     "test": "vitest run",
     "check": "npm run lint && npm run test && npm run build"
