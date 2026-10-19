@@ -1,6 +1,6 @@
 // Generated from bot-unidad command builders. Run npm run docs:sync to update.
 export const commandCatalogSnapshot = {
-  "sourceCommit": "833a4feb62738d4983a388a13aab8675d5246d95",
+  "sourceCommit": "450ee0cc8b91cd3bb32875ff268d0b4fcaf7618c",
   "referenceCommit": "125b0311bdd0ba7e95a12804e31f6ba626e6f407",
   "commands": [
     {
@@ -3978,6 +3978,432 @@ export const commandCatalogSnapshot = {
               "choices": [],
               "minValue": 1,
               "maxValue": 2000000000,
+              "channelTypes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "minecraft",
+      "description": "Servidor de Minecraft de la comunidad",
+      "defaultMemberPermissions": null,
+      "dmPermission": false,
+      "usages": [
+        {
+          "path": [
+            "estado"
+          ],
+          "description": "Muestra si el servidor está en línea, la versión y quién juega",
+          "parameters": []
+        },
+        {
+          "path": [
+            "ip"
+          ],
+          "description": "Muestra la dirección para entrar al servidor",
+          "parameters": []
+        },
+        {
+          "path": [
+            "jugadores"
+          ],
+          "description": "Lista los jugadores conectados",
+          "parameters": []
+        },
+        {
+          "path": [
+            "config",
+            "servidor"
+          ],
+          "description": "Asigna la IP o dominio del servidor",
+          "parameters": [
+            {
+              "name": "direccion",
+              "description": "IP o dominio, con :puerto si no es 25565",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 260,
+              "channelTypes": []
+            },
+            {
+              "name": "nombre",
+              "description": "Nombre que se muestra en el panel",
+              "type": 3,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 64,
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "config",
+            "rcon"
+          ],
+          "description": "Conecta el bot a la consola del servidor (RCON) para administrarlo",
+          "parameters": [
+            {
+              "name": "quitar",
+              "description": "Elimina la conexión RCON guardada",
+              "type": 5,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "config",
+            "seccion"
+          ],
+          "description": "Crea la categoría, canales y rol de Minecraft como las demás secciones de juegos",
+          "parameters": []
+        },
+        {
+          "path": [
+            "config",
+            "panel"
+          ],
+          "description": "Publica el panel de estado en un canal",
+          "parameters": [
+            {
+              "name": "canal",
+              "description": "Canal del panel",
+              "type": 7,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": [
+                0,
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "path": [
+            "config",
+            "chat"
+          ],
+          "description": "Canal donde se une el chat de Discord con el del juego",
+          "parameters": [
+            {
+              "name": "canal",
+              "description": "Vacío para desactivar",
+              "type": 7,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": [
+                0,
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "path": [
+            "config",
+            "contador"
+          ],
+          "description": "Canal de voz que muestra en su nombre los jugadores conectados",
+          "parameters": [
+            {
+              "name": "canal",
+              "description": "Vacío para desactivar",
+              "type": 7,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": [
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "path": [
+            "config",
+            "rol"
+          ],
+          "description": "Rol que puede usar /minecraft gestionar además de los admins",
+          "parameters": [
+            {
+              "name": "rol",
+              "description": "Vacío para quitarlo",
+              "type": 8,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "config",
+            "avisos"
+          ],
+          "description": "Elige qué se publica en el canal de chat",
+          "parameters": [
+            {
+              "name": "chat",
+              "description": "Chat entre Discord y el juego",
+              "type": 5,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": []
+            },
+            {
+              "name": "entradas",
+              "description": "Cuando alguien entra o sale",
+              "type": 5,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": []
+            },
+            {
+              "name": "muertes",
+              "description": "Muertes de jugadores",
+              "type": 5,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": []
+            },
+            {
+              "name": "logros",
+              "description": "Logros, desafíos y metas",
+              "type": 5,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": []
+            },
+            {
+              "name": "estado",
+              "description": "Cuando el servidor se enciende o se apaga",
+              "type": 5,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "config",
+            "registro"
+          ],
+          "description": "Usa el registro del servidor para el chat, muertes y logros",
+          "parameters": [
+            {
+              "name": "activar",
+              "description": "Activar o desactivar",
+              "type": 5,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "config",
+            "ver"
+          ],
+          "description": "Muestra la configuración y prueba la conexión",
+          "parameters": []
+        },
+        {
+          "path": [
+            "config",
+            "quitar"
+          ],
+          "description": "Borra la configuración de Minecraft de este servidor",
+          "parameters": [
+            {
+              "name": "confirmar",
+              "description": "Confirma que quieres borrarla",
+              "type": 5,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "gestionar",
+            "decir"
+          ],
+          "description": "Envía un mensaje a todos los jugadores",
+          "parameters": [
+            {
+              "name": "mensaje",
+              "description": "Texto",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 200,
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "gestionar",
+            "expulsar"
+          ],
+          "description": "Saca a un jugador del servidor",
+          "parameters": [
+            {
+              "name": "jugador",
+              "description": "Nombre exacto en Minecraft",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 16,
+              "channelTypes": []
+            },
+            {
+              "name": "razon",
+              "description": "Motivo (opcional)",
+              "type": 3,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 100,
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "gestionar",
+            "banear"
+          ],
+          "description": "Banea a un jugador",
+          "parameters": [
+            {
+              "name": "jugador",
+              "description": "Nombre exacto en Minecraft",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 16,
+              "channelTypes": []
+            },
+            {
+              "name": "razon",
+              "description": "Motivo (opcional)",
+              "type": 3,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 100,
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "gestionar",
+            "desbanear"
+          ],
+          "description": "Quita el ban a un jugador",
+          "parameters": [
+            {
+              "name": "jugador",
+              "description": "Nombre exacto en Minecraft",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 16,
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "gestionar",
+            "whitelist"
+          ],
+          "description": "Gestiona la lista blanca",
+          "parameters": [
+            {
+              "name": "accion",
+              "description": "Qué hacer",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [
+                {
+                  "name": "Agregar jugador",
+                  "value": "add"
+                },
+                {
+                  "name": "Quitar jugador",
+                  "value": "remove"
+                },
+                {
+                  "name": "Ver lista",
+                  "value": "list"
+                },
+                {
+                  "name": "Activar",
+                  "value": "on"
+                },
+                {
+                  "name": "Desactivar",
+                  "value": "off"
+                }
+              ],
+              "channelTypes": []
+            },
+            {
+              "name": "jugador",
+              "description": "Para agregar o quitar",
+              "type": 3,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 16,
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "gestionar",
+            "comando"
+          ],
+          "description": "(Solo admins) Ejecuta un comando de consola",
+          "parameters": [
+            {
+              "name": "comando",
+              "description": "Sin la barra inicial, ej: time set day",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 400,
               "channelTypes": []
             }
           ]
