@@ -1,13 +1,13 @@
 // Generated from bot-unidad command builders. Run npm run docs:sync to update.
 export const commandCatalogSnapshot = {
-  "sourceCommit": "c482464b59332e8f43d6e986c5813fda39f130d5",
+  "sourceCommit": "c947df17d689ba2568cb03b214537caace0011a6",
   "referenceCommit": "125b0311bdd0ba7e95a12804e31f6ba626e6f407",
   "commands": [
     {
       "name": "activities",
       "description": "Inicia una actividad de Discord en voz.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -79,7 +79,7 @@ export const commandCatalogSnapshot = {
       "name": "admin",
       "description": "Comandos de administración del servidor",
       "defaultMemberPermissions": "32",
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -356,7 +356,7 @@ export const commandCatalogSnapshot = {
       "name": "afk",
       "description": "Gestiona tu estado ausente.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -389,7 +389,7 @@ export const commandCatalogSnapshot = {
       "name": "announcement",
       "description": "Crea y edita anuncios.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -468,7 +468,7 @@ export const commandCatalogSnapshot = {
       "name": "automod",
       "description": "Configura la moderación automática.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -612,7 +612,7 @@ export const commandCatalogSnapshot = {
       "name": "autosetup",
       "description": "Crea configuraciones predeterminadas de Unidad.",
       "defaultMemberPermissions": "32",
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -662,7 +662,7 @@ export const commandCatalogSnapshot = {
       "name": "birthdays",
       "description": "Cumpleaños del servidor.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -721,7 +721,7 @@ export const commandCatalogSnapshot = {
       "name": "bot",
       "description": "Información, enlaces y soporte de Unidad.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -818,7 +818,7 @@ export const commandCatalogSnapshot = {
       "name": "casino",
       "description": "Juegos de azar con la economía del servidor.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -920,7 +920,7 @@ export const commandCatalogSnapshot = {
       "name": "cmd",
       "description": "Gestiona los comandos personalizados de texto",
       "defaultMemberPermissions": "32",
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -978,7 +978,7 @@ export const commandCatalogSnapshot = {
       "name": "coaching",
       "description": "Sistema de coaching",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -1193,7 +1193,7 @@ export const commandCatalogSnapshot = {
       "name": "config",
       "description": "Gestiona la configuración del bot en este servidor",
       "defaultMemberPermissions": "32",
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -1216,55 +1216,55 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [
                 {
-                  "name": "xp.cooldown",
+                  "name": "XP: espera entre mensajes",
                   "value": "xp.cooldown"
                 },
                 {
-                  "name": "xp.permessage",
+                  "name": "XP: base por mensaje",
                   "value": "xp.permessage"
                 },
                 {
-                  "name": "xp.reactions.enabled",
+                  "name": "XP por reacciones: activado",
                   "value": "xp.reactions.enabled"
                 },
                 {
-                  "name": "xp.interactions.enabled",
+                  "name": "XP por interacciones: activado",
                   "value": "xp.interactions.enabled"
                 },
                 {
-                  "name": "xp.voice_join.enabled",
+                  "name": "XP por crear canal de voz: activado",
                   "value": "xp.voice_join.enabled"
                 },
                 {
-                  "name": "xp.voice_time.enabled",
+                  "name": "XP por tiempo en voz: activado",
                   "value": "xp.voice_time.enabled"
                 },
                 {
-                  "name": "xp.reactions.multiplier",
+                  "name": "XP por reacciones: multiplicador",
                   "value": "xp.reactions.multiplier"
                 },
                 {
-                  "name": "xp.interactions.multiplier",
+                  "name": "XP por interacciones: multiplicador",
                   "value": "xp.interactions.multiplier"
                 },
                 {
-                  "name": "xp.voice_join.multiplier",
+                  "name": "XP por crear canal de voz: multiplicador",
                   "value": "xp.voice_join.multiplier"
                 },
                 {
-                  "name": "xp.voice_time.multiplier",
+                  "name": "XP por tiempo en voz: multiplicador",
                   "value": "xp.voice_time.multiplier"
                 },
                 {
-                  "name": "xp.voice_time.interval_minutes",
+                  "name": "XP por tiempo en voz: intervalo (min)",
                   "value": "xp.voice_time.interval_minutes"
                 },
                 {
-                  "name": "social.scope",
+                  "name": "Alcance de perfiles y agradecimientos",
                   "value": "social.scope"
                 },
                 {
-                  "name": "boost.message",
+                  "name": "Mensaje de boost",
                   "value": "boost.message"
                 }
               ],
@@ -1449,7 +1449,7 @@ export const commandCatalogSnapshot = {
       "name": "creator",
       "description": "Gestión de creadores de contenido",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -1548,62 +1548,62 @@ export const commandCatalogSnapshot = {
       "name": "economy",
       "description": "Economía completa del servidor.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
             "beg"
           ],
-          "description": "Obtén la recompensa de beg.",
+          "description": "Pide unas monedas.",
           "parameters": []
         },
         {
           "path": [
             "crime"
           ],
-          "description": "Obtén la recompensa de crime.",
+          "description": "Comete un crimen y arriésgate a que te atrapen.",
           "parameters": []
         },
         {
           "path": [
             "daily"
           ],
-          "description": "Obtén la recompensa de daily.",
+          "description": "Reclama tu recompensa diaria.",
           "parameters": []
         },
         {
           "path": [
             "fish"
           ],
-          "description": "Obtén la recompensa de fish.",
+          "description": "Sal a pescar (necesitas una caña).",
           "parameters": []
         },
         {
           "path": [
             "hourly"
           ],
-          "description": "Obtén la recompensa de hourly.",
+          "description": "Reclama tu recompensa de cada hora.",
           "parameters": []
         },
         {
           "path": [
             "hunt"
           ],
-          "description": "Obtén la recompensa de hunt.",
+          "description": "Sal de cacería.",
           "parameters": []
         },
         {
           "path": [
             "monthly"
           ],
-          "description": "Obtén la recompensa de monthly.",
+          "description": "Reclama tu recompensa mensual.",
           "parameters": []
         },
         {
           "path": [
             "present"
           ],
-          "description": "Obtén la recompensa de present.",
+          "description": "Abre tu regalo semanal.",
           "parameters": []
         },
         {
@@ -1617,21 +1617,21 @@ export const commandCatalogSnapshot = {
           "path": [
             "weekly"
           ],
-          "description": "Obtén la recompensa de weekly.",
+          "description": "Reclama tu recompensa semanal.",
           "parameters": []
         },
         {
           "path": [
             "work"
           ],
-          "description": "Obtén la recompensa de work.",
+          "description": "Trabaja para ganar monedas.",
           "parameters": []
         },
         {
           "path": [
             "yearly"
           ],
-          "description": "Obtén la recompensa de yearly.",
+          "description": "Reclama tu recompensa anual.",
           "parameters": []
         },
         {
@@ -1916,7 +1916,7 @@ export const commandCatalogSnapshot = {
       "name": "event",
       "description": "Gestión de eventos del servidor",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -1972,7 +1972,7 @@ export const commandCatalogSnapshot = {
       "name": "family",
       "description": "Familia social del servidor.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -2072,14 +2072,14 @@ export const commandCatalogSnapshot = {
       "name": "fun",
       "description": "Diversión y contenido ligero.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
             "meme",
             "confused"
           ],
-          "description": "Ejecuta confused.",
+          "description": "Muestra tu confusión.",
           "parameters": []
         },
         {
@@ -2087,7 +2087,7 @@ export const commandCatalogSnapshot = {
             "meme",
             "cleverrate"
           ],
-          "description": "Ejecuta cleverrate.",
+          "description": "Calcula qué tan listo eres.",
           "parameters": []
         },
         {
@@ -2095,7 +2095,7 @@ export const commandCatalogSnapshot = {
             "meme",
             "dinochrome"
           ],
-          "description": "Ejecuta dinochrome.",
+          "description": "El dinosaurio de Chrome.",
           "parameters": []
         },
         {
@@ -2103,7 +2103,7 @@ export const commandCatalogSnapshot = {
             "meme",
             "epicgamerrate"
           ],
-          "description": "Ejecuta epicgamerrate.",
+          "description": "Calcula qué tan gamer épico eres.",
           "parameters": []
         },
         {
@@ -2111,7 +2111,7 @@ export const commandCatalogSnapshot = {
             "meme",
             "howgay"
           ],
-          "description": "Ejecuta howgay.",
+          "description": "Calcula un porcentaje gay al azar.",
           "parameters": []
         },
         {
@@ -2119,7 +2119,7 @@ export const commandCatalogSnapshot = {
             "meme",
             "roast"
           ],
-          "description": "Ejecuta roast.",
+          "description": "Lanza una broma a un usuario.",
           "parameters": [
             {
               "name": "user",
@@ -2137,7 +2137,7 @@ export const commandCatalogSnapshot = {
             "meme",
             "simprate"
           ],
-          "description": "Ejecuta simprate.",
+          "description": "Calcula qué tan simp eres.",
           "parameters": []
         },
         {
@@ -2145,7 +2145,7 @@ export const commandCatalogSnapshot = {
             "meme",
             "stankrate"
           ],
-          "description": "Ejecuta stankrate.",
+          "description": "Calcula qué tan apestoso eres.",
           "parameters": []
         },
         {
@@ -2153,7 +2153,7 @@ export const commandCatalogSnapshot = {
             "meme",
             "rickroll"
           ],
-          "description": "Ejecuta rickroll.",
+          "description": "Envía un rickroll.",
           "parameters": []
         },
         {
@@ -2161,7 +2161,7 @@ export const commandCatalogSnapshot = {
             "user",
             "hack"
           ],
-          "description": "Ejecuta hack.",
+          "description": "Simula hackear a un usuario.",
           "parameters": [
             {
               "name": "user",
@@ -2179,7 +2179,7 @@ export const commandCatalogSnapshot = {
             "user",
             "hug"
           ],
-          "description": "Ejecuta hug.",
+          "description": "Abraza a un usuario.",
           "parameters": [
             {
               "name": "user",
@@ -2197,7 +2197,7 @@ export const commandCatalogSnapshot = {
             "user",
             "kill"
           ],
-          "description": "Ejecuta kill.",
+          "description": "Derrota a un usuario en una batalla ficticia.",
           "parameters": [
             {
               "name": "user",
@@ -2215,7 +2215,7 @@ export const commandCatalogSnapshot = {
             "user",
             "lovemeter"
           ],
-          "description": "Ejecuta lovemeter.",
+          "description": "Mide la compatibilidad entre dos usuarios.",
           "parameters": [
             {
               "name": "user1",
@@ -2242,7 +2242,7 @@ export const commandCatalogSnapshot = {
             "user",
             "sudo"
           ],
-          "description": "Ejecuta sudo.",
+          "description": "Simula un mensaje de otro usuario.",
           "parameters": [
             {
               "name": "user",
@@ -2270,7 +2270,7 @@ export const commandCatalogSnapshot = {
             "text",
             "ascii"
           ],
-          "description": "Ejecuta ascii.",
+          "description": "Escribe el texto en mayúsculas espaciadas.",
           "parameters": [
             {
               "name": "text",
@@ -2289,7 +2289,7 @@ export const commandCatalogSnapshot = {
             "text",
             "gif"
           ],
-          "description": "Ejecuta gif.",
+          "description": "Busca un GIF.",
           "parameters": [
             {
               "name": "text",
@@ -2308,7 +2308,7 @@ export const commandCatalogSnapshot = {
             "text",
             "reverse"
           ],
-          "description": "Ejecuta reverse.",
+          "description": "Invierte el texto.",
           "parameters": [
             {
               "name": "text",
@@ -2327,7 +2327,7 @@ export const commandCatalogSnapshot = {
             "text",
             "say"
           ],
-          "description": "Ejecuta say.",
+          "description": "Repito el texto que escribas.",
           "parameters": [
             {
               "name": "text",
@@ -2346,7 +2346,7 @@ export const commandCatalogSnapshot = {
             "extra",
             "birdfact"
           ],
-          "description": "Ejecuta birdfact.",
+          "description": "Un dato curioso sobre aves.",
           "parameters": []
         },
         {
@@ -2354,7 +2354,7 @@ export const commandCatalogSnapshot = {
             "extra",
             "catfact"
           ],
-          "description": "Ejecuta catfact.",
+          "description": "Un dato curioso sobre gatos.",
           "parameters": []
         },
         {
@@ -2362,7 +2362,7 @@ export const commandCatalogSnapshot = {
             "extra",
             "dogfact"
           ],
-          "description": "Ejecuta dogfact.",
+          "description": "Un dato curioso sobre perros.",
           "parameters": []
         },
         {
@@ -2370,7 +2370,7 @@ export const commandCatalogSnapshot = {
             "extra",
             "fact"
           ],
-          "description": "Ejecuta fact.",
+          "description": "Un dato curioso al azar.",
           "parameters": []
         },
         {
@@ -2378,7 +2378,7 @@ export const commandCatalogSnapshot = {
             "extra",
             "koalafact"
           ],
-          "description": "Ejecuta koalafact.",
+          "description": "Un dato curioso sobre koalas.",
           "parameters": []
         },
         {
@@ -2386,7 +2386,7 @@ export const commandCatalogSnapshot = {
             "extra",
             "pandafact"
           ],
-          "description": "Ejecuta pandafact.",
+          "description": "Un dato curioso sobre pandas.",
           "parameters": []
         },
         {
@@ -2394,7 +2394,7 @@ export const commandCatalogSnapshot = {
             "extra",
             "token"
           ],
-          "description": "Ejecuta token.",
+          "description": "Genera un token ficticio para pruebas.",
           "parameters": []
         },
         {
@@ -2402,7 +2402,7 @@ export const commandCatalogSnapshot = {
             "extra",
             "worldclock"
           ],
-          "description": "Ejecuta worldclock.",
+          "description": "Muestra la fecha y hora UTC.",
           "parameters": []
         },
         {
@@ -2410,7 +2410,7 @@ export const commandCatalogSnapshot = {
             "extra",
             "xmas"
           ],
-          "description": "Ejecuta xmas.",
+          "description": "Cuenta los días que faltan para Navidad.",
           "parameters": []
         }
       ]
@@ -2419,7 +2419,7 @@ export const commandCatalogSnapshot = {
       "name": "games",
       "description": "Minijuegos.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -2524,7 +2524,7 @@ export const commandCatalogSnapshot = {
       "name": "giveaway",
       "description": "Sorteos persistentes.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -2630,7 +2630,7 @@ export const commandCatalogSnapshot = {
           "path": [
             "reroll"
           ],
-          "description": "Gestiona un sorteo: reroll.",
+          "description": "Elige nuevos ganadores de un sorteo finalizado.",
           "parameters": [
             {
               "name": "message",
@@ -2647,7 +2647,7 @@ export const commandCatalogSnapshot = {
           "path": [
             "end"
           ],
-          "description": "Gestiona un sorteo: end.",
+          "description": "Finaliza un sorteo ahora.",
           "parameters": [
             {
               "name": "message",
@@ -2664,7 +2664,7 @@ export const commandCatalogSnapshot = {
           "path": [
             "delete"
           ],
-          "description": "Gestiona un sorteo: delete.",
+          "description": "Elimina un sorteo.",
           "parameters": [
             {
               "name": "message",
@@ -2681,7 +2681,7 @@ export const commandCatalogSnapshot = {
           "path": [
             "pause"
           ],
-          "description": "Gestiona un sorteo: pause.",
+          "description": "Pausa un sorteo activo.",
           "parameters": [
             {
               "name": "message",
@@ -2698,7 +2698,7 @@ export const commandCatalogSnapshot = {
           "path": [
             "unpause"
           ],
-          "description": "Gestiona un sorteo: unpause.",
+          "description": "Reanuda un sorteo pausado.",
           "parameters": [
             {
               "name": "message",
@@ -2753,7 +2753,7 @@ export const commandCatalogSnapshot = {
       "name": "guild",
       "description": "Información del servidor.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -2890,7 +2890,7 @@ export const commandCatalogSnapshot = {
       "name": "help",
       "description": "Consulta los comandos disponibles y sus opciones.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -2924,7 +2924,7 @@ export const commandCatalogSnapshot = {
       "name": "history",
       "description": "Muestra el historial reciente de música reproducida.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -2949,14 +2949,14 @@ export const commandCatalogSnapshot = {
       "name": "images",
       "description": "Imágenes, avatares y tarjetas.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
             "memes",
             "clyde"
           ],
-          "description": "Genera clyde.",
+          "description": "Mensaje al estilo de Clyde.",
           "parameters": [
             {
               "name": "text",
@@ -2975,7 +2975,7 @@ export const commandCatalogSnapshot = {
             "memes",
             "drake"
           ],
-          "description": "Genera drake.",
+          "description": "Meme de Drake con dos textos.",
           "parameters": [
             {
               "name": "text1",
@@ -3004,7 +3004,7 @@ export const commandCatalogSnapshot = {
             "memes",
             "meme"
           ],
-          "description": "Genera meme.",
+          "description": "Meme al azar.",
           "parameters": []
         },
         {
@@ -3012,7 +3012,7 @@ export const commandCatalogSnapshot = {
             "memes",
             "pooh"
           ],
-          "description": "Genera pooh.",
+          "description": "Meme de Winnie Pooh con dos textos.",
           "parameters": [
             {
               "name": "text1",
@@ -3041,7 +3041,7 @@ export const commandCatalogSnapshot = {
             "memes",
             "trumptweet"
           ],
-          "description": "Genera trumptweet.",
+          "description": "Tuit al estilo de Trump.",
           "parameters": [
             {
               "name": "text",
@@ -3060,7 +3060,7 @@ export const commandCatalogSnapshot = {
             "memes",
             "tweet"
           ],
-          "description": "Genera tweet.",
+          "description": "Tuit con tu nombre.",
           "parameters": [
             {
               "name": "text",
@@ -3079,7 +3079,7 @@ export const commandCatalogSnapshot = {
             "memes",
             "wasted"
           ],
-          "description": "Genera wasted.",
+          "description": "Tu avatar con el efecto WASTED.",
           "parameters": []
         },
         {
@@ -3087,7 +3087,7 @@ export const commandCatalogSnapshot = {
             "animals",
             "bird"
           ],
-          "description": "Muestra bird.",
+          "description": "Imagen de un ave.",
           "parameters": []
         },
         {
@@ -3095,7 +3095,7 @@ export const commandCatalogSnapshot = {
             "animals",
             "cat"
           ],
-          "description": "Muestra cat.",
+          "description": "Imagen de un gato.",
           "parameters": []
         },
         {
@@ -3103,7 +3103,7 @@ export const commandCatalogSnapshot = {
             "animals",
             "dog"
           ],
-          "description": "Muestra dog.",
+          "description": "Imagen de un perro.",
           "parameters": []
         },
         {
@@ -3111,7 +3111,7 @@ export const commandCatalogSnapshot = {
             "animals",
             "fox"
           ],
-          "description": "Muestra fox.",
+          "description": "Imagen de un zorro.",
           "parameters": []
         },
         {
@@ -3119,7 +3119,7 @@ export const commandCatalogSnapshot = {
             "animals",
             "koala"
           ],
-          "description": "Muestra koala.",
+          "description": "Imagen de un koala.",
           "parameters": []
         },
         {
@@ -3127,7 +3127,7 @@ export const commandCatalogSnapshot = {
             "animals",
             "panda"
           ],
-          "description": "Muestra panda.",
+          "description": "Imagen de un panda.",
           "parameters": []
         },
         {
@@ -3135,7 +3135,7 @@ export const commandCatalogSnapshot = {
             "animals",
             "redpanda"
           ],
-          "description": "Muestra redpanda.",
+          "description": "Imagen de un panda rojo.",
           "parameters": []
         },
         {
@@ -3143,7 +3143,7 @@ export const commandCatalogSnapshot = {
             "user",
             "ad"
           ],
-          "description": "Genera ad.",
+          "description": "Anuncio con el nombre de un usuario.",
           "parameters": [
             {
               "name": "user",
@@ -3161,7 +3161,7 @@ export const commandCatalogSnapshot = {
             "user",
             "avatar"
           ],
-          "description": "Genera avatar.",
+          "description": "Muestra el avatar de un usuario.",
           "parameters": [
             {
               "name": "user",
@@ -3179,7 +3179,7 @@ export const commandCatalogSnapshot = {
             "user",
             "banner"
           ],
-          "description": "Genera banner.",
+          "description": "Muestra el banner de un usuario.",
           "parameters": [
             {
               "name": "user",
@@ -3197,7 +3197,7 @@ export const commandCatalogSnapshot = {
             "user",
             "bed"
           ],
-          "description": "Genera bed.",
+          "description": "Avatar mandado a la cama.",
           "parameters": [
             {
               "name": "user",
@@ -3215,7 +3215,7 @@ export const commandCatalogSnapshot = {
             "user",
             "blur"
           ],
-          "description": "Genera blur.",
+          "description": "Avatar desenfocado.",
           "parameters": [
             {
               "name": "user",
@@ -3233,7 +3233,7 @@ export const commandCatalogSnapshot = {
             "user",
             "burn"
           ],
-          "description": "Genera burn.",
+          "description": "Avatar en llamas.",
           "parameters": [
             {
               "name": "user",
@@ -3251,7 +3251,7 @@ export const commandCatalogSnapshot = {
             "user",
             "clown"
           ],
-          "description": "Genera clown.",
+          "description": "Avatar de payaso.",
           "parameters": [
             {
               "name": "user",
@@ -3269,7 +3269,7 @@ export const commandCatalogSnapshot = {
             "user",
             "colorify"
           ],
-          "description": "Genera colorify.",
+          "description": "Avatar con colores intensos.",
           "parameters": [
             {
               "name": "user",
@@ -3287,7 +3287,7 @@ export const commandCatalogSnapshot = {
             "user",
             "darkness"
           ],
-          "description": "Genera darkness.",
+          "description": "Avatar oscurecido.",
           "parameters": [
             {
               "name": "user",
@@ -3305,7 +3305,7 @@ export const commandCatalogSnapshot = {
             "user",
             "facepalm"
           ],
-          "description": "Genera facepalm.",
+          "description": "Avatar con facepalm.",
           "parameters": [
             {
               "name": "user",
@@ -3323,7 +3323,7 @@ export const commandCatalogSnapshot = {
             "user",
             "greyscale"
           ],
-          "description": "Genera greyscale.",
+          "description": "Avatar en escala de grises.",
           "parameters": [
             {
               "name": "user",
@@ -3341,7 +3341,7 @@ export const commandCatalogSnapshot = {
             "user",
             "invert"
           ],
-          "description": "Genera invert.",
+          "description": "Avatar con colores invertidos.",
           "parameters": [
             {
               "name": "user",
@@ -3359,7 +3359,7 @@ export const commandCatalogSnapshot = {
             "user",
             "kiss"
           ],
-          "description": "Genera kiss.",
+          "description": "Beso entre tú y un usuario.",
           "parameters": [
             {
               "name": "user",
@@ -3377,7 +3377,7 @@ export const commandCatalogSnapshot = {
             "user",
             "podium"
           ],
-          "description": "Genera podium.",
+          "description": "Podio con tres usuarios.",
           "parameters": [
             {
               "name": "user1",
@@ -3413,7 +3413,7 @@ export const commandCatalogSnapshot = {
             "user",
             "spank"
           ],
-          "description": "Genera spank.",
+          "description": "Avatar con un BONK.",
           "parameters": [
             {
               "name": "user",
@@ -3431,7 +3431,7 @@ export const commandCatalogSnapshot = {
             "user",
             "wanted"
           ],
-          "description": "Genera wanted.",
+          "description": "Cartel de se busca con un avatar.",
           "parameters": [
             {
               "name": "user",
@@ -3494,7 +3494,7 @@ export const commandCatalogSnapshot = {
             "extra",
             "triggered"
           ],
-          "description": "Genera reacción triggered.",
+          "description": "Tu avatar con el efecto TRIGGERED.",
           "parameters": []
         },
         {
@@ -3521,7 +3521,7 @@ export const commandCatalogSnapshot = {
       "name": "invite",
       "description": "Obtén enlaces para instalar y apoyar a Unidad.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -3534,7 +3534,7 @@ export const commandCatalogSnapshot = {
       "name": "invites",
       "description": "Estadísticas de invitaciones.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -3676,7 +3676,7 @@ export const commandCatalogSnapshot = {
       "name": "lobby",
       "description": "Gestiona los lobbies de voz temporales del servidor",
       "defaultMemberPermissions": "32",
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -3846,7 +3846,7 @@ export const commandCatalogSnapshot = {
       "name": "messages",
       "description": "Contador de mensajes y recompensas.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -3988,7 +3988,7 @@ export const commandCatalogSnapshot = {
       "name": "minecraft",
       "description": "Servidor de Minecraft de la comunidad",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -4406,7 +4406,7 @@ export const commandCatalogSnapshot = {
       "name": "moderation",
       "description": "Sanciones y advertencias de moderación.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -4866,7 +4866,7 @@ export const commandCatalogSnapshot = {
       "name": "module",
       "description": "Activa o desactiva módulos del bot",
       "defaultMemberPermissions": "32",
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -4937,7 +4937,7 @@ export const commandCatalogSnapshot = {
       "name": "music",
       "description": "Reproductor musical completo.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -5150,7 +5150,7 @@ export const commandCatalogSnapshot = {
       "name": "nivel",
       "description": "Niveles, XP y recompensas.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -5292,7 +5292,7 @@ export const commandCatalogSnapshot = {
       "name": "notepad",
       "description": "Notas personales, separadas por usuario y servidor.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -5402,30 +5402,30 @@ export const commandCatalogSnapshot = {
     },
     {
       "name": "ping",
-      "description": "Comprueba que el bot está activo",
+      "description": "Comprueba que el bot está activo.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [],
-          "description": "Comprueba que el bot está activo",
+          "description": "Comprueba que el bot está activo.",
           "parameters": []
         }
       ]
     },
     {
       "name": "play",
-      "description": "Reproduce una cancion de YouTube, Spotify o SoundCloud.",
+      "description": "Reproduce una canción de YouTube, Spotify o SoundCloud.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [],
-          "description": "Reproduce una cancion de YouTube, Spotify o SoundCloud.",
+          "description": "Reproduce una canción de YouTube, Spotify o SoundCloud.",
           "parameters": [
             {
               "name": "cancion",
-              "description": "Nombre de la cancion o URL",
+              "description": "Nombre de la canción o URL",
               "type": 3,
               "required": true,
               "autocomplete": false,
@@ -5440,7 +5440,7 @@ export const commandCatalogSnapshot = {
       "name": "profile",
       "description": "Perfil social; por servidor o global según la configuración.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -5871,7 +5871,7 @@ export const commandCatalogSnapshot = {
       "name": "queue",
       "description": "Muestra la cola o elimina una canción pendiente.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -5895,7 +5895,7 @@ export const commandCatalogSnapshot = {
       "name": "radio",
       "description": "Radio en vivo mediante Lavalink.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -5924,7 +5924,7 @@ export const commandCatalogSnapshot = {
       "name": "rank",
       "description": "Gestiona rangos de juego y lobbies de voz por rango",
       "defaultMemberPermissions": "32",
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -6114,7 +6114,7 @@ export const commandCatalogSnapshot = {
       "name": "report",
       "description": "Reporta un error o usuario al equipo del servidor.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -6157,13 +6157,13 @@ export const commandCatalogSnapshot = {
       "name": "search",
       "description": "Búsquedas y consultas externas.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
             "bing"
           ],
-          "description": "Busca con bing.",
+          "description": "Busca con Bing.",
           "parameters": [
             {
               "name": "name",
@@ -6181,7 +6181,7 @@ export const commandCatalogSnapshot = {
           "path": [
             "ddg"
           ],
-          "description": "Busca con ddg.",
+          "description": "Busca con DuckDuckGo.",
           "parameters": [
             {
               "name": "name",
@@ -6199,7 +6199,7 @@ export const commandCatalogSnapshot = {
           "path": [
             "google"
           ],
-          "description": "Busca con google.",
+          "description": "Busca con Google.",
           "parameters": [
             {
               "name": "name",
@@ -6217,7 +6217,7 @@ export const commandCatalogSnapshot = {
           "path": [
             "youtube"
           ],
-          "description": "Busca con youtube.",
+          "description": "Busca con YouTube.",
           "parameters": [
             {
               "name": "name",
@@ -6426,7 +6426,7 @@ export const commandCatalogSnapshot = {
       "name": "seek",
       "description": "Cambia la posición de la canción actual.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -6450,7 +6450,7 @@ export const commandCatalogSnapshot = {
       "name": "selfrole",
       "description": "Gestiona los roles autoasignables del servidor",
       "defaultMemberPermissions": "268435456",
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -6708,7 +6708,7 @@ export const commandCatalogSnapshot = {
       "name": "serverstats",
       "description": "Canales contadores con estadísticas del servidor.",
       "defaultMemberPermissions": "16",
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -6839,59 +6839,59 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [
                 {
-                  "name": "boosts",
+                  "name": "Boosts",
                   "value": "boosts"
                 },
                 {
-                  "name": "tier",
+                  "name": "Nivel",
                   "value": "tier"
                 },
                 {
-                  "name": "channels",
+                  "name": "Canales",
                   "value": "channels"
                 },
                 {
-                  "name": "stage-channels",
+                  "name": "Escenarios",
                   "value": "stage-channels"
                 },
                 {
-                  "name": "text-channels",
+                  "name": "Texto",
                   "value": "text-channels"
                 },
                 {
-                  "name": "voice-channels",
+                  "name": "Voz",
                   "value": "voice-channels"
                 },
                 {
-                  "name": "news-channels",
+                  "name": "Anuncios",
                   "value": "news-channels"
                 },
                 {
-                  "name": "members",
+                  "name": "Miembros",
                   "value": "members"
                 },
                 {
-                  "name": "bots",
+                  "name": "Bots",
                   "value": "bots"
                 },
                 {
-                  "name": "roles",
+                  "name": "Roles",
                   "value": "roles"
                 },
                 {
-                  "name": "emoji",
+                  "name": "Emojis",
                   "value": "emoji"
                 },
                 {
-                  "name": "static-emoji",
+                  "name": "Emojis estáticos",
                   "value": "static-emoji"
                 },
                 {
-                  "name": "animated-emoji",
+                  "name": "Emojis animados",
                   "value": "animated-emoji"
                 },
                 {
-                  "name": "time",
+                  "name": "Hora",
                   "value": "time"
                 }
               ],
@@ -6905,7 +6905,7 @@ export const commandCatalogSnapshot = {
       "name": "setup",
       "description": "Asistente interactivo para configurar el bot en este servidor",
       "defaultMemberPermissions": "8",
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -7271,23 +7271,23 @@ export const commandCatalogSnapshot = {
                   "value": "tickets"
                 },
                 {
-                  "name": "Custom voice",
+                  "name": "Voz temporal",
                   "value": "customvoice"
                 },
                 {
-                  "name": "Server logs",
+                  "name": "Logs del servidor",
                   "value": "serverlogs"
                 },
                 {
-                  "name": "Level logs",
+                  "name": "Logs de niveles",
                   "value": "levellogs"
                 },
                 {
-                  "name": "Boost logs",
+                  "name": "Logs de boosts",
                   "value": "boostlogs"
                 },
                 {
-                  "name": "Birthdays",
+                  "name": "Cumpleaños",
                   "value": "birthdays"
                 },
                 {
@@ -7295,11 +7295,11 @@ export const commandCatalogSnapshot = {
                   "value": "chatbot"
                 },
                 {
-                  "name": "Reviews",
+                  "name": "Reseñas",
                   "value": "reviews"
                 },
                 {
-                  "name": "Suggestions",
+                  "name": "Sugerencias",
                   "value": "suggestions"
                 },
                 {
@@ -7307,35 +7307,35 @@ export const commandCatalogSnapshot = {
                   "value": "starboard"
                 },
                 {
-                  "name": "Group search",
+                  "name": "Buscar grupo (LFG)",
                   "value": "groupsearch"
                 },
                 {
-                  "name": "Counting",
+                  "name": "Contar",
                   "value": "counting"
                 },
                 {
-                  "name": "Guess the number",
+                  "name": "Adivina el número",
                   "value": "gtn"
                 },
                 {
-                  "name": "Guess the word",
+                  "name": "Adivina la palabra",
                   "value": "gtw"
                 },
                 {
-                  "name": "Word snake",
+                  "name": "Cadena de palabras",
                   "value": "wordsnake"
                 },
                 {
-                  "name": "Welcome channel",
+                  "name": "Canal de bienvenida",
                   "value": "welcomechannel"
                 },
                 {
-                  "name": "Leave channel",
+                  "name": "Canal de despedidas",
                   "value": "leavechannel"
                 },
                 {
-                  "name": "Welcome role",
+                  "name": "Rol de bienvenida",
                   "value": "welcomerole"
                 }
               ],
@@ -7349,7 +7349,7 @@ export const commandCatalogSnapshot = {
       "name": "skip",
       "description": "Salta la canción actual o avanza a una posición de /queue.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -7373,7 +7373,7 @@ export const commandCatalogSnapshot = {
       "name": "soundboard",
       "description": "Efectos de sonido mediante Lavalink.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -7637,7 +7637,7 @@ export const commandCatalogSnapshot = {
       "name": "stickymessages",
       "description": "Mensajes fijados dinámicamente.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -7698,13 +7698,13 @@ export const commandCatalogSnapshot = {
     },
     {
       "name": "stop",
-      "description": "Detiene la musica y vacia la cola.",
+      "description": "Detiene la música y vacía la cola.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [],
-          "description": "Detiene la musica y vacia la cola.",
+          "description": "Detiene la música y vacía la cola.",
           "parameters": []
         }
       ]
@@ -7713,7 +7713,7 @@ export const commandCatalogSnapshot = {
       "name": "suggestions",
       "description": "Sugerencias comunitarias.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -7774,7 +7774,7 @@ export const commandCatalogSnapshot = {
       "name": "thanks",
       "description": "Reconocimientos; por servidor o globales según la configuración.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -7816,7 +7816,7 @@ export const commandCatalogSnapshot = {
       "name": "ticket",
       "description": "Gestión del sistema de tickets",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -8110,7 +8110,7 @@ export const commandCatalogSnapshot = {
       "name": "tools",
       "description": "Herramientas prácticas.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -8411,7 +8411,7 @@ export const commandCatalogSnapshot = {
       "name": "trigger",
       "description": "Ejecuta un comando de texto personalizado de este servidor",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -8434,7 +8434,7 @@ export const commandCatalogSnapshot = {
       "name": "voice",
       "description": "Controla tu sala de voz temporal.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -8492,13 +8492,13 @@ export const commandCatalogSnapshot = {
     },
     {
       "name": "volume",
-      "description": "Ajusta el volumen de la musica.",
+      "description": "Ajusta el volumen de la música.",
       "defaultMemberPermissions": null,
-      "dmPermission": false,
+      "dmPermission": null,
       "usages": [
         {
           "path": [],
-          "description": "Ajusta el volumen de la musica.",
+          "description": "Ajusta el volumen de la música.",
           "parameters": [
             {
               "name": "nivel",
