@@ -1,6 +1,6 @@
 // Generated from bot-unidad command builders. Run npm run docs:sync to update.
 export const commandCatalogSnapshot = {
-  "sourceCommit": "450ee0cc8b91cd3bb32875ff268d0b4fcaf7618c",
+  "sourceCommit": "c482464b59332e8f43d6e986c5813fda39f130d5",
   "referenceCommit": "125b0311bdd0ba7e95a12804e31f6ba626e6f407",
   "commands": [
     {
@@ -4057,14 +4057,6 @@ export const commandCatalogSnapshot = {
               "channelTypes": []
             }
           ]
-        },
-        {
-          "path": [
-            "config",
-            "seccion"
-          ],
-          "description": "Crea la categoría, canales y rol de Minecraft como las demás secciones de juegos",
-          "parameters": []
         },
         {
           "path": [
