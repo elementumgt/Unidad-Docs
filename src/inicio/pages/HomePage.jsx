@@ -8,6 +8,7 @@ import unidadLogo from "../../../assets/media/unidad.png";
 import SiteLayout from "../../components/SiteLayout.jsx";
 import { usePreferences } from "../../hooks/usePreferences.js";
 import { legalPaths } from "../../lib/paths.js";
+import { commandCatalogStats } from "../../docs/content/commandCatalogStats.js";
 import DocumentCard from "../components/DocumentCard.jsx";
 
 const copy = {
@@ -19,7 +20,7 @@ const copy = {
     terms: "Condiciones del Servicio",
     docs: "Explorar documentación",
     docsTitle: "Todo sobre Unidad",
-    docsDescription: "Guía completa de los 58 comandos y 471 operaciones, parámetros, permisos, módulos y flujos para miembros, Staff y administradores.",
+    docsDescription: `Guía completa de los ${commandCatalogStats.commands} comandos y ${commandCatalogStats.operations} operaciones, parámetros, permisos, módulos y flujos para miembros, Staff y administradores.`,
     docsAction: "Abrir documentación",
     privacyTitle: "Privacidad por diseño",
     privacyDescription: "Qué datos procesa Unidad, por qué los necesita, cuánto tiempo se conservan y cómo solicitar su eliminación.",
@@ -36,7 +37,7 @@ const copy = {
     terms: "Terms of Service",
     docs: "Explore documentation",
     docsTitle: "Everything about Unidad",
-    docsDescription: "Complete guide to all 58 commands and 471 operations, parameters, permissions, modules, and member, Staff, and administrator workflows.",
+    docsDescription: `Complete guide to all ${commandCatalogStats.commands} commands and ${commandCatalogStats.operations} operations, parameters, permissions, modules, and member, Staff, and administrator workflows.`,
     docsAction: "Open documentation",
     privacyTitle: "Privacy by design",
     privacyDescription: "What data Unidad processes, why it is needed, how long it is kept, and how to request its deletion.",
