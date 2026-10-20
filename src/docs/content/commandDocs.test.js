@@ -6,21 +6,22 @@ const expectedActions = {
   activities: 1, admin: 14, afk: 2, announcement: 2, automod: 7, autosetup: 6, birthdays: 4,
   bot: 11, casino: 4, cmd: 3, coaching: 11, config: 9, creator: 6, economy: 24, event: 4,
   family: 6, fun: 27, games: 9, giveaway: 8, guild: 10, help: 1, history: 1, images: 35, invite: 1,
-  invites: 7, lobby: 4, messages: 7, minecraft: 19, moderation: 18, module: 2, music: 17, nivel: 7,
-  notepad: 5, ping: 1, play: 1, profile: 24, queue: 1, radio: 3, rank: 5, report: 1, search: 14,
-  seek: 1, selfrole: 10, serverstats: 16, setup: 12, skip: 1, soundboard: 32,
-  stickymessages: 3, stop: 1, suggestions: 3, thanks: 2, ticket: 18, tools: 15, trigger: 1, voice: 4, volume: 1,
+  invites: 7, lobby: 4, messages: 7, minecraft: 23, misiones: 2, moderation: 18, module: 2,
+  music: 17, nivel: 7, notepad: 5, ping: 1, play: 1, profile: 24, queue: 1, radio: 3, rank: 5,
+  report: 1, scrim: 3, search: 14, seek: 1, selfrole: 10, serverstats: 16, setup: 12, skip: 1,
+  soundboard: 32, stickymessages: 3, stop: 1, suggestions: 3, thanks: 2, ticket: 18, tools: 15,
+  trigger: 1, voice: 4, volume: 1,
 };
 
 describe("command documentation", () => {
   const commands = commandGroups.flatMap(group => group.commands);
 
   it("covers the complete committed registry", () => {
-    expect(commandCount).toBe(56);
-    expect(actionCount).toBe(462);
+    expect(commandCount).toBe(58);
+    expect(actionCount).toBe(471);
     expect(Object.fromEntries(commands.map(command => [command.name, command.usage.length]))).toEqual(expectedActions);
     expect(commands.map(command => command.name).sort()).toEqual(commandCatalogSnapshot.commands.map(command => command.name).sort());
-    expect(documentedSource).toEqual({ current: "c947df17d689ba2568cb03b214537caace0011a6", since: "125b0311bdd0ba7e95a12804e31f6ba626e6f407" });
+    expect(documentedSource).toEqual({ current: "685e9ffbac3c40ffc19b5e47bc048a601b02e0ed", since: "125b0311bdd0ba7e95a12804e31f6ba626e6f407" });
   });
 
   it("documents every action, option, constraint and executable example", () => {
