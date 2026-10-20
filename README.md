@@ -18,7 +18,7 @@
 ## Páginas
 
 - `/`: centro legal.
-- `/docs/`: documentación completa de los 58 comandos y sus 471 operaciones, generada desde las definiciones slash reales, con parámetros, restricciones, sintaxis, ejemplos, permisos y comportamiento.
+- `/docs/`: documentación completa de todos los comandos y sus operaciones, generada desde las definiciones slash reales, con parámetros, restricciones, sintaxis, ejemplos, permisos y comportamiento.
 - `/privacidad/`: Política de Privacidad.
 - `/terminos/`: Condiciones del Servicio.
 
@@ -52,7 +52,7 @@ npm run check
 ## Arquitectura
 
 - `src/inicio/`: portada y componentes exclusivos del centro.
-- `src/docs/`: página, componentes, instantánea verificable del catálogo bilingüe y pruebas de los 58 comandos y 471 operaciones.
+- `src/docs/`: página, componentes, instantánea verificable del catálogo bilingüe y pruebas que la comparan con el registro real del bot.
 - `src/privacidad/`: página, componente, contenido y pruebas de la Política de Privacidad.
 - `src/terminos/`: página, componente, contenido y pruebas de las Condiciones del Servicio.
 - `src/shared/legal/`: renderer, estructura y validadores reutilizados exclusivamente por los dos módulos legales.

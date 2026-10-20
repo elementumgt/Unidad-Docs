@@ -31,7 +31,7 @@ const copy = {
   es: {
     eyebrow: "Referencia oficial",
     title: "Documentación de comandos",
-    intro: "Referencia completa de los 58 comandos slash y sus 471 operaciones, generada desde las definiciones reales del bot.",
+    intro: `Referencia completa de los ${commandCount} comandos slash y sus ${actionCount} operaciones, generada desde las definiciones reales del bot.`,
     source: "Código verificado",
     since: "cambios documentados desde",
     search: "Buscar comando, acción o función",
@@ -63,7 +63,7 @@ const copy = {
   en: {
     eyebrow: "Official reference",
     title: "Command documentation",
-    intro: "Complete reference for all 58 slash commands and 471 operations, generated from the bot's real definitions.",
+    intro: `Complete reference for all ${commandCount} slash commands and ${actionCount} operations, generated from the bot's real definitions.`,
     source: "Verified source",
     since: "changes documented since",
     search: "Search commands, actions, or features",
