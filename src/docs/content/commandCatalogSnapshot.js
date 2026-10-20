@@ -1,6 +1,6 @@
 // Generated from bot-unidad command builders. Run npm run docs:sync to update.
 export const commandCatalogSnapshot = {
-  "sourceCommit": "c947df17d689ba2568cb03b214537caace0011a6",
+  "sourceCommit": "685e9ffbac3c40ffc19b5e47bc048a601b02e0ed",
   "referenceCommit": "125b0311bdd0ba7e95a12804e31f6ba626e6f407",
   "commands": [
     {
@@ -4013,6 +4013,58 @@ export const commandCatalogSnapshot = {
         },
         {
           "path": [
+            "vincular"
+          ],
+          "description": "Vincula tu cuenta de Minecraft para whitelist y recompensas de logros",
+          "parameters": [
+            {
+              "name": "jugador",
+              "description": "Nombre exacto en Minecraft",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 16,
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "desvincular"
+          ],
+          "description": "Desvincula tu cuenta de Minecraft (o la de otro miembro si eres admin)",
+          "parameters": [
+            {
+              "name": "usuario",
+              "description": "(Admin) Usuario a desvincular",
+              "type": 6,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "perfil"
+          ],
+          "description": "Muestra la cuenta de Minecraft vinculada, logros y recompensas",
+          "parameters": [
+            {
+              "name": "usuario",
+              "description": "Usuario a consultar (opcional)",
+              "type": 6,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
             "config",
             "servidor"
           ],
@@ -4384,6 +4436,14 @@ export const commandCatalogSnapshot = {
         {
           "path": [
             "gestionar",
+            "guardar"
+          ],
+          "description": "Vuelca y guarda el mundo en disco de forma inmediata (save-all flush)",
+          "parameters": []
+        },
+        {
+          "path": [
+            "gestionar",
             "comando"
           ],
           "description": "(Solo admins) Ejecuta un comando de consola",
@@ -4399,6 +4459,38 @@ export const commandCatalogSnapshot = {
               "channelTypes": []
             }
           ]
+        }
+      ]
+    },
+    {
+      "name": "misiones",
+      "description": "Misiones semanales de la comunidad con recompensas de Pepinillos y XP",
+      "defaultMemberPermissions": null,
+      "dmPermission": null,
+      "usages": [
+        {
+          "path": [
+            "ver"
+          ],
+          "description": "Consulta tu progreso en las misiones de la semana",
+          "parameters": [
+            {
+              "name": "usuario",
+              "description": "Usuario a consultar (opcional)",
+              "type": 6,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "reclamar"
+          ],
+          "description": "Reclama las recompensas de tus misiones semanales completadas",
+          "parameters": []
         }
       ]
     },
@@ -6150,6 +6242,94 @@ export const commandCatalogSnapshot = {
               "channelTypes": []
             }
           ]
+        }
+      ]
+    },
+    {
+      "name": "scrim",
+      "description": "Organizador de scrims y partidas internas con balanceo automático por rango",
+      "defaultMemberPermissions": null,
+      "dmPermission": null,
+      "usages": [
+        {
+          "path": [
+            "crear"
+          ],
+          "description": "Publica una convocatoria interactiva para armar una scrim o partida interna",
+          "parameters": [
+            {
+              "name": "titulo",
+              "description": "Nombre de la partida (ej: Scrim Interna Overwatch 5v5)",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 80,
+              "channelTypes": []
+            },
+            {
+              "name": "modo",
+              "description": "Formato de equipos y roles",
+              "type": 3,
+              "required": false,
+              "autocomplete": false,
+              "choices": [
+                {
+                  "name": "5v5 por Roles (2 Tanques, 4 DPS, 4 Supports)",
+                  "value": "ow5v5"
+                },
+                {
+                  "name": "5v5 Abierto (10 jugadores)",
+                  "value": "open10"
+                },
+                {
+                  "name": "4v4 Abierto (8 jugadores)",
+                  "value": "custom8"
+                },
+                {
+                  "name": "3v3 Abierto (6 jugadores)",
+                  "value": "open6"
+                }
+              ],
+              "channelTypes": []
+            },
+            {
+              "name": "hora",
+              "description": "Horario o nota (ej: Hoy 21:00 o En 15 minutos)",
+              "type": 3,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 60,
+              "channelTypes": []
+            },
+            {
+              "name": "canal",
+              "description": "Canal donde publicar la convocatoria (por defecto este canal)",
+              "type": 7,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": [
+                0,
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "path": [
+            "equilibrar"
+          ],
+          "description": "Sortea y balancea los equipos (Alfa vs Omega) según el rango de los inscritos",
+          "parameters": []
+        },
+        {
+          "path": [
+            "cerrar"
+          ],
+          "description": "Cierra las inscripciones de la scrim activa en este canal",
+          "parameters": []
         }
       ]
     },
