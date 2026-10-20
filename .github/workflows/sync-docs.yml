@@ -1,0 +1,105 @@
+name: Sync command docs
+
+# Regenera el catálogo de comandos desde Unidad-Bot (rama main).
+# Si las pruebas pasan, publica en main/dev y lanza el despliegue de Pages.
+# Si fallan (por ejemplo, un comando nuevo sin clasificar en commandDocs.js),
+# deja los cambios en la rama auto/sync-docs con un PR para revisarlos a mano.
+on:
+  schedule:
+    - cron: "17 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+  pull-requests: write
+
+concurrency:
+  group: sync-docs
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: Sync from bot
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      BOT_REPOSITORY_PATH: ${{ github.workspace }}/bot-unidad
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          path: docs
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: elementumgt/Unidad-Bot
+          ref: main
+          path: bot-unidad
+          ssh-key: ${{ secrets.BOT_DEPLOY_KEY }}
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4.4.0
+        with:
+          package_json_file: bot-unidad/package.json
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: |
+          (cd bot-unidad && pnpm install --frozen-lockfile --ignore-scripts)
+          (cd docs && npm ci)
+
+      - id: sync
+        name: Regenerate catalog
+        working-directory: docs
+        run: |
+          npm run docs:sync
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Sin cambios en los comandos del bot."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "commit=$(git -C ../bot-unidad rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - id: check
+        if: steps.sync.outputs.changed == 'true'
+        name: Lint, test and build
+        working-directory: docs
+        continue-on-error: true
+        run: npm run check
+
+      - name: Commit
+        if: steps.sync.outputs.changed == 'true'
+        working-directory: docs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "docs: sincronizar comandos con Unidad-Bot ${{ steps.sync.outputs.commit }}"
+
+      - name: Publish
+        if: steps.sync.outputs.changed == 'true' && steps.check.outcome == 'success'
+        working-directory: docs
+        run: |
+          git push origin HEAD:main
+          git push origin HEAD:dev || echo "::warning::dev no avanza en línea recta con main; sincronízala a mano."
+          # Los push hechos con GITHUB_TOKEN no disparan otros workflows: se lanza Pages explícitamente.
+          gh workflow run pages.yml --ref main
+
+      - name: Open PR for review
+        if: steps.sync.outputs.changed == 'true' && steps.check.outcome != 'success'
+        working-directory: docs
+        run: |
+          git push --force origin HEAD:auto/sync-docs
+          if [ -z "$(gh pr list --head auto/sync-docs --state open --json number --jq '.[].number')" ]; then
+            gh pr create --base main --head auto/sync-docs \
+              --title "docs: el bot cambió y la documentación necesita revisión" \
+              --body "La sincronización automática con Unidad-Bot ${{ steps.sync.outputs.commit }} no pasó \`npm run check\`. Lo más común es un comando nuevo sin clasificar en \`src/docs/content/commandDocs.js\` (grupo y resumen en inglés). Revisa el log: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          fi
+          echo "::error::La documentación necesita revisión manual (PR en auto/sync-docs)."
+          exit 1
