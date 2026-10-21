@@ -19,12 +19,12 @@ export default function SiteHeader({ collapsed, onOpenMobile, onToggleCollapsed,
 
   return (
     <AppBar className="glass-nav shrink-0" color="transparent" elevation={0} position="static">
-      <Toolbar className="!min-h-[64px] !gap-1 !px-2 sm:!gap-2 sm:!px-4 lg:!min-h-[68px] lg:!px-5">
+      <Toolbar className="min-h-[64px]! gap-1! px-2! sm:gap-2! sm:px-4! lg:min-h-[68px]! lg:px-5!">
         <Tooltip title={language === "es" ? "Abrir menú" : "Open menu"}>
-          <IconButton className="shrink-0 lg:!hidden" onClick={onOpenMobile} aria-label={language === "es" ? "Abrir menú" : "Open menu"}><MenuRounded /></IconButton>
+          <IconButton className="shrink-0 lg:hidden!" onClick={onOpenMobile} aria-label={language === "es" ? "Abrir menú" : "Open menu"}><MenuRounded /></IconButton>
         </Tooltip>
         <Tooltip title={collapsed ? (language === "es" ? "Expandir menú" : "Expand menu") : (language === "es" ? "Minimizar menú" : "Collapse menu")}>
-          <IconButton className="!hidden shrink-0 lg:!inline-flex" onClick={onToggleCollapsed} aria-label={collapsed ? "Expandir menú" : "Minimizar menú"}>
+          <IconButton className="hidden! shrink-0 lg:inline-flex!" onClick={onToggleCollapsed} aria-label={collapsed ? "Expandir menú" : "Minimizar menú"}>
             {collapsed ? <ChevronRightRounded /> : <ChevronLeftRounded />}
           </IconButton>
         </Tooltip>
@@ -32,8 +32,8 @@ export default function SiteHeader({ collapsed, onOpenMobile, onToggleCollapsed,
         <Link component={RouterLink} to={paths.home} underline="none" color="inherit" className="flex min-w-0 shrink-0 items-center gap-2 rounded-xl sm:gap-3">
           <Box component="img" src={unidadLogo} alt="" aria-hidden="true" className="h-9 w-9 shrink-0 rounded-xl object-cover shadow-lg sm:h-10 sm:w-10" />
           <Box className="hidden min-w-0 md:block">
-            <Typography component="span" className="block !text-sm !font-extrabold !leading-tight">Unidad</Typography>
-            <Typography component="span" color="text.secondary" className="block !text-xs">{language === "es" ? "Centro de ayuda" : "Help center"}</Typography>
+            <Typography component="span" className="block text-sm! font-extrabold! leading-tight!">Unidad</Typography>
+            <Typography component="span" color="text.secondary" className="block text-xs!">{language === "es" ? "Centro de ayuda" : "Help center"}</Typography>
           </Box>
         </Link>
 

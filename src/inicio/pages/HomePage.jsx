@@ -56,14 +56,14 @@ export default function HomePage() {
   return (
     <SiteLayout page="home">
       <Container maxWidth="lg" className="py-7 sm:py-10 lg:py-14 xl:py-20">
-        <Paper className="glass-hero relative flex min-w-0 flex-col items-center overflow-hidden !rounded-2xl !px-5 !py-9 text-center sm:!rounded-3xl sm:!px-8 sm:!py-12 lg:!px-12 lg:!py-14" elevation={0}>
+        <Paper className="glass-hero relative flex min-w-0 flex-col items-center overflow-hidden rounded-2xl! px-5! py-9! text-center sm:rounded-3xl! sm:px-8! sm:py-12! lg:px-12! lg:py-14!" elevation={0}>
           <Box aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-[#90D8F0]/10 blur-3xl" />
-          <Box component="img" src={unidadLogo} alt="Unidad" className="relative !block h-20 w-20 shrink-0 rounded-2xl object-cover shadow-2xl sm:h-24 sm:w-24 sm:rounded-3xl" />
+          <Box component="img" src={unidadLogo} alt="Unidad" className="relative block! h-20 w-20 shrink-0 rounded-2xl object-cover shadow-2xl sm:h-24 sm:w-24 sm:rounded-3xl" />
           <div className="relative mt-6 flex w-full justify-center">
-            <Chip className="!font-bold" color="primary" icon={<VerifiedUserRounded />} label={text.badge} variant="outlined" />
+            <Chip className="font-bold!" color="primary" icon={<VerifiedUserRounded />} label={text.badge} variant="outlined" />
           </div>
-          <Typography align="center" component="h1" variant="h1" className="relative !mt-6 w-full max-w-4xl !text-3xl !leading-[1.08] sm:!text-4xl lg:!text-5xl xl:!text-6xl">{text.title}</Typography>
-          <Typography align="center" color="text.secondary" className="relative !mt-5 w-full max-w-2xl !text-base !leading-7 md:!text-lg">{text.description}</Typography>
+          <Typography align="center" component="h1" variant="h1" className="relative mt-6! w-full max-w-4xl text-3xl! leading-[1.08]! sm:text-4xl! lg:text-5xl! xl:text-6xl!">{text.title}</Typography>
+          <Typography align="center" color="text.secondary" className="relative mt-5! w-full max-w-2xl text-base! leading-7! md:text-lg!">{text.description}</Typography>
           <div className="relative mt-8 flex w-full max-w-sm flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center">
             <Button className="w-full sm:w-auto" component={RouterLink} to={paths.docs} size="large" variant="contained" startIcon={<MenuBookRounded />}>{text.docs}</Button>
             <Button className="w-full sm:w-auto" component={RouterLink} to={paths.privacy} size="large" variant="outlined" startIcon={<PrivacyTipRounded />}>{text.privacy}</Button>
