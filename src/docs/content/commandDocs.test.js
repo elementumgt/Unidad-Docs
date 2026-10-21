@@ -45,6 +45,17 @@ describe("command documentation", () => {
     }
   });
 
+  it("uses the bot's real English text instead of placeholders", () => {
+    const placeholder = /^(Runs the |Value accepted by |Documentation for \/)/;
+    for (const command of commands) {
+      expect(command.summary.en).not.toMatch(placeholder);
+      for (const usage of command.usage) {
+        expect(usage.description.en).not.toMatch(placeholder);
+        for (const parameter of usage.parameters) expect(parameter.description.en).not.toMatch(placeholder);
+      }
+    }
+  });
+
   it("contains no duplicate command or operation syntax", () => {
     expect(new Set(commands.map(command => command.name)).size).toBe(commandCount);
     const syntax = commands.flatMap(command => command.usage.map(usage => usage.syntax));
