@@ -8,7 +8,7 @@ export const privacyDocument = Object.freeze({
     "Esta política explica qué información procesa Unidad, para qué se utiliza y cómo puedes ejercer control sobre ella.",
     "This policy explains what information Unidad processes, why it is used, and how you can exercise control over it.",
   ),
-  updated: bilingual("8 de septiembre de 2026", "September 8, 2026"),
+  updated: bilingual("20 de octubre de 2026", "October 20, 2026"),
   sections: [
     {
       id: "alcance",
@@ -45,6 +45,18 @@ export const privacyDocument = Object.freeze({
           "Social features and submitted content",
           "Estados AFK y motivos, cumpleaños, relaciones familiares, perfiles sociales y favoritos, agradecimientos, atribución y recompensas de invitaciones, sorteos y participantes, sugerencias, reseñas, mensajes fijados dinámicamente, recordatorios, notas personales y contenido necesario para reportes o transcripciones de tickets.",
           "AFK status and reasons, birthdays, family relationships, social profiles and favorites, acknowledgements, invitation attribution and rewards, giveaways and participants, suggestions, reviews, sticky messages, reminders, personal notes, and content needed for reports or ticket transcripts.",
+        ),
+        subtitle(
+          "Servidor de Minecraft",
+          "Minecraft server",
+          "Si una comunidad configura esta función: el nombre de jugador de Minecraft que cada miembro vincula a su cuenta de Discord, el número de logros obtenidos en el juego y las recompensas recibidas por ellos; y la dirección del servidor, los canales y las credenciales RCON que define un administrador (la contraseña RCON se guarda cifrada). Los mensajes de chat, conexiones, muertes y logros del juego se publican en el canal de Discord configurado, y lo que se escribe en ese canal se envía al juego; el bot no guarda esos mensajes en su base de datos.",
+          "If a community configures this feature: the Minecraft player name each member links to their Discord account, the number of in-game achievements earned, and the rewards received for them; plus the server address, channels, and RCON credentials set by an administrator (the RCON password is stored encrypted). In-game chat messages, joins, deaths, and achievements are posted to the configured Discord channel, and what is written in that channel is sent to the game; the bot does not store those messages in its database.",
+        ),
+        subtitle(
+          "Misiones semanales",
+          "Weekly quests",
+          "Contadores semanales por miembro de mensajes enviados, sesiones de voz, partidas jugadas y logros de Minecraft, junto con las misiones ya reclamadas, para calcular el progreso y entregar las recompensas.",
+          "Weekly per-member counters of messages sent, voice sessions, games played, and Minecraft achievements, along with quests already claimed, used to track progress and deliver rewards.",
         ),
         subtitle(
           "Música",
@@ -91,6 +103,7 @@ export const privacyDocument = Object.freeze({
             "Mantener sistemas de XP, economía, roles, tickets, coaching, eventos y voz.",
             "Gestionar perfiles sociales, cumpleaños, invitaciones, sorteos, sugerencias, recordatorios, starboard y juegos comunitarios.",
             "Buscar, reproducir y restaurar música, así como mostrar un historial solicitado por la comunidad.",
+            "Vincular cuentas de Minecraft, mantener la whitelist del servidor, mostrar su estado, conectar su chat con Discord y calcular el progreso de las misiones semanales.",
             "Enviar al proveedor configurado el contenido escrito en el canal de chatbot para generar una respuesta.",
             "Investigar errores, proteger la infraestructura y mejorar estabilidad y rendimiento.",
           ],
@@ -100,6 +113,7 @@ export const privacyDocument = Object.freeze({
             "Operate XP, economy, roles, tickets, coaching, events, and voice systems.",
             "Manage social profiles, birthdays, invitations, giveaways, suggestions, reminders, starboard, and community games.",
             "Search, play, and restore music, and display community-requested history.",
+            "Link Minecraft accounts, maintain the server whitelist, show its status, connect its chat with Discord, and track weekly quest progress.",
             "Send content written in the configured chatbot channel to the configured provider to generate a response.",
             "Investigate errors, protect infrastructure, and improve stability and performance.",
           ],
@@ -123,6 +137,7 @@ export const privacyDocument = Object.freeze({
             "Discord, para recibir eventos, mostrar respuestas y administrar recursos autorizados.",
             "Proveedores musicales como YouTube, Spotify, SoundCloud y Apple Music, y el servicio Lavalink, para resolver búsquedas y reproducir contenido.",
             "Twitch, cuando un servidor configura avisos de creadores.",
+            "El servidor de Minecraft que configure cada comunidad, que recibe los nombres de jugador para su whitelist y los mensajes escritos en el canal de chat enlazado.",
             "El proveedor de chatbot configurado por el operador, de forma predeterminada un endpoint compatible con OpenAI, cuando un administrador habilita el canal y existe una clave de API.",
             "Proveedores de consultas solicitadas: GIPHY, Open Trivia DB, servicios de dilemas, discord.js, GitHub, npm, Apple iTunes, CoinGecko, disease.sh, MyMemory, Open-Meteo, Anagramica e is.gd, según el comando utilizado.",
             "Infraestructura administrada por el operador para PostgreSQL, Redis, registros y copias de seguridad.",
@@ -132,6 +147,7 @@ export const privacyDocument = Object.freeze({
             "Discord, to receive events, display responses, and manage authorized resources.",
             "Music providers such as YouTube, Spotify, SoundCloud, and Apple Music, plus Lavalink, to resolve searches and play content.",
             "Twitch, when a server configures creator notifications.",
+            "The Minecraft server each community configures, which receives player names for its whitelist and the messages written in the linked chat channel.",
             "The chatbot provider configured by the operator, by default an OpenAI-compatible endpoint, when an administrator enables the channel and an API key is present.",
             "Providers for requested queries: GIPHY, Open Trivia DB, dilemma services, discord.js, GitHub, npm, Apple iTunes, CoinGecko, disease.sh, MyMemory, Open-Meteo, Anagramica, and is.gd, depending on the command used.",
             "Operator-managed infrastructure for PostgreSQL, Redis, logs, and backups.",
@@ -149,8 +165,8 @@ export const privacyDocument = Object.freeze({
       title: bilingual("6. Conservación y eliminación", "6. Retention and deletion"),
       blocks: [
         paragraph(
-          "La configuración, progresión, economía, historial musical, perfiles, relaciones, invitaciones, sorteos, sugerencias, recordatorios y demás registros funcionales se conservan mientras sean necesarios para operar la característica correspondiente o hasta que un administrador autorizado o el usuario solicite su eliminación. El estado AFK se elimina al volver a escribir; los datos temporales de caché y sesiones interactivas expiran automáticamente. Las copias de seguridad pueden conservar datos durante su ciclo operativo limitado.",
-          "Configuration, progression, economy, music history, profiles, relationships, invitations, giveaways, suggestions, reminders, and other functional records are retained while needed for the corresponding feature or until an authorized administrator or user requests deletion. AFK status is removed when the user writes again; temporary cache and interactive-session data expire automatically. Backups may retain data for their limited operational lifecycle.",
+          "La configuración, progresión, economía, historial musical, perfiles, relaciones, invitaciones, sorteos, sugerencias, recordatorios y demás registros funcionales se conservan mientras sean necesarios para operar la característica correspondiente o hasta que un administrador autorizado o el usuario solicite su eliminación. El estado AFK se elimina al volver a escribir. La vinculación de Minecraft se elimina al quitarla con /minecraft desvincular o al salir del servidor de Discord, y en ese momento el jugador se retira de la whitelist. El progreso de las misiones semanales se borra automáticamente pasadas 8 semanas. Los datos temporales de caché y sesiones interactivas expiran automáticamente. Las copias de seguridad pueden conservar datos durante su ciclo operativo limitado.",
+          "Configuration, progression, economy, music history, profiles, relationships, invitations, giveaways, suggestions, reminders, and other functional records are retained while needed for the corresponding feature or until an authorized administrator or user requests deletion. AFK status is removed when the user writes again. A Minecraft link is deleted when removed with /minecraft desvincular or when the member leaves the Discord server, and the player is then removed from the whitelist. Weekly quest progress is deleted automatically after 8 weeks. Temporary cache and interactive-session data expire automatically. Backups may retain data for their limited operational lifecycle.",
         ),
         paragraph(
           "Retirar el bot de un servidor detiene nuevo tratamiento en ese servidor, pero no garantiza la eliminación inmediata de todos los registros existentes. El propietario del servidor puede solicitar la eliminación completa indicando el identificador del servidor.",
