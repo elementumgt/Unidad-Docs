@@ -136,9 +136,9 @@ export default function DocsPage() {
       <Container maxWidth="lg" className="py-7 sm:py-10 lg:py-12">
         <header id="overview" className="scroll-mt-5">
           <Chip color="primary" icon={<MenuBookRounded />} label={labels.eyebrow} variant="outlined" />
-          <Typography component="h1" variant="h1" className="!mt-5 !text-3xl !leading-tight sm:!text-4xl xl:!text-5xl">{labels.title}</Typography>
-          <Typography color="text.secondary" className="!mt-3 max-w-3xl !text-base !leading-7">{labels.intro}</Typography>
-          <Typography color="text.secondary" className="!mt-2 !font-mono !text-xs">{labels.source}: {documentedSource.current.slice(0, 8)} · {labels.since}: {documentedSource.since.slice(0, 8)}</Typography>
+          <Typography component="h1" variant="h1" className="mt-5! text-3xl! leading-tight! sm:text-4xl! xl:text-5xl!">{labels.title}</Typography>
+          <Typography color="text.secondary" className="mt-3! max-w-3xl text-base! leading-7!">{labels.intro}</Typography>
+          <Typography color="text.secondary" className="mt-2! font-mono! text-xs!">{labels.source}: {documentedSource.current.slice(0, 8)} · {labels.since}: {documentedSource.since.slice(0, 8)}</Typography>
           <div className="mt-6 grid grid-cols-1 items-stretch gap-3 sm:grid-cols-3">
             <StatCard value={commandCount} label={labels.commands} />
             <StatCard value={actionCount} label={labels.actions} />
@@ -147,7 +147,7 @@ export default function DocsPage() {
         </header>
 
         <section aria-labelledby="guide-heading" className="mt-10">
-          <Typography id="guide-heading" component="h2" variant="h4" className="!mb-4 !font-black">{labels.guide}</Typography>
+          <Typography id="guide-heading" component="h2" variant="h4" className="mb-4! font-black!">{labels.guide}</Typography>
           <div className="grid gap-4 md:grid-cols-2">
             <GuideCard id="quick-start" icon={<TerminalRounded />} title={labels.quickTitle} body={labels.quickBody} />
             <GuideCard id="permissions" icon={<SecurityRounded />} title={labels.permissionTitle} body={labels.permissionBody} />
@@ -165,22 +165,22 @@ export default function DocsPage() {
             placeholder={labels.search}
             inputProps={{ "aria-label": labels.search }}
             InputProps={{ startAdornment: <InputAdornment position="start"><SearchRounded /></InputAdornment> }}
-            className="glass-control rounded-xl [&_.MuiOutlinedInput-root]:!rounded-xl"
+            className="glass-control rounded-xl [&_.MuiOutlinedInput-root]:rounded-xl!"
           />
-          <Typography color="text.secondary" className="!mt-2 !text-xs">{labels.results}: {visibleCount}/{commandCount}</Typography>
+          <Typography color="text.secondary" className="mt-2! text-xs!">{labels.results}: {visibleCount}/{commandCount}</Typography>
         </section>
 
         <div className="mt-10 space-y-12">
           {filteredGroups.map((group) => (
             <section aria-labelledby={`group-${group.id}`} key={group.id}>
-              <Typography id={`group-${group.id}`} component="h2" variant="h4" className="!font-black">{group.title[language]}</Typography>
-              <Typography color="text.secondary" className="!mt-2 !mb-5">{group.description[language]}</Typography>
+              <Typography id={`group-${group.id}`} component="h2" variant="h4" className="font-black!">{group.title[language]}</Typography>
+              <Typography color="text.secondary" className="mt-2! mb-5!">{group.description[language]}</Typography>
               <div className="space-y-5">
                 {group.commands.map((command) => <CommandCard command={command} language={language} labels={labels} key={command.name} />)}
               </div>
             </section>
           ))}
-          {filteredGroups.length === 0 && <Alert severity="info" className="!rounded-xl">{labels.noResults}</Alert>}
+          {filteredGroups.length === 0 && <Alert severity="info" className="rounded-xl!">{labels.noResults}</Alert>}
         </div>
       </Container>
     </SiteLayout>

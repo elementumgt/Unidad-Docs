@@ -1,0 +1,37 @@
+# Actualizaciones semanales agrupadas: un PR por ecosistema hacia dev,
+# que sigue el flujo normal dev → main. Las de seguridad llegan aparte en cuanto salen.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    target-branch: dev
+    schedule:
+      interval: weekly
+      day: monday
+      time: "08:00"
+      timezone: America/Guatemala
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "deps"
+    groups:
+      produccion:
+        dependency-type: production
+        update-types: [minor, patch]
+      desarrollo:
+        dependency-type: development
+        update-types: [minor, patch]
+
+  - package-ecosystem: github-actions
+    directory: /
+    target-branch: dev
+    schedule:
+      interval: weekly
+      day: monday
+      time: "08:00"
+      timezone: America/Guatemala
+    commit-message:
+      prefix: "ci"
+    groups:
+      acciones:
+        patterns: ["*"]
+

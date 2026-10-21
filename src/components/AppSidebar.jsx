@@ -43,9 +43,9 @@ function SidebarContent({ collapsed, navigationGroups, onNavigate, page }) {
                 to={paths[item.key]}
                 selected={page === item.key}
                 onClick={onNavigate}
-                className="!mb-1 !min-h-11 !rounded-lg !px-3"
+                className="mb-1! min-h-11! rounded-lg! px-3!"
               >
-                <ListItemIcon className="!min-w-10"><Icon color={page === item.key ? "primary" : "inherit"} /></ListItemIcon>
+                <ListItemIcon className="min-w-10!"><Icon color={page === item.key ? "primary" : "inherit"} /></ListItemIcon>
                 {!collapsed && <ListItemText primary={item.label[language]} primaryTypographyProps={{ fontSize: 14, fontWeight: page === item.key ? 750 : 550 }} />}
               </ListItemButton>
             );
@@ -55,11 +55,11 @@ function SidebarContent({ collapsed, navigationGroups, onNavigate, page }) {
 
         {!collapsed && navigationGroups.length > 0 && (
           <>
-            <Divider className="!my-4" />
+            <Divider className="my-4!" />
             <nav aria-label={language === "es" ? "Índice de la página" : "Page index"}>
               {navigationGroups.map((group) => (
                 <div className="mb-5" key={group.id}>
-                  <Typography color="primary" className="!mb-1 !px-3 !text-[11px] !font-black !uppercase !tracking-[0.14em]">
+                  <Typography color="primary" className="mb-1! px-3! text-[11px]! font-black! uppercase! tracking-[0.14em]!">
                     {group.label[language]}
                   </Typography>
                   <List dense disablePadding>
@@ -70,7 +70,7 @@ function SidebarContent({ collapsed, navigationGroups, onNavigate, page }) {
                         selected={activeId === item.id}
                         aria-current={activeId === item.id ? "location" : undefined}
                         onClick={onNavigate}
-                        className="!mb-0.5 !rounded-lg border-l-[3px] border-l-transparent !px-3 !py-1.5"
+                        className="mb-0.5! rounded-lg! border-l-[3px] border-l-transparent px-3! py-1.5!"
                         key={item.id}
                         sx={{ "&.Mui-selected": { borderLeftColor: "primary.main" } }}
                       >
@@ -91,7 +91,7 @@ function SidebarContent({ collapsed, navigationGroups, onNavigate, page }) {
 export default function AppSidebar({ collapsed, mobileOpen, navigationGroups, onCloseMobile, page }) {
   return (
     <>
-      <aside className={`glass-card hidden h-full shrink-0 overflow-hidden !rounded-none border-y-0 border-l-0 transition-[width] duration-200 lg:block ${collapsed ? "w-[72px]" : "w-[280px]"}`}>
+      <aside className={`glass-card hidden h-full shrink-0 overflow-hidden rounded-none! border-y-0 border-l-0 transition-[width] duration-200 lg:block ${collapsed ? "w-[72px]" : "w-[280px]"}`}>
         <SidebarContent collapsed={collapsed} navigationGroups={navigationGroups} page={page} />
       </aside>
       <Drawer
