@@ -11,14 +11,28 @@ const outputPath = join(docsRoot, "src", "docs", "content", "commandCatalogSnaps
 const statsPath = join(docsRoot, "src", "docs", "content", "commandCatalogStats.js");
 const referenceCommit = "125b0311bdd0ba7e95a12804e31f6ba626e6f407";
 
-function serializeParameter(option) {
+// Todo el texto sale del bot: español del código, inglés de src/i18n/en y
+// categorías/acceso de src/commandCatalog.js. Aquí no se escribe nada a mano.
+const { commandTranslations } = await import(pathToFileURL(join(botRoot, "src", "i18n", "commandLocalizations.js")));
+const { commandCategories, commandAccess, defaultCommandAccess } = await import(pathToFileURL(join(botRoot, "src", "commandCatalog.js")));
+const english = commandTranslations.en;
+
+function translated(command, key) {
+  const text = english[command]?.[key];
+  if (!text) throw new Error(`Falta la traducción al inglés de "${key}" en Unidad-Bot (src/i18n/en/commands/${command}.json)`);
+  return text;
+}
+
+function serializeParameter(option, command, path) {
+  const key = `${path} ${option.name}`;
   const result = {
     name: option.name,
     description: option.description,
+    descriptionEn: translated(command, key),
     type: option.type,
     required: Boolean(option.required),
     autocomplete: Boolean(option.autocomplete),
-    choices: (option.choices ?? []).map(({ name, value }) => ({ name, value })),
+    choices: (option.choices ?? []).map(({ name, value }) => ({ name, nameEn: translated(command, `${key}=${value}`), value })),
   };
 
   for (const [source, target] of [
@@ -34,16 +48,18 @@ function serializeParameter(option) {
   return result;
 }
 
-function collectUsages(node, path = []) {
+function collectUsages(node, command, path = []) {
   const children = (node.options ?? []).filter((option) => option.type === 1 || option.type === 2);
   if (children.length) {
-    return children.flatMap((child) => collectUsages(child, [...path, child.name]));
+    return children.flatMap((child) => collectUsages(child, command, [...path, child.name]));
   }
 
+  const key = [command, ...path].join(" ");
   return [{
     path,
     description: node.description,
-    parameters: (node.options ?? []).map(serializeParameter),
+    descriptionEn: translated(command, key),
+    parameters: (node.options ?? []).map((option) => serializeParameter(option, command, key)),
   }];
 }
 
@@ -58,9 +74,10 @@ async function loadCommands() {
     commands.push({
       name: command.name,
       description: command.description,
+      descriptionEn: translated(command.name, command.name),
       defaultMemberPermissions: command.default_member_permissions ?? null,
       dmPermission: command.dm_permission ?? null,
-      usages: collectUsages(command),
+      usages: collectUsages(command, command.name),
     });
   }
 
@@ -72,7 +89,14 @@ const sourceCommit = execFileSync("git", ["rev-parse", "HEAD"], {
   encoding: "utf8",
 }).trim();
 const commands = await loadCommands();
-const snapshot = { sourceCommit, referenceCommit, commands };
+const snapshot = {
+  sourceCommit,
+  referenceCommit,
+  categories: commandCategories,
+  access: commandAccess,
+  defaultAccess: defaultCommandAccess,
+  commands,
+};
 const source = `// Generated from bot-unidad command builders. Run npm run docs:sync to update.\nexport const commandCatalogSnapshot = ${JSON.stringify(snapshot, null, 2)};\n`;
 
 await writeFile(outputPath, source, "utf8");

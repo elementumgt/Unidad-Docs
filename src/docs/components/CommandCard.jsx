@@ -33,7 +33,7 @@ export default function CommandCard({ command, language, labels }) {
                         <Chip color={parameter.required ? "warning" : "default"} label={parameter.required ? labels.required : labels.optional} size="small" className="h-5! text-[10px]!" />
                       </div>
                       <Typography color="text.secondary" className="mt-1! text-xs! leading-5!">{parameter.description[language]}</Typography>
-                      {parameter.constraints && <Typography color="text.secondary" className="mt-1! font-mono! text-[10px]!">{parameter.constraints}</Typography>}
+                      {parameter.constraints[language] && <Typography color="text.secondary" className="mt-1! font-mono! text-[10px]!">{parameter.constraints[language]}</Typography>}
                     </div>
                   ))}
                 </div>
