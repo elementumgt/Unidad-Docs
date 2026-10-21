@@ -1,4 +1,4 @@
-import { CssBaseline, ThemeProvider, useMediaQuery } from "@mui/material";
+import { CssBaseline, StyledEngineProvider, ThemeProvider, useMediaQuery } from "@mui/material";
 import { useEffect, useMemo, useState } from "react";
 import { createBrandTheme } from "../theme.js";
 import { normalizeLanguage, normalizeTheme, resolveTheme } from "../lib/preferences.js";
@@ -36,10 +36,12 @@ export default function PreferencesProvider({ children }) {
 
   return (
     <PreferencesContext.Provider value={value}>
-      <ThemeProvider theme={muiTheme}>
-        <CssBaseline enableColorScheme />
-        {children}
-      </ThemeProvider>
+      <StyledEngineProvider enableCssLayer>
+        <ThemeProvider theme={muiTheme}>
+          <CssBaseline enableColorScheme />
+          {children}
+        </ThemeProvider>
+      </StyledEngineProvider>
     </PreferencesContext.Provider>
   );
 }

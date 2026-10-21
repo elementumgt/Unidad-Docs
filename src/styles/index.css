@@ -1,6 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Sin preflight: MUI define los estilos base (como corePlugins.preflight: false en v3).
+   MUI va en su propia capa (StyledEngineProvider enableCssLayer) por debajo de las
+   utilidades, para que las clases de Tailwind sigan ganándole como en v3. */
+@layer theme, base, mui, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme {
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+}
 
 :root {
   font-synthesis: none;
