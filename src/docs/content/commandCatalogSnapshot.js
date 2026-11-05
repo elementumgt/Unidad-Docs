@@ -1,6 +1,6 @@
 // Generated from bot-unidad command builders. Run npm run docs:sync to update.
 export const commandCatalogSnapshot = {
-  "sourceCommit": "e85b3e8a8a5159aaee89d7bc965b27fcb231fd5a",
+  "sourceCommit": "7b428182688d47df9757160ea290e777c3871f10",
   "referenceCommit": "125b0311bdd0ba7e95a12804e31f6ba626e6f407",
   "categories": [
     {
@@ -79,6 +79,7 @@ export const commandCatalogSnapshot = {
         "invites",
         "event",
         "creator",
+        "noticias",
         "coaching",
         "scrim",
         "ticket"
@@ -190,6 +191,10 @@ export const commandCatalogSnapshot = {
     "module": {
       "es": "Administrador interno + Administrar servidor.",
       "en": "Internal Admin + Manage Server."
+    },
+    "noticias": {
+      "es": "lista: todos. agregar, quitar y probar: Staff.",
+      "en": "list: everyone. add, remove and test: Staff."
     },
     "nivel": {
       "es": "Consulta pública; cambios de XP y recompensas requieren Staff + Administrar servidor.",
@@ -6426,6 +6431,94 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "maxLength": 36,
+              "channelTypes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "noticias",
+      "description": "Noticias automáticas por RSS en los canales que elijas",
+      "descriptionEn": "Automatic RSS news in the channels you choose",
+      "defaultMemberPermissions": null,
+      "dmPermission": null,
+      "usages": [
+        {
+          "path": [
+            "agregar"
+          ],
+          "description": "(Staff) Publica en un canal las noticias nuevas de un feed RSS",
+          "descriptionEn": "(Staff) Posts new items from an RSS feed in a channel",
+          "parameters": [
+            {
+              "name": "url",
+              "description": "Dirección del feed RSS o Atom",
+              "descriptionEn": "RSS or Atom feed address",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 500,
+              "channelTypes": []
+            },
+            {
+              "name": "canal",
+              "description": "Canal donde llegarán las noticias",
+              "descriptionEn": "Channel where the news will arrive",
+              "type": 7,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": [
+                0,
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "path": [
+            "quitar"
+          ],
+          "description": "(Staff) Deja de publicar las noticias de una fuente",
+          "descriptionEn": "(Staff) Stops posting news from a source",
+          "parameters": [
+            {
+              "name": "fuente",
+              "description": "Fuente a quitar",
+              "descriptionEn": "Source to remove",
+              "type": 3,
+              "required": true,
+              "autocomplete": true,
+              "choices": [],
+              "channelTypes": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "lista"
+          ],
+          "description": "Lista las fuentes de noticias del servidor",
+          "descriptionEn": "Lists the server's news sources",
+          "parameters": []
+        },
+        {
+          "path": [
+            "probar"
+          ],
+          "description": "(Staff) Publica ahora la noticia más reciente de una fuente",
+          "descriptionEn": "(Staff) Posts the latest item from a source now",
+          "parameters": [
+            {
+              "name": "fuente",
+              "description": "Fuente a probar",
+              "descriptionEn": "Source to test",
+              "type": 3,
+              "required": true,
+              "autocomplete": true,
+              "choices": [],
               "channelTypes": []
             }
           ]
