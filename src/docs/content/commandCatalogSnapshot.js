@@ -1,6 +1,6 @@
 // Generated from bot-unidad command builders. Run npm run docs:sync to update.
 export const commandCatalogSnapshot = {
-  "sourceCommit": "7b428182688d47df9757160ea290e777c3871f10",
+  "sourceCommit": "ef2f1187be7a4c7df35794030dacd0299798c5e4",
   "referenceCommit": "125b0311bdd0ba7e95a12804e31f6ba626e6f407",
   "categories": [
     {
@@ -6474,6 +6474,16 @@ export const commandCatalogSnapshot = {
                 0,
                 5
               ]
+            },
+            {
+              "name": "traducir",
+              "description": "Publica el título y el resumen traducidos al español",
+              "descriptionEn": "Posts the title and summary translated into Spanish",
+              "type": 5,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "channelTypes": []
             }
           ]
         },
