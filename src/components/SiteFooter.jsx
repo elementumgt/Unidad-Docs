@@ -5,7 +5,7 @@ import { legalPaths } from "../lib/paths.js";
 
 export default function SiteFooter() {
   const { language } = usePreferences();
-  const paths = legalPaths();
+  const paths = legalPaths;
 
   return (
     <footer className="glass-nav z-10 flex min-h-12 shrink-0 items-center justify-center border-b-0 border-t px-3 py-2 sm:justify-between sm:px-6">

@@ -3,14 +3,18 @@ import ChevronRightRounded from "@mui/icons-material/ChevronRightRounded";
 import MenuRounded from "@mui/icons-material/MenuRounded";
 import { AppBar, Box, IconButton, Link, Toolbar, Tooltip, Typography } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import unidadLogo from "../../assets/media/unidad.png";
+import unidadLogo from "../../assets/media/unidad.webp";
 import { usePreferences } from "../hooks/usePreferences.js";
 import { legalPaths } from "../lib/paths.js";
 import PreferenceControls from "./PreferenceControls.jsx";
 
 export default function SiteHeader({ collapsed, onOpenMobile, onToggleCollapsed, page }) {
   const { language } = usePreferences();
-  const paths = legalPaths();
+  // El mismo texto para el tooltip y para los lectores de pantalla.
+  const collapseLabel = collapsed
+    ? (language === "es" ? "Expandir menú" : "Expand menu")
+    : (language === "es" ? "Minimizar menú" : "Collapse menu");
+  const paths = legalPaths;
   const navItems = [
     { href: paths.docs, label: language === "es" ? "Documentación" : "Documentation", page: "docs" },
     { href: paths.privacy, label: language === "es" ? "Privacidad" : "Privacy", page: "privacy" },
@@ -23,8 +27,8 @@ export default function SiteHeader({ collapsed, onOpenMobile, onToggleCollapsed,
         <Tooltip title={language === "es" ? "Abrir menú" : "Open menu"}>
           <IconButton className="shrink-0 lg:hidden!" onClick={onOpenMobile} aria-label={language === "es" ? "Abrir menú" : "Open menu"}><MenuRounded /></IconButton>
         </Tooltip>
-        <Tooltip title={collapsed ? (language === "es" ? "Expandir menú" : "Expand menu") : (language === "es" ? "Minimizar menú" : "Collapse menu")}>
-          <IconButton className="hidden! shrink-0 lg:inline-flex!" onClick={onToggleCollapsed} aria-label={collapsed ? "Expandir menú" : "Minimizar menú"}>
+        <Tooltip title={collapseLabel}>
+          <IconButton className="hidden! shrink-0 lg:inline-flex!" onClick={onToggleCollapsed} aria-label={collapseLabel}>
             {collapsed ? <ChevronRightRounded /> : <ChevronLeftRounded />}
           </IconButton>
         </Tooltip>

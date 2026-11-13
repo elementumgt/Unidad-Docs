@@ -1,16 +1,17 @@
+import { readSetting, saveSetting } from "../lib/storage.js";
 import { useState } from "react";
 import AppSidebar from "./AppSidebar.jsx";
 import SiteFooter from "./SiteFooter.jsx";
 import SiteHeader from "./SiteHeader.jsx";
 
 export default function SiteLayout({ children, navigationGroups = [], page }) {
-  const [collapsed, setCollapsed] = useState(() => localStorage.getItem("unidad-sidebar-collapsed") === "true");
+  const [collapsed, setCollapsed] = useState(() => readSetting("unidad-sidebar-collapsed") === "true");
   const [mobileOpen, setMobileOpen] = useState(false);
 
   function toggleCollapsed() {
     setCollapsed((current) => {
       const next = !current;
-      localStorage.setItem("unidad-sidebar-collapsed", String(next));
+      saveSetting("unidad-sidebar-collapsed", String(next));
       return next;
     });
   }

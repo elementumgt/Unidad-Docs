@@ -7,8 +7,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -29,7 +27,7 @@ jobs:
           node-version: "24"
           cache: npm
 
-      - run: npm ci
+      - run: npm ci --ignore-scripts
 
       - id: pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
@@ -46,6 +44,10 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-24.04
+    # Solo este job publica: el build (npm ci y vite) no recibe estos permisos.
+    permissions:
+      pages: write
+      id-token: write
     timeout-minutes: 5
     environment:
       name: github-pages

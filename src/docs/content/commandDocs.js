@@ -33,7 +33,7 @@ function parameterDetails(parameter) {
 const byName = new Map(commandCatalogSnapshot.commands.map(command => [command.name, command]));
 export const commandGroups = categories.map(group => ({ ...group, commands: group.commands.map(name => {
   const command = byName.get(name); if (!command) throw new Error(`Missing command snapshot: ${name}`); byName.delete(name);
-  return { name, summary: t(command.description, command.descriptionEn), access: access[name] ?? defaultAccess, defaultMemberPermissions: command.defaultMemberPermissions, dmPermission: command.dmPermission, usage: command.usages.map(usage => ({ syntax: syntaxFor(command, usage), example: exampleFor(command, usage), description: t(usage.description, usage.descriptionEn), parameters: usage.parameters.map(parameterDetails) })) };
+  return { name, summary: t(command.description, command.descriptionEn), access: access[name] ?? defaultAccess, usage: command.usages.map(usage => ({ syntax: syntaxFor(command, usage), example: exampleFor(command, usage), description: t(usage.description, usage.descriptionEn), parameters: usage.parameters.map(parameterDetails) })) };
 }) }));
 if (byName.size) throw new Error(`Unclassified command documentation: ${[...byName.keys()].join(", ")}`);
 

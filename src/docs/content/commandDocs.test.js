@@ -3,7 +3,7 @@ import { actionCount, commandCount, commandGroups, documentedSource } from "./co
 import { commandCatalogSnapshot } from "./commandCatalogSnapshot.js";
 
 // Lo esperado sale de la instantánea generada desde el bot (npm run docs:sync):
-// si el bot agrega un comando que commandDocs.js no clasifica, esta prueba falla.
+// si el bot agrega un comando sin clasificar en su src/commandCatalog.js, esta prueba falla.
 const expectedActions = Object.fromEntries(
   commandCatalogSnapshot.commands.map(command => [command.name, command.usages.length]),
 );
