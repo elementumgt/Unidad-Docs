@@ -4,7 +4,7 @@ import PrivacyTipRounded from "@mui/icons-material/PrivacyTipRounded";
 import VerifiedUserRounded from "@mui/icons-material/VerifiedUserRounded";
 import { Box, Button, Chip, Container, Paper, Typography } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import unidadLogo from "../../../assets/media/unidad.png";
+import unidadLogo from "../../../assets/media/unidad.webp";
 import SiteLayout from "../../components/SiteLayout.jsx";
 import { usePreferences } from "../../hooks/usePreferences.js";
 import { legalPaths } from "../../lib/paths.js";
@@ -51,7 +51,7 @@ const copy = {
 export default function HomePage() {
   const { language } = usePreferences();
   const text = copy[language];
-  const paths = legalPaths();
+  const paths = legalPaths;
 
   return (
     <SiteLayout page="home">

@@ -163,8 +163,10 @@ export default function DocsPage() {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder={labels.search}
-            inputProps={{ "aria-label": labels.search }}
-            InputProps={{ startAdornment: <InputAdornment position="start"><SearchRounded /></InputAdornment> }}
+            slotProps={{
+              htmlInput: { "aria-label": labels.search },
+              input: { startAdornment: <InputAdornment position="start"><SearchRounded /></InputAdornment> },
+            }}
             className="glass-control rounded-xl [&_.MuiOutlinedInput-root]:rounded-xl!"
           />
           <Typography color="text.secondary" className="mt-2! text-xs!">{labels.results}: {visibleCount}/{commandCount}</Typography>

@@ -1,6 +1,6 @@
 // Generated from bot-unidad command builders. Run npm run docs:sync to update.
 export const commandCatalogSnapshot = {
-  "sourceCommit": "ef2f1187be7a4c7df35794030dacd0299798c5e4",
+  "sourceCommit": "c515be640a41d8fc6fc93dc1618d12756075df43",
   "referenceCommit": "125b0311bdd0ba7e95a12804e31f6ba626e6f407",
   "categories": [
     {
@@ -80,6 +80,8 @@ export const commandCatalogSnapshot = {
         "event",
         "creator",
         "noticias",
+        "bluesky",
+        "estrenos",
         "coaching",
         "scrim",
         "ticket"
@@ -177,8 +179,8 @@ export const commandCatalogSnapshot = {
       "en": "Internal Admin + Manage Server."
     },
     "cmd": {
-      "es": "Staff + Administrar servidor.",
-      "en": "Staff + Manage Server."
+      "es": "Staff.",
+      "en": "Staff."
     },
     "config": {
       "es": "Administrador interno + Administrar servidor.",
@@ -196,6 +198,14 @@ export const commandCatalogSnapshot = {
       "es": "lista: todos. agregar, quitar y probar: Staff.",
       "en": "list: everyone. add, remove and test: Staff."
     },
+    "bluesky": {
+      "es": "lista: todos. seguir, dejar y probar: Staff.",
+      "en": "list: everyone. follow, unfollow and test: Staff."
+    },
+    "estrenos": {
+      "es": "estado: todos. activar, desactivar y probar: Staff.",
+      "en": "status: everyone. enable, disable and test: Staff."
+    },
     "nivel": {
       "es": "Consulta pública; cambios de XP y recompensas requieren Staff + Administrar servidor.",
       "en": "Public viewing; XP and reward changes require Staff + Manage Server."
@@ -205,8 +215,8 @@ export const commandCatalogSnapshot = {
       "en": "Internal Admin + Manage Server."
     },
     "selfrole": {
-      "es": "Administrador interno + Gestionar roles.",
-      "en": "Internal Admin + Manage Roles."
+      "es": "Staff. Solo se asignan roles sin permisos privilegiados.",
+      "en": "Staff. Only roles without privileged permissions can be assigned."
     },
     "serverstats": {
       "es": "Administrador interno + Gestionar canales.",
@@ -290,8 +300,6 @@ export const commandCatalogSnapshot = {
       "name": "activities",
       "description": "Inicia una actividad de Discord en voz.",
       "descriptionEn": "Starts a Discord activity in voice.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -366,8 +374,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "Watch Together",
                   "value": "watchtogether"
                 }
-              ],
-              "channelTypes": []
+              ]
             }
           ]
         }
@@ -377,8 +384,6 @@ export const commandCatalogSnapshot = {
       "name": "admin",
       "description": "Comandos de administración del servidor",
       "descriptionEn": "Server administration commands",
-      "defaultMemberPermissions": "32",
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -394,10 +399,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
+              "choices": []
             }
           ]
         },
@@ -423,10 +425,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                4
-              ]
+              "choices": []
             }
           ]
         },
@@ -444,8 +443,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -463,10 +461,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
+              "choices": []
             }
           ]
         },
@@ -484,8 +479,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "emoji",
@@ -494,8 +488,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -529,8 +522,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "General (all other events)",
                   "value": "general"
                 }
-              ],
-              "channelTypes": []
+              ]
             },
             {
               "name": "canal",
@@ -539,10 +531,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
+              "choices": []
             }
           ]
         },
@@ -561,8 +550,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 7,
-              "channelTypes": []
+              "maxLength": 7
             }
           ]
         },
@@ -581,7 +569,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "channelTypes": []
+              "maxLength": 255
             }
           ]
         },
@@ -600,8 +588,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 7,
-              "channelTypes": []
+              "maxLength": 7
             }
           ]
         },
@@ -619,8 +606,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -638,8 +624,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -657,8 +642,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -676,8 +660,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         }
@@ -687,8 +670,6 @@ export const commandCatalogSnapshot = {
       "name": "afk",
       "description": "Gestiona tu estado ausente.",
       "descriptionEn": "Manages your away status.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -705,8 +686,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             }
           ]
         },
@@ -724,8 +704,6 @@ export const commandCatalogSnapshot = {
       "name": "announcement",
       "description": "Crea y edita anuncios.",
       "descriptionEn": "Creates and edits announcements.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -741,11 +719,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0,
-                5
-              ]
+              "choices": []
             },
             {
               "name": "message",
@@ -756,8 +730,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 1,
-              "maxLength": 4000,
-              "channelTypes": []
+              "maxLength": 4000
             }
           ]
         },
@@ -775,11 +748,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0,
-                5
-              ]
+              "choices": []
             },
             {
               "name": "id",
@@ -788,8 +757,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "message",
@@ -800,8 +768,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 1,
-              "maxLength": 4000,
-              "channelTypes": []
+              "maxLength": 4000
             }
           ]
         }
@@ -811,8 +778,6 @@ export const commandCatalogSnapshot = {
       "name": "automod",
       "description": "Configura la moderación automática.",
       "descriptionEn": "Configures automatic moderation.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -828,8 +793,7 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -847,8 +811,7 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -866,8 +829,7 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -901,8 +863,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "List",
                   "value": "list"
                 }
-              ],
-              "channelTypes": []
+              ]
             },
             {
               "name": "channel",
@@ -911,10 +872,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
+              "choices": []
             }
           ]
         },
@@ -942,8 +900,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -962,8 +919,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         }
@@ -973,8 +929,6 @@ export const commandCatalogSnapshot = {
       "name": "autosetup",
       "description": "Crea configuraciones predeterminadas de Unidad.",
       "descriptionEn": "Creates Unidad's default configurations.",
-      "defaultMemberPermissions": "32",
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -1030,8 +984,6 @@ export const commandCatalogSnapshot = {
       "name": "birthdays",
       "description": "Cumpleaños del servidor.",
       "descriptionEn": "Server birthdays.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -1073,8 +1025,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 31,
-              "channelTypes": []
+              "maxValue": 31
             },
             {
               "name": "month",
@@ -1085,8 +1036,106 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 12,
-              "channelTypes": []
+              "maxValue": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "bluesky",
+      "description": "Publica en un canal lo que postean cuentas de Bluesky, con imagen",
+      "descriptionEn": "Posts what Bluesky accounts share to a channel, with images",
+      "usages": [
+        {
+          "path": [
+            "seguir"
+          ],
+          "description": "(Staff) Publica en un canal los posts nuevos de una cuenta de Bluesky",
+          "descriptionEn": "(Staff) Posts new posts from a Bluesky account to a channel",
+          "parameters": [
+            {
+              "name": "cuenta",
+              "description": "Usuario de Bluesky (usuario.bsky.social, @usuario o enlace al perfil)",
+              "descriptionEn": "Bluesky user (user.bsky.social, @user or profile link)",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 300
+            },
+            {
+              "name": "canal",
+              "description": "Canal donde llegarán los posts",
+              "descriptionEn": "Channel where the posts will arrive",
+              "type": 7,
+              "required": true,
+              "autocomplete": false,
+              "choices": []
+            },
+            {
+              "name": "idioma",
+              "description": "Idioma de los textos (por defecto español)",
+              "descriptionEn": "Language of the texts (Spanish by default)",
+              "type": 3,
+              "required": false,
+              "autocomplete": false,
+              "choices": [
+                {
+                  "name": "Español (traducido)",
+                  "nameEn": "Spanish (translated)",
+                  "value": "es"
+                },
+                {
+                  "name": "English (original)",
+                  "nameEn": "English (original)",
+                  "value": "en"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": [
+            "dejar"
+          ],
+          "description": "(Staff) Deja de publicar los posts de una cuenta",
+          "descriptionEn": "(Staff) Stops posting an account's posts",
+          "parameters": [
+            {
+              "name": "cuenta",
+              "description": "Cuenta a dejar de seguir",
+              "descriptionEn": "Account to unfollow",
+              "type": 3,
+              "required": true,
+              "autocomplete": true,
+              "choices": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "lista"
+          ],
+          "description": "Lista las cuentas de Bluesky que se publican en el servidor",
+          "descriptionEn": "Lists the Bluesky accounts posted in the server",
+          "parameters": []
+        },
+        {
+          "path": [
+            "probar"
+          ],
+          "description": "(Staff) Publica ahora el post más reciente de una cuenta",
+          "descriptionEn": "(Staff) Posts an account's latest post now",
+          "parameters": [
+            {
+              "name": "cuenta",
+              "description": "Cuenta a probar",
+              "descriptionEn": "Account to test",
+              "type": 3,
+              "required": true,
+              "autocomplete": true,
+              "choices": []
             }
           ]
         }
@@ -1096,8 +1145,6 @@ export const commandCatalogSnapshot = {
       "name": "bot",
       "description": "Información, enlaces y soporte de Unidad.",
       "descriptionEn": "Unidad info, links and support.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -1195,8 +1242,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 3,
-              "maxLength": 1000,
-              "channelTypes": []
+              "maxLength": 1000
             }
           ]
         }
@@ -1206,8 +1252,6 @@ export const commandCatalogSnapshot = {
       "name": "casino",
       "description": "Juegos de azar con la economía del servidor.",
       "descriptionEn": "Games of chance using the server economy.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -1224,8 +1268,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "minValue": 1,
-              "channelTypes": []
+              "minValue": 1
             }
           ]
         },
@@ -1244,8 +1287,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "minValue": 1,
-              "channelTypes": []
+              "minValue": 1
             }
           ]
         },
@@ -1279,8 +1321,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "Green",
                   "value": "green"
                 }
-              ],
-              "channelTypes": []
+              ]
             },
             {
               "name": "amount",
@@ -1290,8 +1331,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "minValue": 1,
-              "channelTypes": []
+              "minValue": 1
             }
           ]
         },
@@ -1310,8 +1350,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "minValue": 1,
-              "channelTypes": []
+              "minValue": 1
             }
           ]
         }
@@ -1321,8 +1360,6 @@ export const commandCatalogSnapshot = {
       "name": "cmd",
       "description": "Gestiona los comandos personalizados de texto",
       "descriptionEn": "Manages custom text commands",
-      "defaultMemberPermissions": "32",
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -1338,8 +1375,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "respuesta",
@@ -1348,8 +1384,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -1367,8 +1402,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -1386,8 +1420,6 @@ export const commandCatalogSnapshot = {
       "name": "coaching",
       "description": "Sistema de coaching",
       "descriptionEn": "Coaching system",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -1422,8 +1454,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "⏸️ Unavailable",
                   "value": "off"
                 }
-              ],
-              "channelTypes": []
+              ]
             }
           ]
         },
@@ -1449,8 +1480,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "posicion",
@@ -1460,8 +1490,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 50,
-              "channelTypes": []
+              "maxLength": 50
             }
           ]
         },
@@ -1479,8 +1508,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -1499,8 +1527,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 50,
-              "channelTypes": []
+              "maxLength": 50
             }
           ]
         },
@@ -1526,8 +1553,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -1546,8 +1572,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 50,
-              "channelTypes": []
+              "maxLength": 50
             },
             {
               "name": "nombre",
@@ -1557,8 +1582,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             },
             {
               "name": "emoji",
@@ -1568,8 +1592,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             },
             {
               "name": "rol",
@@ -1578,8 +1601,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "orden",
@@ -1588,8 +1610,7 @@ export const commandCatalogSnapshot = {
               "type": 4,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -1608,8 +1629,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 50,
-              "channelTypes": []
+              "maxLength": 50
             }
           ]
         },
@@ -1627,8 +1647,6 @@ export const commandCatalogSnapshot = {
       "name": "config",
       "description": "Gestiona la configuración del bot en este servidor",
       "descriptionEn": "Manages the bot's configuration on this server",
-      "defaultMemberPermissions": "32",
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -1718,8 +1736,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "Boost message",
                   "value": "boost.message"
                 }
-              ],
-              "channelTypes": []
+              ]
             },
             {
               "name": "valor",
@@ -1728,8 +1745,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -1747,8 +1763,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -1766,8 +1781,7 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "channel",
@@ -1776,10 +1790,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
+              "choices": []
             },
             {
               "name": "role",
@@ -1788,8 +1799,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -1808,8 +1818,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -1828,8 +1837,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 1000,
-              "channelTypes": []
+              "maxLength": 1000
             }
           ]
         },
@@ -1848,8 +1856,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 1000,
-              "channelTypes": []
+              "maxLength": 1000
             }
           ]
         },
@@ -1868,8 +1875,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 1000,
-              "channelTypes": []
+              "maxLength": 1000
             }
           ]
         },
@@ -1898,8 +1904,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "Closing via DM",
                   "value": "close"
                 }
-              ],
-              "channelTypes": []
+              ]
             },
             {
               "name": "message",
@@ -1909,8 +1914,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 1000,
-              "channelTypes": []
+              "maxLength": 1000
             }
           ]
         }
@@ -1920,8 +1924,6 @@ export const commandCatalogSnapshot = {
       "name": "creator",
       "description": "Gestión de creadores de contenido",
       "descriptionEn": "Content creator management",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -1937,8 +1939,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "dueno",
@@ -1947,8 +1948,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -1982,8 +1982,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -2001,8 +2000,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -2020,8 +2018,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         }
@@ -2031,8 +2028,6 @@ export const commandCatalogSnapshot = {
       "name": "economy",
       "description": "Economía completa del servidor.",
       "descriptionEn": "Full server economy.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -2144,8 +2139,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -2163,8 +2157,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "amount",
@@ -2174,8 +2167,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "minValue": 1,
-              "channelTypes": []
+              "minValue": 1
             }
           ]
         },
@@ -2194,8 +2186,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "minValue": 1,
-              "channelTypes": []
+              "minValue": 1
             }
           ]
         },
@@ -2214,8 +2205,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "minValue": 1,
-              "channelTypes": []
+              "minValue": 1
             }
           ]
         },
@@ -2233,8 +2223,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -2263,8 +2252,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "Bank",
                   "value": "bank"
                 }
-              ],
-              "channelTypes": []
+              ]
             }
           ]
         },
@@ -2283,8 +2271,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "minValue": 1,
-              "channelTypes": []
+              "minValue": 1
             }
           ]
         },
@@ -2303,8 +2290,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "minValue": 1,
-              "channelTypes": []
+              "minValue": 1
             },
             {
               "name": "role",
@@ -2313,8 +2299,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "nombre",
@@ -2324,8 +2309,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             },
             {
               "name": "descripcion",
@@ -2335,8 +2319,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 200,
-              "channelTypes": []
+              "maxLength": 200
             }
           ]
         },
@@ -2354,8 +2337,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -2373,8 +2355,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "amount",
@@ -2384,8 +2365,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "minValue": 1,
-              "channelTypes": []
+              "minValue": 1
             }
           ]
         },
@@ -2403,8 +2383,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "amount",
@@ -2414,8 +2393,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "minValue": 1,
-              "channelTypes": []
+              "minValue": 1
             }
           ]
         },
@@ -2433,10 +2411,78 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
+        }
+      ]
+    },
+    {
+      "name": "estrenos",
+      "description": "Avisos de cada episodio nuevo de los animes de Crunchyroll",
+      "descriptionEn": "Alerts for every new episode of Crunchyroll anime",
+      "usages": [
+        {
+          "path": [
+            "activar"
+          ],
+          "description": "(Staff) Elige el canal donde se avisan los episodios nuevos",
+          "descriptionEn": "(Staff) Choose the channel for new episode alerts",
+          "parameters": [
+            {
+              "name": "canal",
+              "description": "Canal de estrenos",
+              "descriptionEn": "Releases channel",
+              "type": 7,
+              "required": true,
+              "autocomplete": false,
+              "choices": []
+            },
+            {
+              "name": "idioma",
+              "description": "Idioma de los textos (por defecto español)",
+              "descriptionEn": "Language of the texts (Spanish by default)",
+              "type": 3,
+              "required": false,
+              "autocomplete": false,
+              "choices": [
+                {
+                  "name": "Español (traducido)",
+                  "nameEn": "Spanish (translated)",
+                  "value": "es"
+                },
+                {
+                  "name": "English (original)",
+                  "nameEn": "English (original)",
+                  "value": "en"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": [
+            "desactivar"
+          ],
+          "description": "(Staff) Deja de avisar los episodios nuevos",
+          "descriptionEn": "(Staff) Stops new episode alerts",
+          "parameters": []
+        },
+        {
+          "path": [
+            "estado"
+          ],
+          "description": "Muestra dónde se avisan los episodios nuevos",
+          "descriptionEn": "Shows where new episodes are announced",
+          "parameters": []
+        },
+        {
+          "path": [
+            "probar"
+          ],
+          "description": "(Staff) Publica ahora el episodio más reciente",
+          "descriptionEn": "(Staff) Posts the latest episode now",
+          "parameters": []
         }
       ]
     },
@@ -2444,8 +2490,6 @@ export const commandCatalogSnapshot = {
       "name": "event",
       "description": "Gestión de eventos del servidor",
       "descriptionEn": "Server event management",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -2477,8 +2521,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -2496,8 +2539,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         }
@@ -2507,8 +2549,6 @@ export const commandCatalogSnapshot = {
       "name": "family",
       "description": "Familia social del servidor.",
       "descriptionEn": "The server's social family.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -2524,8 +2564,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -2543,8 +2582,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -2562,8 +2600,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -2581,8 +2618,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -2608,8 +2644,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         }
@@ -2619,8 +2654,6 @@ export const commandCatalogSnapshot = {
       "name": "fun",
       "description": "Diversión y contenido ligero.",
       "descriptionEn": "Fun and lighthearted content.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -2682,8 +2715,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -2729,8 +2761,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -2749,8 +2780,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -2769,8 +2799,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -2789,8 +2818,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "user2",
@@ -2799,8 +2827,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -2819,8 +2846,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "text",
@@ -2830,8 +2856,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 1000,
-              "channelTypes": []
+              "maxLength": 1000
             }
           ]
         },
@@ -2851,8 +2876,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 1000,
-              "channelTypes": []
+              "maxLength": 1000
             }
           ]
         },
@@ -2872,8 +2896,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 1000,
-              "channelTypes": []
+              "maxLength": 1000
             }
           ]
         },
@@ -2893,8 +2916,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 1000,
-              "channelTypes": []
+              "maxLength": 1000
             }
           ]
         },
@@ -2914,8 +2936,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 1000,
-              "channelTypes": []
+              "maxLength": 1000
             }
           ]
         },
@@ -3006,8 +3027,6 @@ export const commandCatalogSnapshot = {
       "name": "games",
       "description": "Minijuegos.",
       "descriptionEn": "Minigames.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -3024,8 +3043,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             }
           ]
         },
@@ -3075,8 +3093,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "Scissors",
                   "value": "scissors"
                 }
-              ],
-              "channelTypes": []
+              ]
             }
           ]
         },
@@ -3126,8 +3143,6 @@ export const commandCatalogSnapshot = {
       "name": "giveaway",
       "description": "Sorteos persistentes.",
       "descriptionEn": "Persistent giveaways.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -3143,11 +3158,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0,
-                5
-              ]
+              "choices": []
             },
             {
               "name": "duration",
@@ -3156,8 +3167,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "winners",
@@ -3168,8 +3178,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 20,
-              "channelTypes": []
+              "maxValue": 20
             },
             {
               "name": "prize",
@@ -3179,8 +3188,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             }
           ]
         },
@@ -3198,11 +3206,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0,
-                5
-              ]
+              "choices": []
             },
             {
               "name": "duration",
@@ -3211,8 +3215,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "winners",
@@ -3223,8 +3226,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 20,
-              "channelTypes": []
+              "maxValue": 20
             },
             {
               "name": "prize",
@@ -3234,8 +3236,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             }
           ]
         },
@@ -3253,8 +3254,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -3272,8 +3272,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -3291,8 +3290,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -3310,8 +3308,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -3329,8 +3326,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -3348,8 +3344,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "duration",
@@ -3358,8 +3353,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "prize",
@@ -3369,8 +3363,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             }
           ]
         }
@@ -3380,8 +3373,6 @@ export const commandCatalogSnapshot = {
       "name": "guild",
       "description": "Información del servidor.",
       "descriptionEn": "Server information.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -3397,8 +3388,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -3432,8 +3422,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -3459,8 +3448,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "role",
@@ -3469,8 +3457,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -3496,8 +3483,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -3515,8 +3501,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -3534,8 +3519,6 @@ export const commandCatalogSnapshot = {
       "name": "help",
       "description": "Consulta los comandos disponibles y sus opciones.",
       "descriptionEn": "Shows the available commands and their options.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -3550,8 +3533,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 32,
-              "channelTypes": []
+              "maxLength": 32
             },
             {
               "name": "pagina",
@@ -3561,8 +3543,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "minValue": 1,
-              "channelTypes": []
+              "minValue": 1
             }
           ]
         }
@@ -3572,8 +3553,6 @@ export const commandCatalogSnapshot = {
       "name": "history",
       "description": "Muestra el historial reciente de música reproducida.",
       "descriptionEn": "Shows the recent history of played music.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -3589,8 +3568,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 25,
-              "channelTypes": []
+              "maxValue": 25
             }
           ]
         }
@@ -3600,8 +3578,6 @@ export const commandCatalogSnapshot = {
       "name": "images",
       "description": "Imágenes, avatares y tarjetas.",
       "descriptionEn": "Images, avatars and cards.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -3619,8 +3595,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             }
           ]
         },
@@ -3640,8 +3615,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             },
             {
               "name": "text2",
@@ -3651,8 +3625,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             }
           ]
         },
@@ -3681,8 +3654,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             },
             {
               "name": "text2",
@@ -3692,8 +3664,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             }
           ]
         },
@@ -3713,8 +3684,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             }
           ]
         },
@@ -3734,8 +3704,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             }
           ]
         },
@@ -3826,8 +3795,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -3846,8 +3814,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -3866,8 +3833,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -3886,8 +3852,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -3906,8 +3871,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -3926,8 +3890,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -3946,8 +3909,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -3966,8 +3928,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -3986,8 +3947,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4006,8 +3966,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4026,8 +3985,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4046,8 +4004,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4066,8 +4023,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4086,8 +4042,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "user2",
@@ -4096,8 +4051,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "user3",
@@ -4106,8 +4060,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4126,8 +4079,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4146,8 +4098,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4184,10 +4135,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
+              "choices": []
             },
             {
               "name": "image-url",
@@ -4196,8 +4144,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4225,8 +4172,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         }
@@ -4236,8 +4182,6 @@ export const commandCatalogSnapshot = {
       "name": "invite",
       "description": "Obtén enlaces para instalar y apoyar a Unidad.",
       "descriptionEn": "Get links to install and support Unidad.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -4251,8 +4195,6 @@ export const commandCatalogSnapshot = {
       "name": "invites",
       "description": "Estadísticas de invitaciones.",
       "descriptionEn": "Invite statistics.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -4268,8 +4210,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "amount",
@@ -4280,8 +4221,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 100000,
-              "channelTypes": []
+              "maxValue": 100000
             }
           ]
         },
@@ -4299,8 +4239,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "amount",
@@ -4311,8 +4250,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 100000,
-              "channelTypes": []
+              "maxValue": 100000
             }
           ]
         },
@@ -4330,8 +4268,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4367,8 +4304,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 100000,
-              "channelTypes": []
+              "maxValue": 100000
             },
             {
               "name": "rol",
@@ -4377,8 +4313,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4398,8 +4333,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 100000,
-              "channelTypes": []
+              "maxValue": 100000
             }
           ]
         }
@@ -4409,8 +4343,6 @@ export const commandCatalogSnapshot = {
       "name": "lobby",
       "description": "Gestiona los lobbies de voz temporales del servidor",
       "descriptionEn": "Manages the server's temporary voice lobbies",
-      "defaultMemberPermissions": "32",
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -4426,10 +4358,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                2
-              ]
+              "choices": []
             },
             {
               "name": "nombre",
@@ -4439,8 +4368,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 50,
-              "channelTypes": []
+              "maxLength": 50
             },
             {
               "name": "limite",
@@ -4451,8 +4379,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 0,
-              "maxValue": 99,
-              "channelTypes": []
+              "maxValue": 99
             },
             {
               "name": "rol",
@@ -4461,8 +4388,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "emoji",
@@ -4472,8 +4398,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 4,
-              "channelTypes": []
+              "maxLength": 4
             },
             {
               "name": "requiere_perfil",
@@ -4482,8 +4407,7 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4501,10 +4425,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                2
-              ]
+              "choices": []
             },
             {
               "name": "nombre",
@@ -4514,8 +4435,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 50,
-              "channelTypes": []
+              "maxLength": 50
             },
             {
               "name": "limite",
@@ -4526,8 +4446,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 0,
-              "maxValue": 99,
-              "channelTypes": []
+              "maxValue": 99
             },
             {
               "name": "rol",
@@ -4536,8 +4455,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "emoji",
@@ -4547,8 +4465,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 4,
-              "channelTypes": []
+              "maxLength": 4
             },
             {
               "name": "requiere_perfil",
@@ -4557,8 +4474,7 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4576,10 +4492,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                2
-              ]
+              "choices": []
             }
           ]
         },
@@ -4597,8 +4510,6 @@ export const commandCatalogSnapshot = {
       "name": "messages",
       "description": "Contador de mensajes y recompensas.",
       "descriptionEn": "Message counter and rewards.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -4614,8 +4525,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4651,8 +4561,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 2000000000,
-              "channelTypes": []
+              "maxValue": 2000000000
             },
             {
               "name": "rol",
@@ -4661,8 +4570,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4682,8 +4590,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 2000000000,
-              "channelTypes": []
+              "maxValue": 2000000000
             }
           ]
         },
@@ -4701,8 +4608,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "cantidad",
@@ -4713,8 +4619,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 2000000000,
-              "channelTypes": []
+              "maxValue": 2000000000
             }
           ]
         },
@@ -4732,8 +4637,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "cantidad",
@@ -4744,8 +4648,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 2000000000,
-              "channelTypes": []
+              "maxValue": 2000000000
             }
           ]
         }
@@ -4755,8 +4658,6 @@ export const commandCatalogSnapshot = {
       "name": "minecraft",
       "description": "Servidor de Minecraft de la comunidad",
       "descriptionEn": "The community's Minecraft server",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -4797,8 +4698,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 16,
-              "channelTypes": []
+              "maxLength": 16
             }
           ]
         },
@@ -4816,8 +4716,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4835,8 +4734,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4856,8 +4754,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 260,
-              "channelTypes": []
+              "maxLength": 260
             },
             {
               "name": "nombre",
@@ -4867,8 +4764,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 64,
-              "channelTypes": []
+              "maxLength": 64
             }
           ]
         },
@@ -4887,8 +4783,7 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4907,11 +4802,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0,
-                5
-              ]
+              "choices": []
             }
           ]
         },
@@ -4930,11 +4821,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0,
-                5
-              ]
+              "choices": []
             }
           ]
         },
@@ -4953,10 +4840,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                2
-              ]
+              "choices": []
             }
           ]
         },
@@ -4975,8 +4859,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -4995,8 +4878,7 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "entradas",
@@ -5005,8 +4887,7 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "muertes",
@@ -5015,8 +4896,7 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "logros",
@@ -5025,8 +4905,7 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "estado",
@@ -5035,8 +4914,7 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -5055,8 +4933,7 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -5084,8 +4961,7 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -5105,8 +4981,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 200,
-              "channelTypes": []
+              "maxLength": 200
             }
           ]
         },
@@ -5126,8 +5001,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 16,
-              "channelTypes": []
+              "maxLength": 16
             },
             {
               "name": "razon",
@@ -5137,8 +5011,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -5158,8 +5031,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 16,
-              "channelTypes": []
+              "maxLength": 16
             },
             {
               "name": "razon",
@@ -5169,8 +5041,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -5190,8 +5061,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 16,
-              "channelTypes": []
+              "maxLength": 16
             }
           ]
         },
@@ -5236,8 +5106,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "Disable",
                   "value": "off"
                 }
-              ],
-              "channelTypes": []
+              ]
             },
             {
               "name": "jugador",
@@ -5247,8 +5116,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 16,
-              "channelTypes": []
+              "maxLength": 16
             }
           ]
         },
@@ -5277,8 +5145,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 400,
-              "channelTypes": []
+              "maxLength": 400
             }
           ]
         }
@@ -5288,8 +5155,6 @@ export const commandCatalogSnapshot = {
       "name": "misiones",
       "description": "Misiones semanales de la comunidad con recompensas de Pepinillos y XP",
       "descriptionEn": "Weekly community missions with Pepinillos and XP rewards",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -5305,8 +5170,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -5324,8 +5188,6 @@ export const commandCatalogSnapshot = {
       "name": "moderation",
       "description": "Sanciones y advertencias de moderación.",
       "descriptionEn": "Moderation sanctions and warnings.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -5341,8 +5203,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "motivo",
@@ -5353,8 +5214,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 1,
-              "maxLength": 400,
-              "channelTypes": []
+              "maxLength": 400
             }
           ]
         },
@@ -5372,8 +5232,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "motivo",
@@ -5384,8 +5243,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 1,
-              "maxLength": 400,
-              "channelTypes": []
+              "maxLength": 400
             }
           ]
         },
@@ -5403,8 +5261,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "motivo",
@@ -5415,8 +5272,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 1,
-              "maxLength": 400,
-              "channelTypes": []
+              "maxLength": 400
             }
           ]
         },
@@ -5434,8 +5290,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "motivo",
@@ -5446,8 +5301,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 1,
-              "maxLength": 400,
-              "channelTypes": []
+              "maxLength": 400
             }
           ]
         },
@@ -5465,8 +5319,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "minutos",
@@ -5477,8 +5330,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 40320,
-              "channelTypes": []
+              "maxValue": 40320
             },
             {
               "name": "motivo",
@@ -5489,8 +5341,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 1,
-              "maxLength": 400,
-              "channelTypes": []
+              "maxLength": 400
             }
           ]
         },
@@ -5509,8 +5360,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 20,
-              "channelTypes": []
+              "maxLength": 20
             },
             {
               "name": "motivo",
@@ -5521,8 +5371,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 1,
-              "maxLength": 400,
-              "channelTypes": []
+              "maxLength": 400
             }
           ]
         },
@@ -5542,8 +5391,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 100,
-              "channelTypes": []
+              "maxValue": 100
             }
           ]
         },
@@ -5561,8 +5409,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "pagina",
@@ -5573,8 +5420,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 10000,
-              "channelTypes": []
+              "maxValue": 10000
             }
           ]
         },
@@ -5592,8 +5438,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "id",
@@ -5603,8 +5448,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 36,
-              "channelTypes": []
+              "maxLength": 36
             },
             {
               "name": "motivo",
@@ -5615,8 +5459,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 1,
-              "maxLength": 400,
-              "channelTypes": []
+              "maxLength": 400
             }
           ]
         },
@@ -5642,8 +5485,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -5661,8 +5503,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "motivo",
@@ -5673,8 +5514,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 1,
-              "maxLength": 400,
-              "channelTypes": []
+              "maxLength": 400
             }
           ]
         },
@@ -5692,8 +5532,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -5711,8 +5550,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -5730,8 +5568,7 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -5749,8 +5586,7 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -5768,8 +5604,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "motivo",
@@ -5780,8 +5615,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 1,
-              "maxLength": 400,
-              "channelTypes": []
+              "maxLength": 400
             }
           ]
         },
@@ -5799,8 +5633,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "minutos",
@@ -5811,8 +5644,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 525600,
-              "channelTypes": []
+              "maxValue": 525600
             },
             {
               "name": "motivo",
@@ -5823,8 +5655,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 1,
-              "maxLength": 400,
-              "channelTypes": []
+              "maxLength": 400
             }
           ]
         }
@@ -5834,8 +5665,6 @@ export const commandCatalogSnapshot = {
       "name": "module",
       "description": "Activa o desactiva módulos del bot",
       "descriptionEn": "Enables or disables bot modules",
-      "defaultMemberPermissions": "32",
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -5877,8 +5706,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "🔒 Moderation",
                   "value": "moderation"
                 }
-              ],
-              "channelTypes": []
+              ]
             },
             {
               "name": "estado",
@@ -5898,8 +5726,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "❌ Disable",
                   "value": "off"
                 }
-              ],
-              "channelTypes": []
+              ]
             }
           ]
         },
@@ -5917,8 +5744,6 @@ export const commandCatalogSnapshot = {
       "name": "music",
       "description": "Reproductor musical completo.",
       "descriptionEn": "Full-featured music player.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -6022,8 +5847,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -6042,8 +5866,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "minValue": 1,
-              "channelTypes": []
+              "minValue": 1
             }
           ]
         },
@@ -6062,8 +5885,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "minValue": 1,
-              "channelTypes": []
+              "minValue": 1
             }
           ]
         },
@@ -6082,8 +5904,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "minValue": 0,
-              "channelTypes": []
+              "minValue": 0
             }
           ]
         },
@@ -6103,8 +5924,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 100,
-              "channelTypes": []
+              "maxValue": 100
             }
           ]
         },
@@ -6148,8 +5968,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "Extreme",
                   "value": "earrape"
                 }
-              ],
-              "channelTypes": []
+              ]
             }
           ]
         }
@@ -6159,8 +5978,6 @@ export const commandCatalogSnapshot = {
       "name": "nivel",
       "description": "Niveles, XP y recompensas.",
       "descriptionEn": "Levels, XP and rewards.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -6176,8 +5993,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -6213,8 +6029,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 2000000000,
-              "channelTypes": []
+              "maxValue": 2000000000
             },
             {
               "name": "rol",
@@ -6223,8 +6038,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -6244,8 +6058,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 2000000000,
-              "channelTypes": []
+              "maxValue": 2000000000
             }
           ]
         },
@@ -6263,8 +6076,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "cantidad",
@@ -6275,8 +6087,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 0,
-              "maxValue": 2000000000,
-              "channelTypes": []
+              "maxValue": 2000000000
             }
           ]
         },
@@ -6294,8 +6105,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "cantidad",
@@ -6306,8 +6116,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 0,
-              "maxValue": 2000000000,
-              "channelTypes": []
+              "maxValue": 2000000000
             }
           ]
         }
@@ -6317,8 +6126,6 @@ export const commandCatalogSnapshot = {
       "name": "notepad",
       "description": "Notas personales, separadas por usuario y servidor.",
       "descriptionEn": "Personal notes, kept separate per user and server.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -6336,8 +6143,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 1,
-              "maxLength": 1500,
-              "channelTypes": []
+              "maxLength": 1500
             }
           ]
         },
@@ -6357,8 +6163,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 10000,
-              "channelTypes": []
+              "maxValue": 10000
             }
           ]
         },
@@ -6378,8 +6183,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 10000,
-              "channelTypes": []
+              "maxValue": 10000
             }
           ]
         },
@@ -6398,8 +6202,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 36,
-              "channelTypes": []
+              "maxLength": 36
             },
             {
               "name": "texto",
@@ -6410,8 +6213,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 1,
-              "maxLength": 1500,
-              "channelTypes": []
+              "maxLength": 1500
             }
           ]
         },
@@ -6430,8 +6232,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 36,
-              "channelTypes": []
+              "maxLength": 36
             }
           ]
         }
@@ -6441,8 +6242,6 @@ export const commandCatalogSnapshot = {
       "name": "noticias",
       "description": "Noticias automáticas por RSS en los canales que elijas",
       "descriptionEn": "Automatic RSS news in the channels you choose",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -6459,8 +6258,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             },
             {
               "name": "canal",
@@ -6469,11 +6267,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0,
-                5
-              ]
+              "choices": []
             },
             {
               "name": "traducir",
@@ -6482,8 +6276,7 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -6501,8 +6294,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": true,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -6528,8 +6320,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": true,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         }
@@ -6539,8 +6330,6 @@ export const commandCatalogSnapshot = {
       "name": "ping",
       "description": "Comprueba que el bot está activo.",
       "descriptionEn": "Checks that the bot is online.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -6554,8 +6343,6 @@ export const commandCatalogSnapshot = {
       "name": "play",
       "description": "Reproduce una canción de YouTube, Spotify o SoundCloud.",
       "descriptionEn": "Plays a song from YouTube, Spotify or SoundCloud.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -6569,8 +6356,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         }
@@ -6580,8 +6366,6 @@ export const commandCatalogSnapshot = {
       "name": "profile",
       "description": "Perfil social; por servidor o global según la configuración.",
       "descriptionEn": "Social profile; per server or global depending on the configuration.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -6613,8 +6397,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -6633,8 +6416,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 1000,
-              "channelTypes": []
+              "maxLength": 1000
             }
           ]
         },
@@ -6654,8 +6436,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 13,
-              "maxValue": 120,
-              "channelTypes": []
+              "maxValue": 120
             }
           ]
         },
@@ -6674,8 +6455,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 32,
-              "channelTypes": []
+              "maxLength": 32
             }
           ]
         },
@@ -6695,8 +6475,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -6716,8 +6495,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -6737,8 +6515,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -6758,8 +6535,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -6779,8 +6555,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -6800,8 +6575,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -6821,8 +6595,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -6842,8 +6615,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -6863,8 +6635,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -6884,8 +6655,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -6905,8 +6675,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -6926,8 +6695,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -6947,8 +6715,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -6968,8 +6735,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -6987,8 +6753,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -7007,8 +6772,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 64,
-              "channelTypes": []
+              "maxLength": 64
             }
           ]
         },
@@ -7027,8 +6791,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -7047,8 +6810,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 200,
-              "channelTypes": []
+              "maxLength": 200
             }
           ]
         }
@@ -7058,8 +6820,6 @@ export const commandCatalogSnapshot = {
       "name": "queue",
       "description": "Muestra la cola o elimina una canción pendiente.",
       "descriptionEn": "Shows the queue or removes a pending song.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -7074,8 +6834,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "minValue": 1,
-              "channelTypes": []
+              "minValue": 1
             }
           ]
         }
@@ -7085,8 +6844,6 @@ export const commandCatalogSnapshot = {
       "name": "radio",
       "description": "Radio en vivo mediante Lavalink.",
       "descriptionEn": "Live radio via Lavalink.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -7118,8 +6875,6 @@ export const commandCatalogSnapshot = {
       "name": "rank",
       "description": "Gestiona rangos de juego y lobbies de voz por rango",
       "descriptionEn": "Manages game ranks and rank-based voice lobbies",
-      "defaultMemberPermissions": "32",
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -7136,8 +6891,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 50,
-              "channelTypes": []
+              "maxLength": 50
             },
             {
               "name": "rank",
@@ -7147,8 +6901,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 50,
-              "channelTypes": []
+              "maxLength": 50
             },
             {
               "name": "label",
@@ -7158,8 +6911,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             },
             {
               "name": "tier",
@@ -7170,8 +6922,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 100,
-              "channelTypes": []
+              "maxValue": 100
             },
             {
               "name": "role_emoji",
@@ -7181,8 +6932,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 8,
-              "channelTypes": []
+              "maxLength": 8
             },
             {
               "name": "channel_emoji",
@@ -7192,8 +6942,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 8,
-              "channelTypes": []
+              "maxLength": 8
             }
           ]
         },
@@ -7212,8 +6961,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 50,
-              "channelTypes": []
+              "maxLength": 50
             },
             {
               "name": "rank",
@@ -7223,8 +6971,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 50,
-              "channelTypes": []
+              "maxLength": 50
             }
           ]
         },
@@ -7243,8 +6990,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 50,
-              "channelTypes": []
+              "maxLength": 50
             }
           ]
         },
@@ -7263,8 +7009,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 50,
-              "channelTypes": []
+              "maxLength": 50
             },
             {
               "name": "category",
@@ -7273,10 +7018,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                4
-              ]
+              "choices": []
             },
             {
               "name": "user_limit",
@@ -7287,8 +7029,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 99,
-              "channelTypes": []
+              "maxValue": 99
             },
             {
               "name": "requires_profile",
@@ -7297,8 +7038,7 @@ export const commandCatalogSnapshot = {
               "type": 5,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -7317,8 +7057,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 50,
-              "channelTypes": []
+              "maxLength": 50
             }
           ]
         }
@@ -7328,8 +7067,6 @@ export const commandCatalogSnapshot = {
       "name": "report",
       "description": "Reporta un error o usuario al equipo del servidor.",
       "descriptionEn": "Reports a bug or user to the server team.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -7354,8 +7091,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "User",
                   "value": "user"
                 }
-              ],
-              "channelTypes": []
+              ]
             },
             {
               "name": "description",
@@ -7366,8 +7102,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 10,
-              "maxLength": 1500,
-              "channelTypes": []
+              "maxLength": 1500
             }
           ]
         }
@@ -7377,8 +7112,6 @@ export const commandCatalogSnapshot = {
       "name": "scrim",
       "description": "Organizador de scrims y partidas internas con balanceo automático por rango",
       "descriptionEn": "Scrim and internal match organizer with automatic rank balancing",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -7395,8 +7128,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 80,
-              "channelTypes": []
+              "maxLength": 80
             },
             {
               "name": "modo",
@@ -7426,8 +7158,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "3v3 Open (6 players)",
                   "value": "open6"
                 }
-              ],
-              "channelTypes": []
+              ]
             },
             {
               "name": "hora",
@@ -7437,8 +7168,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 60,
-              "channelTypes": []
+              "maxLength": 60
             },
             {
               "name": "canal",
@@ -7447,11 +7177,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0,
-                5
-              ]
+              "choices": []
             }
           ]
         },
@@ -7477,8 +7203,6 @@ export const commandCatalogSnapshot = {
       "name": "search",
       "description": "Búsquedas y consultas externas.",
       "descriptionEn": "External searches and lookups.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -7495,8 +7219,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             }
           ]
         },
@@ -7515,8 +7238,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             }
           ]
         },
@@ -7535,8 +7257,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             }
           ]
         },
@@ -7555,8 +7276,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             }
           ]
         },
@@ -7574,8 +7294,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -7593,8 +7312,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "currency",
@@ -7603,8 +7321,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -7622,8 +7339,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -7641,8 +7357,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -7660,8 +7375,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -7679,8 +7393,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -7698,8 +7411,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -7717,8 +7429,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -7736,8 +7447,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "text",
@@ -7747,8 +7457,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             }
           ]
         },
@@ -7766,8 +7475,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         }
@@ -7777,8 +7485,6 @@ export const commandCatalogSnapshot = {
       "name": "seek",
       "description": "Cambia la posición de la canción actual.",
       "descriptionEn": "Changes the position of the current song.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -7793,8 +7499,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "minValue": 0,
-              "channelTypes": []
+              "minValue": 0
             }
           ]
         }
@@ -7804,8 +7509,6 @@ export const commandCatalogSnapshot = {
       "name": "selfrole",
       "description": "Gestiona los roles autoasignables del servidor",
       "descriptionEn": "Manages the server's self-assignable roles",
-      "defaultMemberPermissions": "268435456",
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -7821,8 +7524,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "etiqueta",
@@ -7831,8 +7533,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "categoria",
@@ -7841,8 +7542,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "orden",
@@ -7851,8 +7551,7 @@ export const commandCatalogSnapshot = {
               "type": 4,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -7870,8 +7569,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -7897,10 +7595,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
+              "choices": []
             },
             {
               "name": "estilo",
@@ -7920,8 +7615,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "Buttons",
                   "value": "buttons"
                 }
-              ],
-              "channelTypes": []
+              ]
             }
           ]
         },
@@ -7939,8 +7633,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "categorias",
@@ -7949,8 +7642,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "emoji",
@@ -7959,8 +7651,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "orden",
@@ -7969,8 +7660,7 @@ export const commandCatalogSnapshot = {
               "type": 4,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "rolgate",
@@ -7979,8 +7669,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "nota",
@@ -7989,8 +7678,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -8008,8 +7696,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -8035,8 +7722,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "categorias",
@@ -8045,8 +7731,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "titulo",
@@ -8055,8 +7740,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -8074,8 +7758,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -8093,8 +7776,6 @@ export const commandCatalogSnapshot = {
       "name": "serverstats",
       "description": "Canales contadores con estadísticas del servidor.",
       "descriptionEn": "Counter channels with server statistics.",
-      "defaultMemberPermissions": "16",
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -8214,8 +7895,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -8312,8 +7992,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "Time",
                   "value": "time"
                 }
-              ],
-              "channelTypes": []
+              ]
             }
           ]
         }
@@ -8323,8 +8002,6 @@ export const commandCatalogSnapshot = {
       "name": "setup",
       "description": "Asistente interactivo para configurar el bot en este servidor",
       "descriptionEn": "Interactive assistant to set up the bot on this server",
-      "defaultMemberPermissions": "8",
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -8377,8 +8054,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "Restore automatic detection",
                   "value": "clear"
                 }
-              ],
-              "channelTypes": []
+              ]
             },
             {
               "name": "channel",
@@ -8387,10 +8063,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
+              "choices": []
             }
           ]
         },
@@ -8424,8 +8097,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "Boost logs",
                   "value": "boostlogs"
                 }
-              ],
-              "channelTypes": []
+              ]
             },
             {
               "name": "channel",
@@ -8434,10 +8106,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
+              "choices": []
             }
           ]
         },
@@ -8481,8 +8150,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "Starboard",
                   "value": "starboard"
                 }
-              ],
-              "channelTypes": []
+              ]
             },
             {
               "name": "channel",
@@ -8491,10 +8159,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
+              "choices": []
             }
           ]
         },
@@ -8533,8 +8198,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "Word chain",
                   "value": "wordsnake"
                 }
-              ],
-              "channelTypes": []
+              ]
             },
             {
               "name": "channel",
@@ -8543,10 +8207,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
+              "choices": []
             }
           ]
         },
@@ -8575,8 +8236,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "Goodbye channel",
                   "value": "leavechannel"
                 }
-              ],
-              "channelTypes": []
+              ]
             },
             {
               "name": "channel",
@@ -8585,10 +8245,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
+              "choices": []
             }
           ]
         },
@@ -8606,10 +8263,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                4
-              ]
+              "choices": []
             },
             {
               "name": "role",
@@ -8618,8 +8272,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "channel",
@@ -8628,10 +8281,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
+              "choices": []
             },
             {
               "name": "logs",
@@ -8640,10 +8290,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
+              "choices": []
             }
           ]
         },
@@ -8661,10 +8308,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                2
-              ]
+              "choices": []
             },
             {
               "name": "channelname",
@@ -8674,8 +8318,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -8693,8 +8336,7 @@ export const commandCatalogSnapshot = {
               "type": 8,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -8712,10 +8354,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
+              "choices": []
             }
           ]
         },
@@ -8824,8 +8463,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "Welcome role",
                   "value": "welcomerole"
                 }
-              ],
-              "channelTypes": []
+              ]
             }
           ]
         }
@@ -8835,8 +8473,6 @@ export const commandCatalogSnapshot = {
       "name": "skip",
       "description": "Salta la canción actual o avanza a una posición de /queue.",
       "descriptionEn": "Skips the current song or jumps to a position in /queue.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -8851,8 +8487,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "minValue": 1,
-              "channelTypes": []
+              "minValue": 1
             }
           ]
         }
@@ -8862,8 +8497,6 @@ export const commandCatalogSnapshot = {
       "name": "soundboard",
       "description": "Efectos de sonido mediante Lavalink.",
       "descriptionEn": "Sound effects via Lavalink.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -9159,8 +8792,6 @@ export const commandCatalogSnapshot = {
       "name": "stickymessages",
       "description": "Mensajes fijados dinámicamente.",
       "descriptionEn": "Dynamically pinned messages.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -9176,10 +8807,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
+              "choices": []
             },
             {
               "name": "message",
@@ -9189,8 +8817,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 2000,
-              "channelTypes": []
+              "maxLength": 2000
             }
           ]
         },
@@ -9216,10 +8843,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": [
-                0
-              ]
+              "choices": []
             }
           ]
         }
@@ -9229,8 +8853,6 @@ export const commandCatalogSnapshot = {
       "name": "stop",
       "description": "Detiene la música y vacía la cola.",
       "descriptionEn": "Stops the music and clears the queue.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -9244,8 +8866,6 @@ export const commandCatalogSnapshot = {
       "name": "suggestions",
       "description": "Sugerencias comunitarias.",
       "descriptionEn": "Community suggestions.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -9263,8 +8883,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 3,
-              "maxLength": 1500,
-              "channelTypes": []
+              "maxLength": 1500
             }
           ]
         },
@@ -9282,8 +8901,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -9301,8 +8919,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         }
@@ -9312,8 +8929,6 @@ export const commandCatalogSnapshot = {
       "name": "thanks",
       "description": "Reconocimientos; por servidor o globales según la configuración.",
       "descriptionEn": "Recognition; per server or global depending on the configuration.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -9329,8 +8944,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -9348,8 +8962,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         }
@@ -9359,8 +8972,6 @@ export const commandCatalogSnapshot = {
       "name": "ticket",
       "description": "Gestión del sistema de tickets",
       "descriptionEn": "Ticket system management",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -9376,8 +8987,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "nombre",
@@ -9386,8 +8996,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "emoji",
@@ -9396,8 +9005,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "descripcion",
@@ -9406,8 +9014,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "orden",
@@ -9416,8 +9023,7 @@ export const commandCatalogSnapshot = {
               "type": 4,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -9435,8 +9041,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -9462,8 +9067,7 @@ export const commandCatalogSnapshot = {
               "type": 7,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -9481,8 +9085,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": false,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "motivo",
@@ -9492,8 +9095,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 500,
-              "channelTypes": []
+              "maxLength": 500
             }
           ]
         },
@@ -9537,8 +9139,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 1,
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -9556,8 +9157,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -9575,8 +9175,7 @@ export const commandCatalogSnapshot = {
               "type": 6,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -9596,8 +9195,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 1000,
-              "channelTypes": []
+              "maxValue": 1000
             },
             {
               "name": "formato",
@@ -9617,8 +9215,7 @@ export const commandCatalogSnapshot = {
                   "nameEn": "Text",
                   "value": "txt"
                 }
-              ],
-              "channelTypes": []
+              ]
             }
           ]
         },
@@ -9678,8 +9275,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 1,
-              "maxLength": 1000,
-              "channelTypes": []
+              "maxLength": 1000
             }
           ]
         }
@@ -9689,8 +9285,6 @@ export const commandCatalogSnapshot = {
       "name": "tools",
       "description": "Herramientas prácticas.",
       "descriptionEn": "Handy tools.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -9707,8 +9301,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -9726,8 +9319,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "text",
@@ -9737,8 +9329,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 80,
-              "channelTypes": []
+              "maxLength": 80
             }
           ]
         },
@@ -9765,8 +9356,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 1500,
-              "channelTypes": []
+              "maxLength": 1500
             }
           ]
         },
@@ -9785,8 +9375,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         },
@@ -9805,8 +9394,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 1000,
-              "channelTypes": []
+              "maxLength": 1000
             }
           ]
         },
@@ -9824,8 +9412,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -9843,8 +9430,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -9862,8 +9448,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         },
@@ -9890,8 +9475,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 1000,
-              "channelTypes": []
+              "maxLength": 1000
             }
           ]
         },
@@ -9909,8 +9493,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "message",
@@ -9920,8 +9503,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 1000,
-              "channelTypes": []
+              "maxLength": 1000
             }
           ]
         },
@@ -9941,8 +9523,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 5,
-              "channelTypes": []
+              "maxValue": 5
             },
             {
               "name": "message",
@@ -9952,8 +9533,7 @@ export const commandCatalogSnapshot = {
               "required": false,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 1000,
-              "channelTypes": []
+              "maxLength": 1000
             }
           ]
         },
@@ -9971,8 +9551,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "code",
@@ -9982,8 +9561,7 @@ export const commandCatalogSnapshot = {
               "required": true,
               "autocomplete": false,
               "choices": [],
-              "maxLength": 4000,
-              "channelTypes": []
+              "maxLength": 4000
             }
           ]
         },
@@ -10001,8 +9579,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             },
             {
               "name": "code",
@@ -10013,8 +9590,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 5,
-              "maxLength": 30,
-              "channelTypes": []
+              "maxLength": 30
             }
           ]
         }
@@ -10024,8 +9600,6 @@ export const commandCatalogSnapshot = {
       "name": "trigger",
       "description": "Ejecuta un comando de texto personalizado de este servidor",
       "descriptionEn": "Runs a custom text command from this server",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -10039,8 +9613,7 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": true,
-              "choices": [],
-              "channelTypes": []
+              "choices": []
             }
           ]
         }
@@ -10050,8 +9623,6 @@ export const commandCatalogSnapshot = {
       "name": "voice",
       "description": "Controla tu sala de voz temporal.",
       "descriptionEn": "Controls your temporary voice room.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [
@@ -10069,8 +9640,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 0,
-              "maxValue": 99,
-              "channelTypes": []
+              "maxValue": 99
             }
           ]
         },
@@ -10106,8 +9676,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minLength": 1,
-              "maxLength": 100,
-              "channelTypes": []
+              "maxLength": 100
             }
           ]
         }
@@ -10117,8 +9686,6 @@ export const commandCatalogSnapshot = {
       "name": "volume",
       "description": "Ajusta el volumen de la música.",
       "descriptionEn": "Adjusts the music volume.",
-      "defaultMemberPermissions": null,
-      "dmPermission": null,
       "usages": [
         {
           "path": [],
@@ -10134,8 +9701,7 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "minValue": 1,
-              "maxValue": 100,
-              "channelTypes": []
+              "maxValue": 100
             }
           ]
         }

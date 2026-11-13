@@ -1,11 +1,9 @@
-export function legalPaths() {
-  return {
-    docs: "/docs/",
-    home: "/",
-    privacy: "/privacidad/",
-    terms: "/terminos/",
-  };
-}
+export const legalPaths = Object.freeze({
+  docs: "/docs/",
+  home: "/",
+  privacy: "/privacidad/",
+  terms: "/terminos/",
+});
 
 export function pageFromPath(pathname) {
   const segments = String(pathname).toLowerCase().split("/").filter(Boolean);

@@ -30,3 +30,7 @@ for (const route of routes) {
   await mkdir(outputDirectory, { recursive: true });
   await writeFile(join(outputDirectory, "index.html"), html, "utf8");
 }
+
+// GitHub Pages sirve 404.html para cualquier ruta que no exista: con la app ahí,
+// el enrutador lleva al inicio en lugar de mostrar el 404 genérico de GitHub.
+await writeFile(join("dist", "404.html"), source, "utf8");

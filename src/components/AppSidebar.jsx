@@ -27,7 +27,7 @@ const primaryItems = [
 
 function SidebarContent({ collapsed, navigationGroups, onNavigate, page }) {
   const { language } = usePreferences();
-  const paths = legalPaths();
+  const paths = legalPaths;
   const internalItems = navigationGroups.flatMap((group) => group.items);
   const activeId = useActiveSection(internalItems.map((item) => item.id));
 
@@ -46,7 +46,7 @@ function SidebarContent({ collapsed, navigationGroups, onNavigate, page }) {
                 className="mb-1! min-h-11! rounded-lg! px-3!"
               >
                 <ListItemIcon className="min-w-10!"><Icon color={page === item.key ? "primary" : "inherit"} /></ListItemIcon>
-                {!collapsed && <ListItemText primary={item.label[language]} primaryTypographyProps={{ fontSize: 14, fontWeight: page === item.key ? 750 : 550 }} />}
+                {!collapsed && <ListItemText primary={item.label[language]} slotProps={{ primary: { sx: { fontSize: 14, fontWeight: page === item.key ? 750 : 550 } } }} />}
               </ListItemButton>
             );
             return collapsed ? <Tooltip key={item.key} placement="right" title={item.label[language]}>{button}</Tooltip> : <Box key={item.key}>{button}</Box>;
@@ -74,7 +74,7 @@ function SidebarContent({ collapsed, navigationGroups, onNavigate, page }) {
                         key={item.id}
                         sx={{ "&.Mui-selected": { borderLeftColor: "primary.main" } }}
                       >
-                        <ListItemText primary={item.label[language]} primaryTypographyProps={{ fontSize: 12.5, lineHeight: 1.35, fontWeight: activeId === item.id ? 750 : 500 }} />
+                        <ListItemText primary={item.label[language]} slotProps={{ primary: { sx: { fontSize: 12.5, lineHeight: 1.35, fontWeight: activeId === item.id ? 750 : 500 } } }} />
                       </ListItemButton>
                     ))}
                   </List>

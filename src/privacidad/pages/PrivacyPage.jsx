@@ -1,5 +1,6 @@
-import PrivacyDocument from "../components/PrivacyDocument.jsx";
+import LegalDocumentPage from "../../shared/legal/components/LegalDocumentPage.jsx";
+import { privacyDocument } from "../content/privacyDocument.js";
 
 export default function PrivacyPage() {
-  return <PrivacyDocument />;
+  return <LegalDocumentPage document={privacyDocument} />;
 }

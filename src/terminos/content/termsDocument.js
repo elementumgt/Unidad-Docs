@@ -8,7 +8,7 @@ export const termsDocument = Object.freeze({
     "Al instalar Unidad o utilizar sus comandos, aceptas estas reglas de uso y las políticas aplicables de Discord.",
     "By installing Unidad or using its commands, you agree to these usage rules and Discord’s applicable policies.",
   ),
-  updated: bilingual("8 de septiembre de 2026", "September 8, 2026"),
+  updated: bilingual("13 de noviembre de 2026", "November 13, 2026"),
   sections: [
     {
       id: "aceptacion",
@@ -123,6 +123,14 @@ export const termsDocument = Object.freeze({
         paragraph(
           "Unidad no concede licencias sobre música ni contenido de terceros. Los usuarios y administradores son responsables de cumplir la legislación de propiedad intelectual aplicable.",
           "Unidad does not grant licenses to music or third-party content. Users and administrators are responsible for complying with applicable intellectual-property law.",
+        ),
+        paragraph(
+          "Las publicaciones automáticas (noticias de feeds RSS, posts de cuentas de Bluesky y avisos de episodios de anime con datos de AniList y enlaces a Crunchyroll) reproducen contenido público de terceros, que pertenece a sus autores. Unidad solo lo muestra con un enlace a la fuente original; el Staff de cada servidor elige qué fuentes seguir y responde de esa elección.",
+          "Automatic posts (RSS news, posts from Bluesky accounts, and anime episode alerts using AniList data with links to Crunchyroll) reproduce public third-party content that belongs to its authors. Unidad only displays it with a link to the original source; each server’s Staff chooses which sources to follow and is responsible for that choice.",
+        ),
+        paragraph(
+          "Cuando un servidor elige el español, esos textos se traducen automáticamente con un proveedor de IA. La traducción puede contener errores u omisiones: el texto original, enlazado en cada publicación, es el que prevalece.",
+          "When a server chooses Spanish, those texts are translated automatically with an AI provider. Translations may contain errors or omissions: the original text, linked in each post, prevails.",
         ),
       ],
     },
