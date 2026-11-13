@@ -8,9 +8,9 @@ import SiteLayout from "../../../components/SiteLayout.jsx";
 import { usePreferences } from "../../../hooks/usePreferences.js";
 import { legalPaths } from "../../../lib/paths.js";
 
-export default function LegalPage({ document, page }) {
+export default function LegalPage({ document }) {
   const { language } = usePreferences();
-  const paths = legalPaths();
+  const paths = legalPaths;
   const isPrivacy = document.kind === "privacy";
   const navigationGroups = [{
     id: document.kind,
@@ -19,7 +19,7 @@ export default function LegalPage({ document, page }) {
   }];
 
   return (
-    <SiteLayout navigationGroups={navigationGroups} page={page}>
+    <SiteLayout navigationGroups={navigationGroups} page={document.kind}>
       <Container maxWidth="lg" className="py-7 sm:py-10 lg:py-12">
         <header className="mb-7 sm:mb-9">
           <Button component={RouterLink} to={paths.home} startIcon={<ArrowBackRounded />} className="-ml-2!">
@@ -34,7 +34,7 @@ export default function LegalPage({ document, page }) {
             />
             <Typography component="h1" variant="h1" className="mt-5! text-3xl! leading-tight! sm:text-4xl! xl:text-5xl!">{document.title[language]}</Typography>
             <Typography color="text.secondary" className="mt-3! text-sm!">
-              {language === "es" ? "Última actualización" : "Last updated"}: {document.updated[language]} · {language === "es" ? "Versión" : "Version"} 2.0
+              {language === "es" ? "Última actualización" : "Last updated"}: {document.updated[language]}
             </Typography>
           </div>
           <Alert className="single-line-alert glass-hero mt-6! w-full! rounded-xl! xl:w-fit!" icon={isPrivacy ? <PrivacyTipRounded /> : <GavelRounded />} severity={isPrivacy ? "info" : "warning"} variant="outlined">

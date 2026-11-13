@@ -1,3 +1,4 @@
+import { readSetting, saveSetting } from "../lib/storage.js";
 import { CssBaseline, StyledEngineProvider, ThemeProvider, useMediaQuery } from "@mui/material";
 import { useEffect, useMemo, useState } from "react";
 import { createBrandTheme } from "../theme.js";
@@ -6,13 +7,13 @@ import { PreferencesContext } from "./PreferencesContext.js";
 
 export default function PreferencesProvider({ children }) {
   const prefersDark = useMediaQuery("(prefers-color-scheme: dark)", { noSsr: true });
-  const [theme, setTheme] = useState(() => normalizeTheme(localStorage.getItem("unidad-legal-theme")));
-  const [language, setLanguage] = useState(() => normalizeLanguage(localStorage.getItem("unidad-legal-language")));
+  const [theme, setTheme] = useState(() => normalizeTheme(readSetting("unidad-legal-theme")));
+  const [language, setLanguage] = useState(() => normalizeLanguage(readSetting("unidad-legal-language")));
   const resolvedTheme = resolveTheme(theme, prefersDark);
   const muiTheme = useMemo(() => createBrandTheme(resolvedTheme), [resolvedTheme]);
 
   useEffect(() => {
-    localStorage.setItem("unidad-legal-theme", theme);
+    saveSetting("unidad-legal-theme", theme);
     document.documentElement.dataset.theme = theme;
     document.documentElement.dataset.resolvedTheme = resolvedTheme;
     document.querySelector('meta[name="theme-color"]')?.setAttribute(
@@ -22,7 +23,7 @@ export default function PreferencesProvider({ children }) {
   }, [resolvedTheme, theme]);
 
   useEffect(() => {
-    localStorage.setItem("unidad-legal-language", language);
+    saveSetting("unidad-legal-language", language);
     document.documentElement.lang = language;
   }, [language]);
 

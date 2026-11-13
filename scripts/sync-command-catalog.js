@@ -44,7 +44,6 @@ function serializeParameter(option, command, path) {
     if (option[source] !== undefined) result[target] = option[source];
   }
 
-  result.channelTypes = option.channel_types ?? [];
   return result;
 }
 
@@ -75,8 +74,6 @@ async function loadCommands() {
       name: command.name,
       description: command.description,
       descriptionEn: translated(command.name, command.name),
-      defaultMemberPermissions: command.default_member_permissions ?? null,
-      dmPermission: command.dm_permission ?? null,
       usages: collectUsages(command, command.name),
     });
   }

@@ -26,14 +26,14 @@ La aplicación conserva un único `index.html`; toda la interfaz y el contenido 
 
 ## Desarrollo
 
-Requiere Node.js 22.
+Requiere Node.js 24.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Para regenerar el catálogo desde un clon hermano de `bot-unidad`:
+Para regenerar el catálogo desde un clon hermano de Unidad-Bot (`../bot-unidad`):
 
 ```bash
 npm run docs:sync
@@ -65,6 +65,6 @@ El contenido de cada idioma se renderiza de forma exclusiva en React; no se mant
 
 ## Fuente documentada
 
-La referencia visible fue contrastada con `bot-unidad` en el commit actual `833a4feb62738d4983a388a13aab8675d5246d95`. El commit `125b0311bdd0ba7e95a12804e31f6ba626e6f407` se conserva como punto de partida solicitado para revisar los cambios posteriores.
+El commit de Unidad-Bot del que sale el catálogo se registra en la instantánea y se muestra en `/docs`. El workflow `sync-docs.yml` la regenera cada 3 horas desde la rama `main` del bot y la publica si pasan lint, pruebas y build.
 
 El catálogo incluido en `src/docs/content/commandCatalogSnapshot.js` conserva cada comando, subcomando, opción, tipo, obligatoriedad, elección y límite declarado por Discord. La documentación interna de arquitectura, persistencia, seguridad, configuración y despliegue permanece en `bot-unidad/docs/` y no se publica en este sitio.

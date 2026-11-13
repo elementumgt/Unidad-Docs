@@ -2,7 +2,8 @@ name: Sync command docs
 
 # Regenera el catálogo de comandos desde Unidad-Bot (rama main).
 # Si las pruebas pasan, publica en main/dev y lanza el despliegue de Pages.
-# Si fallan (por ejemplo, un comando nuevo sin clasificar en commandDocs.js),
+# Si fallan (por ejemplo, un comando nuevo sin clasificar en src/commandCatalog.js
+# de Unidad-Bot o sin su traducción en src/i18n/en),
 # deja los cambios en la rama auto/sync-docs con un PR para revisarlos a mano.
 on:
   schedule:
@@ -23,9 +24,10 @@ jobs:
     name: Sync from bot
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+    # El token solo se entrega a los pasos que publican: la instalación, la
+    # sincronización (que importa el código del bot) y el build corren sin él.
     env:
       BOT_REPOSITORY_PATH: ${{ github.workspace }}/bot-unidad
-      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -33,6 +35,7 @@ jobs:
           path: docs
           # Historial completo: sin él, git no puede ver que dev es ancestro de main y rechaza el push.
           fetch-depth: 0
+          persist-credentials: false
 
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -49,7 +52,7 @@ jobs:
       - name: Install dependencies
         run: |
           (cd bot-unidad && npm ci --ignore-scripts)
-          (cd docs && npm ci)
+          (cd docs && npm ci --ignore-scripts)
 
       - id: sync
         name: Regenerate catalog
@@ -83,7 +86,10 @@ jobs:
       - name: Publish
         if: steps.sync.outputs.changed == 'true' && steps.check.outcome == 'success'
         working-directory: docs
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git push origin HEAD:main
           git push origin HEAD:dev || echo "::warning::dev no avanza en línea recta con main; sincronízala a mano."
           # Los push hechos con GITHUB_TOKEN no disparan otros workflows: se lanza Pages explícitamente.
@@ -92,12 +98,15 @@ jobs:
       - name: Open PR for review
         if: steps.sync.outputs.changed == 'true' && steps.check.outcome != 'success'
         working-directory: docs
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git push --force origin HEAD:auto/sync-docs
           if [ -z "$(gh pr list --head auto/sync-docs --state open --json number --jq '.[].number')" ]; then
             gh pr create --base main --head auto/sync-docs \
               --title "docs: el bot cambió y la documentación necesita revisión" \
-              --body "La sincronización automática con Unidad-Bot ${{ steps.sync.outputs.commit }} no pasó \`npm run check\`. Lo más común es un comando nuevo sin clasificar en \`src/docs/content/commandDocs.js\` (grupo y resumen en inglés). Revisa el log: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+              --body "La sincronización automática con Unidad-Bot ${{ steps.sync.outputs.commit }} no pasó \`npm run check\`. Lo más común es un comando nuevo sin clasificar en \`src/commandCatalog.js\` de Unidad-Bot o sin su traducción en \`src/i18n/en\`. Revisa el log: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           fi
           echo "::error::La documentación necesita revisión manual (PR en auto/sync-docs)."
           exit 1
