@@ -35,6 +35,8 @@ export default function SiteHeader({ collapsed, onOpenMobile, onToggleCollapsed,
 
         <Link component={RouterLink} to={paths.home} underline="none" color="inherit" className="flex min-w-0 shrink-0 items-center gap-2 rounded-xl sm:gap-3">
           <Box component="img" src={unidadLogo} alt="" aria-hidden="true" className="h-9 w-9 shrink-0 rounded-xl object-cover shadow-lg sm:h-10 sm:w-10" />
+          {/* Por debajo de md el texto visible se oculta: el enlace conserva un nombre accesible. */}
+          <span className="sr-only md:hidden">{language === "es" ? "Unidad, Centro de ayuda (inicio)" : "Unidad, Help center (home)"}</span>
           <Box className="hidden min-w-0 md:block">
             <Typography component="span" className="block text-sm! font-extrabold! leading-tight!">Unidad</Typography>
             <Typography component="span" color="text.secondary" className="block text-xs!">{language === "es" ? "Centro de ayuda" : "Help center"}</Typography>

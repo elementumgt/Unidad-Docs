@@ -25,11 +25,9 @@ const primaryItems = [
   { key: "terms", icon: GavelRounded, label: { es: "Condiciones", en: "Terms" } },
 ];
 
-function SidebarContent({ collapsed, navigationGroups, onNavigate, page }) {
+function SidebarContent({ activeId, collapsed, navigationGroups, onNavigate, page }) {
   const { language } = usePreferences();
   const paths = legalPaths;
-  const internalItems = navigationGroups.flatMap((group) => group.items);
-  const activeId = useActiveSection(internalItems.map((item) => item.id));
 
   return (
     <div className="flex h-full min-h-0 flex-col">
@@ -89,19 +87,24 @@ function SidebarContent({ collapsed, navigationGroups, onNavigate, page }) {
 }
 
 export default function AppSidebar({ collapsed, mobileOpen, navigationGroups, onCloseMobile, page }) {
+  const { language } = usePreferences();
+  // Una sola instancia: el aside y el Drawer (keepMounted) comparten la sección activa.
+  const activeId = useActiveSection(navigationGroups.flatMap((group) => group.items.map((item) => item.id)));
+
   return (
     <>
       <aside className={`glass-card hidden h-full shrink-0 overflow-hidden rounded-none! border-y-0 border-l-0 transition-[width] duration-200 lg:block ${collapsed ? "w-[72px]" : "w-[280px]"}`}>
-        <SidebarContent collapsed={collapsed} navigationGroups={navigationGroups} page={page} />
+        <SidebarContent activeId={activeId} collapsed={collapsed} navigationGroups={navigationGroups} page={page} />
       </aside>
       <Drawer
         open={mobileOpen}
         onClose={onCloseMobile}
         variant="temporary"
         ModalProps={{ keepMounted: true }}
+        slotProps={{ paper: { role: "dialog", "aria-modal": true, "aria-label": language === "es" ? "Menú de navegación" : "Navigation menu" } }}
         sx={{ display: { xs: "block", lg: "none" }, "& .MuiDrawer-paper": { width: "min(320px, calc(100vw - 24px))", backgroundImage: "var(--glass-nav)", backdropFilter: "blur(16px)" } }}
       >
-        <SidebarContent collapsed={false} navigationGroups={navigationGroups} onNavigate={onCloseMobile} page={page} />
+        <SidebarContent activeId={activeId} collapsed={false} navigationGroups={navigationGroups} onNavigate={onCloseMobile} page={page} />
       </Drawer>
     </>
   );

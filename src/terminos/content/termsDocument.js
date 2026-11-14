@@ -8,7 +8,7 @@ export const termsDocument = Object.freeze({
     "Al instalar Unidad o utilizar sus comandos, aceptas estas reglas de uso y las políticas aplicables de Discord.",
     "By installing Unidad or using its commands, you agree to these usage rules and Discord’s applicable policies.",
   ),
-  updated: bilingual("13 de noviembre de 2026", "November 13, 2026"),
+  updated: bilingual("14 de noviembre de 2026", "November 14, 2026"),
   sections: [
     {
       id: "aceptacion",
@@ -29,8 +29,8 @@ export const termsDocument = Object.freeze({
       title: bilingual("2. Descripción del servicio", "2. Service description"),
       blocks: [
         paragraph(
-          "Unidad es un bot multipropósito para comunidades de Discord. Sus funciones incluyen moderación y auditoría, roles y verificación, XP y economía, tickets y coaching, eventos, perfiles sociales y de juego, invitaciones, sorteos, sugerencias, recordatorios, juegos, imágenes, búsquedas, chatbot, canales de voz temporales, contadores, avisos de Twitch y reproducción musical persistente.",
-          "Unidad is a multipurpose bot for Discord communities. Its features include moderation and auditing, roles and verification, XP and economy, tickets and coaching, events, social and game profiles, invitations, giveaways, suggestions, reminders, games, images, search, chatbot, temporary voice channels, counters, Twitch notifications, and persistent music playback.",
+          "Unidad es un bot multipropósito para comunidades de Discord. Sus funciones incluyen moderación y auditoría, roles y verificación, XP y economía, tickets y coaching, eventos, perfiles sociales y de juego, invitaciones, sorteos, sugerencias, recordatorios, juegos, imágenes, búsquedas, chatbot, canales de voz temporales, contadores, avisos de Twitch, integración con un servidor de Minecraft, misiones semanales, publicaciones automáticas (feeds RSS, cuentas de Bluesky y avisos de episodios de anime) y reproducción musical persistente.",
+          "Unidad is a multipurpose bot for Discord communities. Its features include moderation and auditing, roles and verification, XP and economy, tickets and coaching, events, social and game profiles, invitations, giveaways, suggestions, reminders, games, images, search, chatbot, temporary voice channels, counters, Twitch notifications, Minecraft server integration, weekly quests, automatic posts (RSS feeds, Bluesky accounts, and anime episode alerts), and persistent music playback.",
         ),
         paragraph(
           "Los módulos disponibles pueden cambiar, estar limitados por permisos o depender de Discord y otros proveedores externos.",

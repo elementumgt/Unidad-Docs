@@ -35,6 +35,15 @@
   --card-shadow: 0 4px 24px rgb(0 0 0 / 0.28);
 }
 
+/* Respaldo si theme-init.js no llegara a ejecutarse: sin tema resuelto, el
+   fondo sigue la preferencia del sistema en lugar de destellar en claro. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-resolved-theme]) {
+    --page-bg: #17122f;
+    color-scheme: dark;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -182,4 +191,14 @@ body {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.skip-link {
+  color: #ffffff;
+  background: #7b1f4b;
+}
+
+:root[data-resolved-theme="dark"] .skip-link {
+  color: #17122f;
+  background: #90d8f0;
 }
