@@ -35,6 +35,15 @@
   --card-shadow: 0 4px 24px rgb(0 0 0 / 0.28);
 }
 
+/* Respaldo si theme-init.js no llegara a ejecutarse: sin tema resuelto, el
+   fondo sigue la preferencia del sistema en lugar de destellar en claro. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-resolved-theme]) {
+    --page-bg: #17122f;
+    color-scheme: dark;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
