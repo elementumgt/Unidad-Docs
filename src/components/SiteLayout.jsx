@@ -25,17 +25,14 @@ function useRouteFocusAndHash() {
 
   useEffect(() => {
     const main = document.getElementById("main-content");
-    if (!main) return undefined;
+    if (!main) return;
     // Las páginas se cargan de forma diferida: cuando el navegador intentó
     // seguir el #ancla, el elemento aún no existía. Se resuelve al montar.
-    const frame = requestAnimationFrame(() => {
-      const target = targetFromHash(window.location.hash);
-      if (target) target.scrollIntoView({ block: "start" });
-      else main.scrollTo({ top: 0, behavior: "instant" });
-      if (hasNavigated) main.focus({ preventScroll: true });
-      hasNavigated = true;
-    });
-    return () => cancelAnimationFrame(frame);
+    const target = targetFromHash(window.location.hash);
+    if (target) target.scrollIntoView({ block: "start", behavior: "instant" });
+    else main.scrollTo({ top: 0, behavior: "instant" });
+    if (hasNavigated) main.focus({ preventScroll: true });
+    hasNavigated = true;
   }, [pathname]);
 }
 
