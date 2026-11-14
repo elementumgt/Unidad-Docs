@@ -105,27 +105,35 @@ const guideNavigation = {
   ],
 };
 
+// Minúsculas y sin acentos: "musica" encuentra "música" y al revés.
+function normalizeSearch(text, language) {
+  return text.normalize("NFD").replace(/\p{M}/gu, "").toLocaleLowerCase(language);
+}
+
 export default function DocsPage() {
   const { language } = usePreferences();
   const labels = copy[language];
   const [query, setQuery] = useState("");
-  const navigationGroups = [guideNavigation, ...commandNavigationGroups()];
-
   const filteredGroups = useMemo(() => {
-    const normalized = query.trim().toLocaleLowerCase(language);
+    const normalized = normalizeSearch(query.trim(), language);
     if (!normalized) return commandGroups;
     return commandGroups
       .map((group) => ({
         ...group,
-        commands: group.commands.filter((command) => [
+        commands: group.commands.filter((command) => normalizeSearch([
           command.name,
           command.summary[language],
           command.access[language],
-          ...command.usage.flatMap((usage) => [usage.syntax, usage.example, usage.description[language]]),
-        ].join(" ").toLocaleLowerCase(language).includes(normalized)),
+          ...command.usage.flatMap((usage) => [usage.syntax, usage.example[language], usage.description[language]]),
+        ].join(" "), language).includes(normalized)),
       }))
       .filter((group) => group.commands.length > 0);
   }, [language, query]);
+  // El índice lateral sigue a la búsqueda para no enlazar comandos ocultos.
+  const navigationGroups = useMemo(
+    () => [guideNavigation, ...commandNavigationGroups(filteredGroups)],
+    [filteredGroups],
+  );
 
   const visibleCount = filteredGroups.reduce((total, group) => total + group.commands.length, 0);
 

@@ -40,7 +40,7 @@ export default function CommandCard({ command, language, labels }) {
             </div>
             <div className="min-w-0">
               <Typography color="text.secondary" className="mb-1! text-[11px]! font-black! uppercase! tracking-wider!">{labels.example}</Typography>
-              <Box component="code" className="command-example block overflow-x-auto rounded-lg px-3 py-2 font-mono text-sm">{usage.example}</Box>
+              <Box component="code" className="command-example block overflow-x-auto rounded-lg px-3 py-2 font-mono text-sm">{usage.example[language]}</Box>
             </div>
           </div>
         ))}
