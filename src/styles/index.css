@@ -192,3 +192,13 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+.skip-link {
+  color: #ffffff;
+  background: #7b1f4b;
+}
+
+:root[data-resolved-theme="dark"] .skip-link {
+  color: #17122f;
+  background: #90d8f0;
+}

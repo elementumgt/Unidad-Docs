@@ -25,10 +25,6 @@ export default function App() {
     document.title = (titles[page] ?? titles.home)[language];
   }, [language, page]);
 
-  useEffect(() => {
-    document.getElementById("main-content")?.scrollTo({ top: 0 });
-  }, [pathname]);
-
   return (
     <Suspense fallback={<div className="flex min-h-screen items-center justify-center"><CircularProgress aria-label={language === "es" ? "Cargando" : "Loading"} /></div>}>
       <Routes>
