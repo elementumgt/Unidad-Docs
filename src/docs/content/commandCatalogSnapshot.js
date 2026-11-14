@@ -1,6 +1,6 @@
 // Generated from bot-unidad command builders. Run npm run docs:sync to update.
 export const commandCatalogSnapshot = {
-  "sourceCommit": "251e4078e72144695c80c9311595ca9ee993fbce",
+  "sourceCommit": "9baa4cc33010c4b36eefcd989388f65a545720b1",
   "referenceCommit": "125b0311bdd0ba7e95a12804e31f6ba626e6f407",
   "categories": [
     {
@@ -1543,8 +1543,8 @@ export const commandCatalogSnapshot = {
           "path": [
             "setcanal"
           ],
-          "description": "(Admin) Canal donde se crean los hilos",
-          "descriptionEn": "(Admin) Channel where threads are created",
+          "description": "(Staff) Canal donde se crean los hilos",
+          "descriptionEn": "(Staff) Channel where threads are created",
           "parameters": [
             {
               "name": "canal",
@@ -1561,8 +1561,8 @@ export const commandCatalogSnapshot = {
           "path": [
             "posicion-add"
           ],
-          "description": "(Admin) Añade o edita una posición de coaching",
-          "descriptionEn": "(Admin) Adds or edits a coaching position",
+          "description": "(Staff) Añade o edita una posición de coaching",
+          "descriptionEn": "(Staff) Adds or edits a coaching position",
           "parameters": [
             {
               "name": "clave",
@@ -1618,8 +1618,8 @@ export const commandCatalogSnapshot = {
           "path": [
             "posicion-delete"
           ],
-          "description": "(Admin) Elimina una posición de coaching",
-          "descriptionEn": "(Admin) Deletes a coaching position",
+          "description": "(Staff) Elimina una posición de coaching",
+          "descriptionEn": "(Staff) Deletes a coaching position",
           "parameters": [
             {
               "name": "clave",
@@ -1972,8 +1972,8 @@ export const commandCatalogSnapshot = {
           "path": [
             "canal"
           ],
-          "description": "(Admin) Canal donde se publican las notificaciones de streams",
-          "descriptionEn": "(Admin) Channel where stream notifications are posted",
+          "description": "(Staff) Canal donde se publican las notificaciones de streams",
+          "descriptionEn": "(Staff) Channel where stream notifications are posted",
           "parameters": [
             {
               "name": "canal",
@@ -1990,8 +1990,8 @@ export const commandCatalogSnapshot = {
           "path": [
             "rolnotif"
           ],
-          "description": "(Admin) Rol que se menciona cuando alguien está en vivo",
-          "descriptionEn": "(Admin) Role mentioned when someone goes live",
+          "description": "(Staff) Rol que se menciona cuando alguien está en vivo",
+          "descriptionEn": "(Staff) Role mentioned when someone goes live",
           "parameters": [
             {
               "name": "rol",
@@ -2008,8 +2008,8 @@ export const commandCatalogSnapshot = {
           "path": [
             "setrole"
           ],
-          "description": "(Admin) Rol que identifica a los creadores de contenido",
-          "descriptionEn": "(Admin) Role that identifies content creators",
+          "description": "(Staff) Rol que identifica a los creadores de contenido",
+          "descriptionEn": "(Staff) Role that identifies content creators",
           "parameters": [
             {
               "name": "rol",
@@ -2327,15 +2327,25 @@ export const commandCatalogSnapshot = {
           "path": [
             "deleteitem"
           ],
-          "description": "Elimina de la tienda el artículo de un rol.",
-          "descriptionEn": "Removes a role's item from the shop.",
+          "description": "Elimina un artículo de la tienda por su ID o por su rol.",
+          "descriptionEn": "Removes a shop item by its ID or its role.",
           "parameters": [
+            {
+              "name": "id",
+              "description": "ID mostrado en la tienda",
+              "descriptionEn": "ID shown in the shop",
+              "type": 4,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "minValue": 1
+            },
             {
               "name": "role",
               "description": "Rol",
               "descriptionEn": "Role",
               "type": 8,
-              "required": true,
+              "required": false,
               "autocomplete": false,
               "choices": []
             }
@@ -2529,8 +2539,8 @@ export const commandCatalogSnapshot = {
           "path": [
             "setcanal"
           ],
-          "description": "(Admin) Canal donde el bot publica los eventos creados",
-          "descriptionEn": "(Admin) Channel where the bot posts created events",
+          "description": "(Staff) Canal donde el bot publica los eventos creados",
+          "descriptionEn": "(Staff) Channel where the bot posts created events",
           "parameters": [
             {
               "name": "canal",
@@ -4699,6 +4709,17 @@ export const commandCatalogSnapshot = {
               "autocomplete": false,
               "choices": [],
               "maxLength": 16
+            },
+            {
+              "name": "codigo",
+              "description": "Código de 6 dígitos que te envié dentro del juego (segundo paso)",
+              "descriptionEn": "6-digit code I sent you in-game (second step)",
+              "type": 3,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "minLength": 6,
+              "maxLength": 6
             }
           ]
         },
@@ -7542,7 +7563,8 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": false,
               "autocomplete": false,
-              "choices": []
+              "choices": [],
+              "maxLength": 32
             },
             {
               "name": "orden",
@@ -7633,7 +7655,8 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": []
+              "choices": [],
+              "maxLength": 255
             },
             {
               "name": "categorias",
@@ -7642,7 +7665,8 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": []
+              "choices": [],
+              "maxLength": 255
             },
             {
               "name": "emoji",
@@ -7651,7 +7675,8 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": false,
               "autocomplete": false,
-              "choices": []
+              "choices": [],
+              "maxLength": 100
             },
             {
               "name": "orden",
@@ -7678,7 +7703,8 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": false,
               "autocomplete": false,
-              "choices": []
+              "choices": [],
+              "maxLength": 255
             }
           ]
         },
@@ -7731,7 +7757,8 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": true,
               "autocomplete": false,
-              "choices": []
+              "choices": [],
+              "maxLength": 255
             },
             {
               "name": "titulo",
@@ -7740,7 +7767,8 @@ export const commandCatalogSnapshot = {
               "type": 3,
               "required": false,
               "autocomplete": false,
-              "choices": []
+              "choices": [],
+              "maxLength": 255
             }
           ]
         },
