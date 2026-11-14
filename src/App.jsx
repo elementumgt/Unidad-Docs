@@ -10,7 +10,7 @@ const PrivacyPage = lazy(() => import("./privacidad/pages/PrivacyPage.jsx"));
 const TermsPage = lazy(() => import("./terminos/pages/TermsPage.jsx"));
 
 const titles = {
-  home: { es: "Centro legal · Unidad", en: "Legal center · Unidad" },
+  home: { es: "Centro de ayuda · Unidad", en: "Help center · Unidad" },
   docs: { es: "Documentación · Unidad", en: "Documentation · Unidad" },
   privacy: { es: "Política de Privacidad · Unidad", en: "Privacy Policy · Unidad" },
   terms: { es: "Condiciones del Servicio · Unidad", en: "Terms of Service · Unidad" },

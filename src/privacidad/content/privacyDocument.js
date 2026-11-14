@@ -152,7 +152,7 @@ export const privacyDocument = Object.freeze({
             "top.gg, que recibe tu identificador de usuario de Discord para comprobar si votaste por el bot; api.mcsrvstat.us, que recibe la dirección del servidor de Minecraft consultada; quickchart.io, que recibe el texto con el que se genera un código QR; y minotar.net, que recibe el nombre de jugador de Minecraft para mostrar su avatar.",
             "Fuentes de contenido multimedia: loremflickr.com (imágenes aleatorias por palabra clave), myinstants.com (sonidos del soundboard) y el stream de radio configurado (por defecto, servido por StreamTheWorld). Solo reciben la solicitud del contenido, no datos de miembros.",
             "Infraestructura administrada por el operador para PostgreSQL, Redis, registros y copias de seguridad.",
-            "GitHub Pages, para publicar este centro legal; sus registros de acceso se rigen por la política de GitHub.",
+            "GitHub Pages, para publicar este centro de ayuda; sus registros de acceso se rigen por la política de GitHub.",
           ],
           [
             "Discord, to receive events, display responses, and manage authorized resources.",
@@ -165,7 +165,7 @@ export const privacyDocument = Object.freeze({
             "top.gg, which receives your Discord user ID to check whether you voted for the bot; api.mcsrvstat.us, which receives the Minecraft server address being queried; quickchart.io, which receives the text used to generate a QR code; and minotar.net, which receives the Minecraft player name to display its avatar.",
             "Media sources: loremflickr.com (random images by keyword), myinstants.com (soundboard sounds), and the configured radio stream (served by StreamTheWorld by default). They only receive the content request, not member data.",
             "Operator-managed infrastructure for PostgreSQL, Redis, logs, and backups.",
-            "GitHub Pages, to publish this legal center; access logs are governed by GitHub’s policy.",
+            "GitHub Pages, to publish this help center; access logs are governed by GitHub’s policy.",
           ],
         ),
         paragraph(

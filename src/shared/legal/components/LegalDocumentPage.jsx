@@ -23,7 +23,7 @@ export default function LegalPage({ document }) {
       <Container maxWidth="lg" className="py-7 sm:py-10 lg:py-12">
         <header className="mb-7 sm:mb-9">
           <Button component={RouterLink} to={paths.home} startIcon={<ArrowBackRounded />} className="-ml-2!">
-            {language === "es" ? "Volver al Centro legal" : "Back to Legal center"}
+            {language === "es" ? "Volver al Centro de ayuda" : "Back to Help center"}
           </Button>
           <div className="mt-5">
             <Chip
