@@ -17,7 +17,7 @@
 
 ## Páginas
 
-- `/`: centro legal.
+- `/`: centro de ayuda.
 - `/docs/`: documentación completa de todos los comandos y sus operaciones, generada desde las definiciones slash reales, con parámetros, restricciones, sintaxis, ejemplos, permisos y comportamiento.
 - `/privacidad/`: Política de Privacidad.
 - `/terminos/`: Condiciones del Servicio.

@@ -29,9 +29,11 @@ describe("command documentation", () => {
       expect(command.access.en).toBeTruthy();
       for (const usage of command.usage) {
         expect(usage.syntax).toMatch(new RegExp(`^/${command.name}(?: |$)`));
-        expect(usage.example).toMatch(new RegExp(`^/${command.name}(?: |$)`));
-        expect(usage.example).not.toContain("[");
-        expect(usage.example).not.toContain("]");
+        for (const example of [usage.example.es, usage.example.en]) {
+          expect(example).toMatch(new RegExp(`^/${command.name}(?: |$)`));
+          expect(example).not.toContain("[");
+          expect(example).not.toContain("]");
+        }
         expect(usage.description.es).toBeTruthy();
         expect(usage.description.en).toBeTruthy();
         for (const parameter of usage.parameters) {
@@ -54,6 +56,12 @@ describe("command documentation", () => {
         for (const parameter of usage.parameters) expect(parameter.description.en).not.toMatch(placeholder);
       }
     }
+  });
+
+  it("localizes example values to the page language", () => {
+    const examples = commands.flatMap(command => command.usage.map(usage => usage.example));
+    expect(examples.some(example => example.en !== example.es)).toBe(true);
+    expect(examples.map(example => example.en).join(" ")).not.toMatch(/@Miembro|\bejemplo\b|Hola /);
   });
 
   it("contains no duplicate command or operation syntax", () => {

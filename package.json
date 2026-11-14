@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "private": true,
   "type": "module",
-  "description": "Centro legal bilingüe del bot Unidad para comunidades de Discord.",
+  "description": "Centro de ayuda bilingüe del bot Unidad para comunidades de Discord.",
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/create-route-entries.js",

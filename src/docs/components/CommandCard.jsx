@@ -1,6 +1,5 @@
-import CheckCircleRounded from "@mui/icons-material/CheckCircleRounded";
 import SecurityRounded from "@mui/icons-material/SecurityRounded";
-import { Alert, Box, Chip, Paper, Typography } from "@mui/material";
+import { Box, Chip, Paper, Typography } from "@mui/material";
 
 export default function CommandCard({ command, language, labels }) {
   return (
@@ -8,7 +7,7 @@ export default function CommandCard({ command, language, labels }) {
       <div className="border-b border-(--glass-border) px-5 py-5 sm:px-6 lg:px-7">
         <div className="grid min-w-0 items-start gap-4 xl:grid-cols-[minmax(0,1fr)_minmax(280px,auto)]">
           <div className="min-w-0">
-            <Typography component="h3" className="font-mono! text-2xl! font-black! text-(--mui-palette-primary-main)!">/{command.name}</Typography>
+            <Typography component="h3" color="primary" className="font-mono! text-2xl! font-black!">/{command.name}</Typography>
             <Typography color="text.secondary" className="mt-1! leading-6!">{command.summary[language]}</Typography>
           </div>
           <Chip icon={<SecurityRounded />} label={`${labels.access}: ${command.access[language]}`} variant="outlined" className="h-auto! w-full! max-w-full justify-start! py-1! xl:w-auto! [&_.MuiChip-icon]:self-start! [&_.MuiChip-icon]:mt-1! [&_.MuiChip-label]:block! [&_.MuiChip-label]:min-w-0! [&_.MuiChip-label]:whitespace-normal!" />
@@ -28,7 +27,7 @@ export default function CommandCard({ command, language, labels }) {
                   {usage.parameters.map((parameter) => (
                     <div className="rounded-lg border border-(--glass-border) px-3 py-2" key={parameter.name}>
                       <div className="flex min-w-0 flex-wrap items-center gap-2">
-                        <code className="font-mono text-xs font-black text-(--mui-palette-primary-main)">{parameter.name}</code>
+                        <Box component="code" className="font-mono text-xs font-black" sx={{ color: "primary.main" }}>{parameter.name}</Box>
                         <Chip label={parameter.type[language]} size="small" variant="outlined" className="h-5! text-[10px]!" />
                         <Chip color={parameter.required ? "warning" : "default"} label={parameter.required ? labels.required : labels.optional} size="small" className="h-5! text-[10px]!" />
                       </div>
@@ -41,17 +40,11 @@ export default function CommandCard({ command, language, labels }) {
             </div>
             <div className="min-w-0">
               <Typography color="text.secondary" className="mb-1! text-[11px]! font-black! uppercase! tracking-wider!">{labels.example}</Typography>
-              <Box component="code" className="command-example block overflow-x-auto rounded-lg px-3 py-2 font-mono text-sm">{usage.example}</Box>
+              <Box component="code" className="command-example block overflow-x-auto rounded-lg px-3 py-2 font-mono text-sm">{usage.example[language]}</Box>
             </div>
           </div>
         ))}
       </div>
-
-      {command.notes && (
-        <Alert severity="info" icon={<CheckCircleRounded />} className="m-5! rounded-xl! md:mx-7!">
-          <strong>{labels.note}:</strong> {command.notes[language]}
-        </Alert>
-      )}
     </Paper>
   );
 }

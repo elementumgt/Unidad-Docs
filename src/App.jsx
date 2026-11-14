@@ -10,7 +10,7 @@ const PrivacyPage = lazy(() => import("./privacidad/pages/PrivacyPage.jsx"));
 const TermsPage = lazy(() => import("./terminos/pages/TermsPage.jsx"));
 
 const titles = {
-  home: { es: "Centro legal · Unidad", en: "Legal center · Unidad" },
+  home: { es: "Centro de ayuda · Unidad", en: "Help center · Unidad" },
   docs: { es: "Documentación · Unidad", en: "Documentation · Unidad" },
   privacy: { es: "Política de Privacidad · Unidad", en: "Privacy Policy · Unidad" },
   terms: { es: "Condiciones del Servicio · Unidad", en: "Terms of Service · Unidad" },
@@ -24,10 +24,6 @@ export default function App() {
   useEffect(() => {
     document.title = (titles[page] ?? titles.home)[language];
   }, [language, page]);
-
-  useEffect(() => {
-    document.getElementById("main-content")?.scrollTo({ top: 0 });
-  }, [pathname]);
 
   return (
     <Suspense fallback={<div className="flex min-h-screen items-center justify-center"><CircularProgress aria-label={language === "es" ? "Cargando" : "Loading"} /></div>}>

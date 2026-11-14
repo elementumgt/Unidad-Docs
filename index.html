@@ -3,14 +3,25 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Centro legal oficial de Unidad, bot para comunidades de Discord.">
+    <meta name="description" content="Centro de ayuda oficial de Unidad, bot para comunidades de Discord: documentación, privacidad y condiciones.">
     <meta name="theme-color" content="#282058">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'none'; upgrade-insecure-requests">
     <link rel="icon" type="image/png" href="./assets/media/favicon.png">
-    <title>Centro legal · Unidad</title>
-    <script type="module" src="./src/theme-init.js"></script>
+    <title>Centro de ayuda · Unidad</title>
+    <!-- Script clásico y bloqueante (vive en public/): fija el tema antes del primer pintado. -->
+    <script src="/theme-init.js"></script>
   </head>
   <body>
+    <noscript>
+      <nav aria-label="Páginas principales" style="padding: 24px; font-family: system-ui, sans-serif;">
+        <p>Unidad necesita JavaScript para mostrar este centro de ayuda. Páginas principales:</p>
+        <ul>
+          <li><a href="%BASE_URL%">Centro de ayuda</a></li>
+          <li><a href="%BASE_URL%docs/">Documentación de comandos</a></li>
+          <li><a href="%BASE_URL%privacidad/">Política de Privacidad</a></li>
+          <li><a href="%BASE_URL%terminos/">Condiciones del Servicio</a></li>
+        </ul>
+      </nav>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="./src/main.jsx"></script>
   </body>

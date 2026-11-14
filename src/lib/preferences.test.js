@@ -14,10 +14,12 @@ describe("preferencias", () => {
     expect(resolveTheme("light", true)).toBe("light");
   });
 
-  it("resuelve las rutas limpias de GitHub Pages", () => {
-    expect(pageFromPath("/Unidad-Legal/")).toBe("home");
-    expect(pageFromPath("/Unidad-Legal/docs/")).toBe("docs");
-    expect(pageFromPath("/Unidad-Legal/privacidad/")).toBe("privacy");
-    expect(pageFromPath("/Unidad-Legal/terminos/")).toBe("terms");
+  it("resuelve las rutas del enrutador (sin basename)", () => {
+    expect(pageFromPath("/")).toBe("home");
+    expect(pageFromPath("/docs/")).toBe("docs");
+    expect(pageFromPath("/docs")).toBe("docs");
+    expect(pageFromPath("/privacidad/")).toBe("privacy");
+    expect(pageFromPath("/Terminos/")).toBe("terms");
+    expect(pageFromPath("/desconocida/docs/")).toBe("home");
   });
 });
