@@ -5,10 +5,11 @@ export const legalPaths = Object.freeze({
   terms: "/terminos/",
 });
 
+const pageBySegment = Object.freeze({ docs: "docs", privacidad: "privacy", terminos: "terms" });
+
+// Recibe el pathname del enrutador, que ya no incluye el basename
+// (/Unidad-Docs/), así que basta con mirar el primer segmento.
 export function pageFromPath(pathname) {
-  const segments = String(pathname).toLowerCase().split("/").filter(Boolean);
-  if (segments.includes("docs")) return "docs";
-  if (segments.includes("privacidad")) return "privacy";
-  if (segments.includes("terminos")) return "terms";
-  return "home";
+  const [segment = ""] = String(pathname).toLowerCase().split("/").filter(Boolean);
+  return pageBySegment[segment] ?? "home";
 }

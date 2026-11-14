@@ -1,6 +1,5 @@
-import CheckCircleRounded from "@mui/icons-material/CheckCircleRounded";
 import SecurityRounded from "@mui/icons-material/SecurityRounded";
-import { Alert, Box, Chip, Paper, Typography } from "@mui/material";
+import { Box, Chip, Paper, Typography } from "@mui/material";
 
 export default function CommandCard({ command, language, labels }) {
   return (
@@ -46,12 +45,6 @@ export default function CommandCard({ command, language, labels }) {
           </div>
         ))}
       </div>
-
-      {command.notes && (
-        <Alert severity="info" icon={<CheckCircleRounded />} className="m-5! rounded-xl! md:mx-7!">
-          <strong>{labels.note}:</strong> {command.notes[language]}
-        </Alert>
-      )}
     </Paper>
   );
 }
