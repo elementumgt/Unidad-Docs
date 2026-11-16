@@ -1,6 +1,6 @@
 // Generated from bot-unidad command builders. Run npm run docs:sync to update.
 export const commandCatalogSnapshot = {
-  "sourceCommit": "1aa608718090cf6ce3fe004a1febeab227f9a444",
+  "sourceCommit": "657c325d5ccf48f4a4882051ce0e9229f44fcedc",
   "referenceCommit": "125b0311bdd0ba7e95a12804e31f6ba626e6f407",
   "categories": [
     {
@@ -19,7 +19,8 @@ export const commandCatalogSnapshot = {
         "bot",
         "invite",
         "guild",
-        "notepad"
+        "notepad",
+        "ia"
       ]
     },
     {
@@ -170,6 +171,10 @@ export const commandCatalogSnapshot = {
     }
   ],
   "access": {
+    "ia": {
+      "es": "Consultas privadas: miembros. Activación y fuentes: Admin. Tickets, moderación y redacción: Staff; publicar requiere Gestionar mensajes. Música conserva las reglas del reproductor.",
+      "en": "Private queries: members. Activation and sources: Admin. Tickets, moderation and drafts: Staff; publishing requires Manage Messages. Music retains player rules."
+    },
     "admin": {
       "es": "Administrador interno + Administrar servidor.",
       "en": "Internal Admin + Manage Server."
@@ -3579,6 +3584,388 @@ export const commandCatalogSnapshot = {
               "choices": [],
               "minValue": 1,
               "maxValue": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ia",
+      "description": "Asistente, fuentes, resúmenes y propuestas de Unidad con Google Cloud.",
+      "descriptionEn": "Unit assistant, sources, summaries and proposals powered by Google Cloud.",
+      "usages": [
+        {
+          "path": [
+            "activar"
+          ],
+          "description": "Admin: activa o desactiva las funciones /ia.",
+          "descriptionEn": "Admin: enable or disable /ia features.",
+          "parameters": [
+            {
+              "name": "habilitada",
+              "description": "Permitir consultas de IA",
+              "descriptionEn": "Allow AI requests",
+              "type": 5,
+              "required": true,
+              "autocomplete": false,
+              "choices": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "estado"
+          ],
+          "description": "Consulta configuración, canales y presupuesto mensual de IA.",
+          "descriptionEn": "View AI configuration, channels and monthly budget.",
+          "parameters": []
+        },
+        {
+          "path": [
+            "preguntar"
+          ],
+          "description": "Explica comandos y configuración real del servidor.",
+          "descriptionEn": "Explain commands and the server's actual configuration.",
+          "parameters": [
+            {
+              "name": "pregunta",
+              "description": "¿Qué necesitas saber?",
+              "descriptionEn": "What would you like to know?",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 1500
+            }
+          ]
+        },
+        {
+          "path": [
+            "fuente"
+          ],
+          "description": "Admin: selecciona un mensaje de reglas, anuncios o guías para las FAQ.",
+          "descriptionEn": "Admin: select a rules, announcements or guide message as an FAQ source.",
+          "parameters": [
+            {
+              "name": "enlace",
+              "description": "Enlace del mensaje de este servidor",
+              "descriptionEn": "Link to a message in this server",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 200
+            },
+            {
+              "name": "titulo",
+              "description": "Nombre de la fuente",
+              "descriptionEn": "Source title",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 100
+            }
+          ]
+        },
+        {
+          "path": [
+            "quitar-fuente"
+          ],
+          "description": "Admin: retira un mensaje de las fuentes de FAQ.",
+          "descriptionEn": "Admin: remove a message from the FAQ sources.",
+          "parameters": [
+            {
+              "name": "enlace",
+              "description": "Enlace del mensaje seleccionado",
+              "descriptionEn": "Link to the selected message",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 200
+            }
+          ]
+        },
+        {
+          "path": [
+            "fuentes"
+          ],
+          "description": "Lista las fuentes seleccionadas que puedes leer.",
+          "descriptionEn": "List selected sources you can read.",
+          "parameters": []
+        },
+        {
+          "path": [
+            "faq"
+          ],
+          "description": "Pregunta sobre las fuentes seleccionadas y recibe sus referencias.",
+          "descriptionEn": "Ask about selected sources and receive references.",
+          "parameters": [
+            {
+              "name": "pregunta",
+              "description": "Pregunta sobre las reglas o guías del servidor",
+              "descriptionEn": "Question about the server's rules or guides",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 1500
+            }
+          ]
+        },
+        {
+          "path": [
+            "resumen"
+          ],
+          "description": "Resume hasta 300 mensajes del canal; envía el texto a Google Cloud.",
+          "descriptionEn": "Summarize up to 300 channel messages; sends text to Google Cloud.",
+          "parameters": [
+            {
+              "name": "canal",
+              "description": "Canal al que tienes acceso",
+              "descriptionEn": "Channel you can access",
+              "type": 7,
+              "required": true,
+              "autocomplete": false,
+              "choices": []
+            },
+            {
+              "name": "ultimas",
+              "description": "Entre 1m y 24h; por defecto 2h",
+              "descriptionEn": "Between 1m and 24h; defaults to 2h",
+              "type": 3,
+              "required": false,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 4
+            }
+          ]
+        },
+        {
+          "path": [
+            "ticket"
+          ],
+          "description": "Staff: clasifica un ticket y sugiere respuesta y resumen de resolución.",
+          "descriptionEn": "Staff: classify a ticket and suggest a reply and resolution summary.",
+          "parameters": [
+            {
+              "name": "canal",
+              "description": "Canal al que tienes acceso",
+              "descriptionEn": "Channel you can access",
+              "type": 7,
+              "required": true,
+              "autocomplete": false,
+              "choices": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "anuncio"
+          ],
+          "description": "Staff: prepara un anuncio o encuesta con vista previa; aún no publica.",
+          "descriptionEn": "Staff: prepare an announcement or poll preview without publishing.",
+          "parameters": [
+            {
+              "name": "canal",
+              "description": "Canal al que tienes acceso",
+              "descriptionEn": "Channel you can access",
+              "type": 7,
+              "required": true,
+              "autocomplete": false,
+              "choices": []
+            },
+            {
+              "name": "instrucciones",
+              "description": "Qué quieres anunciar",
+              "descriptionEn": "What you want to announce",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 1500
+            },
+            {
+              "name": "tipo",
+              "description": "Formato",
+              "descriptionEn": "Format",
+              "type": 3,
+              "required": false,
+              "autocomplete": false,
+              "choices": [
+                {
+                  "name": "Anuncio",
+                  "nameEn": "Announcement",
+                  "value": "announcement"
+                },
+                {
+                  "name": "Encuesta",
+                  "nameEn": "Poll",
+                  "value": "poll"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": [
+            "editar"
+          ],
+          "description": "Edita el texto de tu borrador de anuncio o encuesta.",
+          "descriptionEn": "Edit the text of your announcement or poll draft.",
+          "parameters": [
+            {
+              "name": "borrador",
+              "description": "Identificador del borrador",
+              "descriptionEn": "Draft identifier",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 36
+            },
+            {
+              "name": "texto",
+              "description": "Texto final para la publicación",
+              "descriptionEn": "Final text for publication",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 1800
+            }
+          ]
+        },
+        {
+          "path": [
+            "publicar"
+          ],
+          "description": "Staff: confirma y publica tu borrador en el canal seleccionado.",
+          "descriptionEn": "Staff: confirm and publish your draft to the selected channel.",
+          "parameters": [
+            {
+              "name": "borrador",
+              "description": "Identificador del borrador",
+              "descriptionEn": "Draft identifier",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 36
+            }
+          ]
+        },
+        {
+          "path": [
+            "cancelar"
+          ],
+          "description": "Descarta uno de tus borradores.",
+          "descriptionEn": "Discard one of your drafts.",
+          "parameters": [
+            {
+              "name": "borrador",
+              "description": "Identificador del borrador",
+              "descriptionEn": "Draft identifier",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 36
+            }
+          ]
+        },
+        {
+          "path": [
+            "moderar"
+          ],
+          "description": "Staff: revisa un mensaje con contexto y envía la sugerencia al canal privado.",
+          "descriptionEn": "Staff: review a message in context and notify the private staff channel.",
+          "parameters": [
+            {
+              "name": "enlace",
+              "description": "Enlace al mensaje de este servidor",
+              "descriptionEn": "Link to a message in this server",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 200
+            }
+          ]
+        },
+        {
+          "path": [
+            "musica"
+          ],
+          "description": "Propone hasta tres canciones o un control para revisar antes de ejecutar.",
+          "descriptionEn": "Propose up to three songs or a playback control to review before running.",
+          "parameters": [
+            {
+              "name": "peticion",
+              "description": "Ejemplo: agrega tres openings de Digimon",
+              "descriptionEn": "Example: add three Digimon openings",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 500
+            }
+          ]
+        },
+        {
+          "path": [
+            "confirmar"
+          ],
+          "description": "Confirma tu propuesta musical; vuelve a comprobar permisos y canal de voz.",
+          "descriptionEn": "Confirm your music proposal; checks permissions and voice channel again.",
+          "parameters": [
+            {
+              "name": "borrador",
+              "description": "Identificador del borrador",
+              "descriptionEn": "Draft identifier",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 36
+            }
+          ]
+        },
+        {
+          "path": [
+            "transcribir"
+          ],
+          "description": "Envía voluntariamente tu audio a Google Cloud para transcribirlo y resumirlo.",
+          "descriptionEn": "Voluntarily send your audio to Google Cloud for transcription and a summary.",
+          "parameters": [
+            {
+              "name": "audio",
+              "description": "Audio adjunto de hasta 1 MB; se procesa en Google Cloud",
+              "descriptionEn": "Audio attachment up to 1 MB; processed in Google Cloud",
+              "type": 11,
+              "required": true,
+              "autocomplete": false,
+              "choices": []
+            }
+          ]
+        },
+        {
+          "path": [
+            "adaptar"
+          ],
+          "description": "Staff: traduce y adapta una noticia o estreno al español, sin publicarlo.",
+          "descriptionEn": "Staff: translate and adapt a news item or release into Spanish without publishing.",
+          "parameters": [
+            {
+              "name": "texto",
+              "description": "Texto original para adaptar",
+              "descriptionEn": "Original text to adapt",
+              "type": 3,
+              "required": true,
+              "autocomplete": false,
+              "choices": [],
+              "maxLength": 3000
             }
           ]
         }
