@@ -8,7 +8,7 @@ export const privacyDocument = Object.freeze({
     "Esta política explica qué información procesa Unidad, para qué se utiliza y cómo puedes ejercer control sobre ella.",
     "This policy explains what information Unidad processes, why it is used, and how you can exercise control over it.",
   ),
-  updated: bilingual("14 de noviembre de 2026", "November 14, 2026"),
+  updated: bilingual("17 de noviembre de 2026", "November 17, 2026"),
   sections: [
     {
       id: "alcance",
@@ -71,6 +71,12 @@ export const privacyDocument = Object.freeze({
           "Requested queries or links, title, author, provider, duration, requester identifier and display name, playback status, timestamps, persistent queue, and playback history.",
         ),
         subtitle(
+          "Asistente de IA (/ia)",
+          "AI assistant (/ia)",
+          "Solo cuando un administrador lo activa y un miembro usa un comando /ia: la pregunta o instrucción escrita; los mensajes que se piden resumir o revisar (texto, identificador del autor y fecha; hasta 300 mensajes en un resumen y hasta 15 de contexto en una revisión de moderación); la conversación de un ticket que el Staff pide analizar; y el audio adjunto que un miembro decide transcribir (hasta 1 MB). Se guardan los identificadores de los mensajes elegidos como fuentes de preguntas frecuentes (con su título y quién los agregó, no su texto), los borradores temporales de anuncios y encuestas, la configuración de /ia del servidor y un contador mensual de consumo por servidor.",
+          "Only when an administrator enables it and a member uses an /ia command: the written question or instruction; the messages requested for a summary or review (text, author identifier, and date; up to 300 messages in a summary and up to 15 messages of context in a moderation review); a ticket conversation that Staff asks to analyze; and an audio attachment a member chooses to transcribe (up to 1 MB). Stored data is limited to the identifiers of messages chosen as FAQ sources (with their title and who added them, not their text), temporary announcement and poll drafts, the server’s /ia settings, and a monthly per-server usage counter.",
+        ),
+        subtitle(
           "Integraciones y operación",
           "Integrations and operations",
           "Nombres o identificadores de Twitch configurados por administradores; fuentes de publicaciones automáticas configuradas por el Staff (direcciones de feeds RSS, cuentas públicas de Bluesky y el canal de estrenos de anime, con su canal de destino, el idioma elegido, el identificador de quien la configuró y la lista de lo ya publicado para no repetirlo); consultas enviadas voluntariamente a búsqueda, traducción, juegos, GIF o chatbot; y registros técnicos limitados, como cambios de canales, roles, emojis, stickers, eventos y servidor, errores, tiempos e identificadores necesarios para operar o diagnosticar el servicio.",
@@ -84,13 +90,13 @@ export const privacyDocument = Object.freeze({
       blocks: [
         list(
           [
-            "Unidad no graba ni almacena audio de los canales de voz.",
+            "Unidad no graba ni almacena audio de los canales de voz. Un audio adjunto que un miembro envía a /ia transcribir se procesa en memoria y no se guarda.",
             "No almacena de forma general el contenido de todos los mensajes. El contenido puede procesarse transitoriamente para moderación, comandos personalizados y funciones solicitadas.",
             "No solicita contraseñas de Discord, datos bancarios ni información de tarjetas.",
             "No vende datos personales ni crea perfiles publicitarios.",
           ],
           [
-            "Unidad does not record or store audio from voice channels.",
+            "Unidad does not record or store audio from voice channels. An audio attachment a member sends to /ia transcribir is processed in memory and is not stored.",
             "It does not generally store the content of every message. Content may be processed transiently for moderation, custom commands, and requested features.",
             "It does not request Discord passwords, bank details, or payment-card information.",
             "It does not sell personal data or create advertising profiles.",
@@ -111,6 +117,7 @@ export const privacyDocument = Object.freeze({
             "Buscar, reproducir y restaurar música, así como mostrar un historial solicitado por la comunidad.",
             "Vincular cuentas de Minecraft, mantener la whitelist del servidor, mostrar su estado, conectar su chat con Discord y calcular el progreso de las misiones semanales.",
             "Enviar al proveedor configurado el contenido escrito en el canal de chatbot para generar una respuesta.",
+            "Responder a los comandos /ia que un miembro ejecuta: contestar preguntas sobre el bot y el servidor, resumir mensajes, apoyar al Staff con tickets, revisiones de moderación y borradores de anuncios, proponer música y transcribir audios adjuntos. Los resultados son orientativos: la IA no aplica sanciones ni publica nada sin que una persona lo confirme.",
             "Publicar en los canales que elija cada servidor noticias de feeds RSS, publicaciones de cuentas públicas de Bluesky y avisos de episodios nuevos de anime; si el servidor elige español, enviar el texto de esas publicaciones (nunca datos de miembros) al proveedor de IA para traducirlo.",
             "Investigar errores, proteger la infraestructura y mejorar estabilidad y rendimiento.",
           ],
@@ -122,6 +129,7 @@ export const privacyDocument = Object.freeze({
             "Search, play, and restore music, and display community-requested history.",
             "Link Minecraft accounts, maintain the server whitelist, show its status, connect its chat with Discord, and track weekly quest progress.",
             "Send content written in the configured chatbot channel to the configured provider to generate a response.",
+            "Respond to /ia commands a member runs: answer questions about the bot and the server, summarize messages, support Staff with tickets, moderation reviews, and announcement drafts, suggest music, and transcribe attached audio. Results are advisory: the AI applies no sanctions and publishes nothing unless a person confirms it.",
             "Post RSS news, posts from public Bluesky accounts, and new anime episode alerts to the channels each server chooses; when the server picks Spanish, send the text of those posts (never member data) to the AI provider for translation.",
             "Investigate errors, protect infrastructure, and improve stability and performance.",
           ],
@@ -146,7 +154,7 @@ export const privacyDocument = Object.freeze({
             "Proveedores musicales como YouTube, Spotify, SoundCloud y Apple Music, y el servicio Lavalink, para resolver búsquedas y reproducir contenido.",
             "Twitch, cuando un servidor configura avisos de creadores.",
             "El servidor de Minecraft que configure cada comunidad, que recibe los nombres de jugador para su whitelist y los mensajes escritos en el canal de chat enlazado.",
-            "El proveedor de IA configurado por el operador (hoy, Gemini de Google): recibe lo escrito en el canal de chatbot cuando un administrador lo habilita, y el texto de las publicaciones automáticas que se traducen al español.",
+            "Google Cloud (modelo Gemini), proveedor de IA configurado por el operador: recibe lo escrito en el canal de chatbot cuando un administrador lo habilita, el texto de las publicaciones automáticas que se traducen al español y el contenido de cada solicitud /ia descrito en la sección 2. Unidad no registra el texto de esas solicitudes en sus logs.",
             "Las fuentes de las publicaciones automáticas: los sitios cuyos feeds RSS configure cada servidor, la API pública de Bluesky y AniList (horarios de emisión), con enlaces a Crunchyroll. Unidad solo lee de ellas contenido público; no les envía datos de miembros.",
             "Proveedores de consultas solicitadas: GIPHY, Open Trivia DB, servicios de dilemas, discord.js, GitHub, npm, Apple iTunes, CoinGecko, disease.sh, MyMemory, Open-Meteo, Anagramica e is.gd, según el comando utilizado.",
             "top.gg, que recibe tu identificador de usuario de Discord para comprobar si votaste por el bot; api.mcsrvstat.us, que recibe la dirección del servidor de Minecraft consultada; quickchart.io, que recibe el texto con el que se genera un código QR; y minotar.net, que recibe el nombre de jugador de Minecraft para mostrar su avatar.",
@@ -159,7 +167,7 @@ export const privacyDocument = Object.freeze({
             "Music providers such as YouTube, Spotify, SoundCloud, and Apple Music, plus Lavalink, to resolve searches and play content.",
             "Twitch, when a server configures creator notifications.",
             "The Minecraft server each community configures, which receives player names for its whitelist and the messages written in the linked chat channel.",
-            "The AI provider configured by the operator (today, Google’s Gemini): it receives what is written in the chatbot channel when an administrator enables it, and the text of automatic posts translated into Spanish.",
+            "Google Cloud (Gemini model), the AI provider configured by the operator: it receives what is written in the chatbot channel when an administrator enables it, the text of automatic posts translated into Spanish, and the content of each /ia request described in section 2. Unidad does not record the text of those requests in its logs.",
             "The sources of automatic posts: the sites whose RSS feeds each server configures, Bluesky’s public API, and AniList (airing schedules), with links to Crunchyroll. Unidad only reads public content from them; it sends them no member data.",
             "Providers for requested queries: GIPHY, Open Trivia DB, dilemma services, discord.js, GitHub, npm, Apple iTunes, CoinGecko, disease.sh, MyMemory, Open-Meteo, Anagramica, and is.gd, depending on the command used.",
             "top.gg, which receives your Discord user ID to check whether you voted for the bot; api.mcsrvstat.us, which receives the Minecraft server address being queried; quickchart.io, which receives the text used to generate a QR code; and minotar.net, which receives the Minecraft player name to display its avatar.",
@@ -179,8 +187,8 @@ export const privacyDocument = Object.freeze({
       title: bilingual("6. Conservación y eliminación", "6. Retention and deletion"),
       blocks: [
         paragraph(
-          "La configuración, progresión, economía, historial musical, perfiles, relaciones, invitaciones, sorteos, sugerencias, recordatorios y demás registros funcionales se conservan mientras sean necesarios para operar la característica correspondiente o hasta que un administrador autorizado o el usuario solicite su eliminación. Las advertencias de moderación se conservan hasta que un moderador las retira, y los baneos temporales se conservan con su estado una vez vencidos como historial de moderación. El estado AFK se elimina al volver a escribir. La vinculación de Minecraft se elimina al quitarla con /minecraft desvincular o al salir del servidor de Discord, y en ese momento el jugador se retira de la whitelist. El progreso de las misiones semanales se borra automáticamente pasadas 8 semanas. Los datos temporales de caché y sesiones interactivas expiran automáticamente. Las copias de seguridad pueden conservar datos durante su ciclo operativo limitado.",
-          "Configuration, progression, economy, music history, profiles, relationships, invitations, giveaways, suggestions, reminders, and other functional records are retained while needed for the corresponding feature or until an authorized administrator or user requests deletion. Moderation warnings are kept until a moderator removes them, and temporary bans are kept with their status after they expire as moderation history. AFK status is removed when the user writes again. A Minecraft link is deleted when removed with /minecraft desvincular or when the member leaves the Discord server, and the player is then removed from the whitelist. Weekly quest progress is deleted automatically after 8 weeks. Temporary cache and interactive-session data expire automatically. Backups may retain data for their limited operational lifecycle.",
+          "La configuración, progresión, economía, historial musical, perfiles, relaciones, invitaciones, sorteos, sugerencias, recordatorios y demás registros funcionales se conservan mientras sean necesarios para operar la característica correspondiente o hasta que un administrador autorizado o el usuario solicite su eliminación. Las advertencias de moderación se conservan hasta que un moderador las retira, y los baneos temporales se conservan con su estado una vez vencidos como historial de moderación. El estado AFK se elimina al volver a escribir. La vinculación de Minecraft se elimina al quitarla con /minecraft desvincular o al salir del servidor de Discord, y en ese momento el jugador se retira de la whitelist. El progreso de las misiones semanales se borra automáticamente pasadas 8 semanas. Los borradores de /ia caducan a los 15 minutos y las fuentes de preguntas frecuentes se conservan hasta que el Staff las quita; al retirar el bot de un servidor se eliminan sus fuentes, borradores y configuración de /ia, y solo se conserva el contador mensual de consumo. Los datos temporales de caché y sesiones interactivas expiran automáticamente. Las copias de seguridad pueden conservar datos durante su ciclo operativo limitado.",
+          "Configuration, progression, economy, music history, profiles, relationships, invitations, giveaways, suggestions, reminders, and other functional records are retained while needed for the corresponding feature or until an authorized administrator or user requests deletion. Moderation warnings are kept until a moderator removes them, and temporary bans are kept with their status after they expire as moderation history. AFK status is removed when the user writes again. A Minecraft link is deleted when removed with /minecraft desvincular or when the member leaves the Discord server, and the player is then removed from the whitelist. Weekly quest progress is deleted automatically after 8 weeks. /ia drafts expire after 15 minutes and FAQ sources are kept until Staff removes them; when the bot is removed from a server, its /ia sources, drafts, and settings are deleted, and only the monthly usage counter is kept. Temporary cache and interactive-session data expire automatically. Backups may retain data for their limited operational lifecycle.",
         ),
         paragraph(
           "Retirar el bot de un servidor detiene nuevo tratamiento en ese servidor, pero no garantiza la eliminación inmediata de todos los registros existentes. El propietario del servidor puede solicitar la eliminación completa indicando el identificador del servidor.",
