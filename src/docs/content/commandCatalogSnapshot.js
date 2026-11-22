@@ -1,6 +1,6 @@
 // Generated from bot-unidad command builders. Run npm run docs:sync to update.
 export const commandCatalogSnapshot = {
-  "sourceCommit": "b191eb469006ea719493fe5c1043e7f602e20956",
+  "sourceCommit": "2a022483e77191eff2e66035f3fa21820f5e879f",
   "referenceCommit": "125b0311bdd0ba7e95a12804e31f6ba626e6f407",
   "categories": [
     {
